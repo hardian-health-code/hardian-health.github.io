@@ -1036,18 +1036,11 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 {
   }
 }
 @media (max-width: 767px) {
-  /* Hide the arrow in case it's applied via a pseudo-element */
-  .header-nav-folder-title::after {
-    display: none !important;
-    content: none !important;
-    background: none !important;
-  }
-
-@media (max-width: 767px) {
-  .header-nav-folder-title svg {
+  .header-dropdown-icon svg {
     display: none !important;
   }
 }
+
 
 
 /*********
