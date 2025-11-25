@@ -1035,11 +1035,6 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 {
     font-size: 40px !important;
   }
 }
-@media (max-width: 767px) {
-  .header-dropdown-icon svg {
-    display: none !important;
-  }
-}
 
 
 
