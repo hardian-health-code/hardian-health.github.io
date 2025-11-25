@@ -1034,11 +1034,15 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 {
   .read-more {
     font-size: 40px !important;
   }
+}
+
+/* REMOVE MOBILE NAV FOLDER ARROWS */
 @media (max-width: 767px) {
   .header-nav-folder-title:after {
     display: none !important;
   }
 }
+
 .active-nav-item-underline {
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: repeat-x;
