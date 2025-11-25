@@ -1043,18 +1043,12 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 {
     background: none !important;
   }
 
-  /* In case it's applied to the folder title's text */
-  .header-nav-folder-title-text::after {
+@media (max-width: 767px) {
+  .header-nav-folder-title svg {
     display: none !important;
-    content: none !important;
-    background: none !important;
-  }
-
-  /* Reset any extra padding or margin affecting spacing */
-  .header-nav-folder-title-text {
-    padding-right: 0 !important;
   }
 }
+
 
 /*********
 Blog items
