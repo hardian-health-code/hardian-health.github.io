@@ -1050,6 +1050,15 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 {
     background: none !important;
   }
 
+  /* Reset any extra padding or margin affecting spacing */
+  .header-nav-folder-title-text {
+    padding-right: 0 !important;
+  }
+}
+
+/*********
+Blog items
+**********/
 .active-nav-item-underline {
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: repeat-x;
