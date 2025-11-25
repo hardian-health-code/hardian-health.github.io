@@ -1008,7 +1008,8 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 {
 @media (min-width: 767px) {
 }
 .header-nav-list a,
-.header-nav-list {
+.header-nav-list, 
+.header-nav-folder-title-text {
   font-family: 'Open Sans', sans-serif !important;
   font-weight: 500 !important;
   font-size: 14px !important;
