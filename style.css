@@ -1018,13 +1018,7 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 {
   font-weight: 500 !important;
   font-size: 14px !important;
 }
-/* Mobile menu folder titles - match regular nav items */
-.header-menu-nav-folder .header-menu-nav-folder-title,
-.header-menu-nav-folder-title {
-  font-family: inherit !important;
-  font-weight: inherit !important;
-  font-size: inherit !important;
-}
+
 @media (min-width: 767px) {
 }
 .read-more {
