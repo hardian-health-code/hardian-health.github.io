@@ -1035,20 +1035,18 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 {
     font-size: 40px !important;
   }
 }
-/* Mobile menu folder titles - match regular nav items */
-.header-menu-nav-folder .header-menu-nav-folder-title,
-.header-menu-nav-folder-title {
-  font-family: inherit !important;
-  font-weight: inherit !important;
-  font-size: inherit !important;
-}
-
-/* REMOVE MOBILE NAV FOLDER ARROWS */
 @media (max-width: 767px) {
-  .header-nav-folder-title:after {
-    display: none !important;
+  /* Ensure the arrow is hidden on mobile */
+  .header-nav-folder-title-text::after {
+    display: none !important;  /* Hide the arrow */
+    background: none !important; /* Remove the arrow background */
   }
-}
+
+  /* In case the arrows are coming from the .header-nav-folder-title pseudo-element */
+  .header-nav-folder-title::after {
+    display: none !important;
+    background: none !important;
+  }
 
 .active-nav-item-underline {
   background-image: linear-gradient(currentColor, currentColor);
