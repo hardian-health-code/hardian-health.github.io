@@ -1035,6 +1035,13 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 {
     font-size: 40px !important;
   }
 }
+/* Mobile menu folder titles - match regular nav items */
+.header-menu-nav-folder .header-menu-nav-folder-title,
+.header-menu-nav-folder-title {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+}
 
 /* REMOVE MOBILE NAV FOLDER ARROWS */
 @media (max-width: 767px) {
