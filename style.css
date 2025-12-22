@@ -1049,7 +1049,7 @@ html body #page .dateFormatted-and-ready-to-show,
 .dateFormatted-and-ready-to-show * {
   opacity: 1 !important;
 }
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 0px) {
   section[data-section-id="63345cfd93596d2af59dedad"] a:after {
     content: "\A" !important;
     white-space: pre !important;
