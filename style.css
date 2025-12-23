@@ -2541,7 +2541,8 @@ html .fe-63d3d1df55d0b241361a0b22:before {
 }
 /*hide these mobile only extra grid cells on destkop, min-width 677px*/
 .sqs-block-content.has-charts-100-height,
-.sqs-block-content:has(.chart-line) {
+.sqs-block-content:has(.chart-line),
+.sqs-code-container:has(.chart-line) {
   height: 100% !important;
 }
 /*
