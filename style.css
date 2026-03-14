@@ -11,6 +11,7 @@
   --regulatory-mintgreen: #49dab0;
   --ip-darkblue: #3a6df5;
   --health-economics-brightpink: #ff9ff2;
+  --casestudy-lightgrey: #a6a6a6;
   --timelinetitleleft: -28px;
 }
 .marketaccess {
@@ -1517,6 +1518,45 @@ section[data-section-id="63936a7c3d674d7079783a93"]
   a[href*="ealth"]:hover:before,
 .blog-item-category-wrapper a[href*="ealth"]:hover:before,
 .blog-categories-list a[href*="ealth"]:hover:before {
+  background: #ffffff;
+}
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ase+Study"],
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ase+Study"],
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ase+Study"],
+.blog-item-category-wrapper a[href*="ase+Study"],
+.blog-categories-list a[href*="ase+Study"] {
+  border: 1px solid #ff9f43 !important;
+}
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ase+Study"]:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ase+Study"]:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ase+Study"]:before,
+.blog-item-category-wrapper a[href*="ase+Study"]:before,
+.blog-categories-list a[href*="ase+Study"]:before {
+  background: #ff9f43;
+}
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ase+Study"].active-filter,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ase+Study"].active-filter,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ase+Study"].active-filter,
+.blog-item-category-wrapper a[href*="ase+Study"].active-filter,
+.blog-categories-list a[href*="ase+Study"].active-filter,
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ase+Study"]:hover,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ase+Study"]:hover,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ase+Study"]:hover,
+.blog-item-category-wrapper a[href*="ase+Study"]:hover,
+.blog-categories-list a[href*="ase+Study"]:hover {
+  background: #ff9f43;
+  color: #ffffff !important;
+}
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ase+Study"].active-filter:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ase+Study"].active-filter:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ase+Study"].active-filter:before,
+.blog-item-category-wrapper a[href*="ase+Study"].active-filter:before,
+.blog-categories-list a[href*="ase+Study"].active-filter:before,
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ase+Study"]:hover:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ase+Study"]:hover:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ase+Study"]:hover:before,
+.blog-item-category-wrapper a[href*="ase+Study"]:hover:before,
+.blog-categories-list a[href*="ase+Study"]:hover:before {
   background: #ffffff;
 }
 a.blog-categories {
