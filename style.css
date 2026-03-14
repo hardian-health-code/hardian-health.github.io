@@ -343,12 +343,12 @@ p {
   .blog-more-link,
 section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="regulatory"],
 section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="intellectual"],
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="marketaccess"],
+section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="arket"],
 section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="economics"],
 section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="cli"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="regulatory"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="intellectual"],
-section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="marketaccess"],
+section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="arket"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="economics"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="cli"],
 a.summary-read-more-link {
@@ -373,7 +373,7 @@ section[data-section-id="62f528d73cd06779e8eb3ee9"]
   > a[href*="intellectual"]:hover,
 section[data-section-id="62f528d73cd06779e8eb3ee9"]
   p
-  > a[href*="marketaccess"]:hover,
+  > a[href*="arket"]:hover,
 section[data-section-id="62f528d73cd06779e8eb3ee9"]
   p
   > a[href*="economics"]:hover,
@@ -386,7 +386,7 @@ section[data-section-id="630906727a98a14798f4b3f4"]
   > a[href*="intellectual"]:hover,
 section[data-section-id="630906727a98a14798f4b3f4"]
   p
-  > a[href*="marketaccess"]:hover,
+  > a[href*="arket"]:hover,
 section[data-section-id="630906727a98a14798f4b3f4"]
   p
   > a[href*="economics"]:hover,
@@ -406,7 +406,7 @@ section[data-section-id="62f528d73cd06779e8eb3ee9"]
   > a[href*="intellectual"]:hover:after,
 section[data-section-id="62f528d73cd06779e8eb3ee9"]
   p
-  > a[href*="marketaccess"]:hover:after,
+  > a[href*="arket"]:hover:after,
 section[data-section-id="62f528d73cd06779e8eb3ee9"]
   p
   > a[href*="economics"]:hover:after,
@@ -421,7 +421,7 @@ section[data-section-id="630906727a98a14798f4b3f4"]
   > a[href*="intellectual"]:hover:after,
 section[data-section-id="630906727a98a14798f4b3f4"]
   p
-  > a[href*="marketaccess"]:hover:after,
+  > a[href*="arket"]:hover:after,
 section[data-section-id="630906727a98a14798f4b3f4"]
   p
   > a[href*="economics"]:hover:after,
@@ -443,7 +443,7 @@ section[data-section-id="62f528d73cd06779e8eb3ee9"]
   > a[href*="intellectual"]:after,
 section[data-section-id="62f528d73cd06779e8eb3ee9"]
   p
-  > a[href*="marketaccess"]:after,
+  > a[href*="arket"]:after,
 section[data-section-id="62f528d73cd06779e8eb3ee9"]
   p
   > a[href*="economics"]:after,
@@ -456,7 +456,7 @@ section[data-section-id="630906727a98a14798f4b3f4"]
   > a[href*="intellectual"]:after,
 section[data-section-id="630906727a98a14798f4b3f4"]
   p
-  > a[href*="marketaccess"]:after,
+  > a[href*="arket"]:after,
 section[data-section-id="630906727a98a14798f4b3f4"]
   p
   > a[href*="economics"]:after,
@@ -831,7 +831,7 @@ section[data-section-id="630906727a98a14798f4b3f4"]
 }
 section[data-section-id="630906727a98a14798f4b3f4"]
   h4
-  a[href*="marketaccess"]:before {
+  a[href*="arket"]:before {
   background: var(--marketaccess-lightblue) !important;
 }
 section[data-section-id="630906727a98a14798f4b3f4"]
@@ -1321,52 +1321,52 @@ section[data-section-id="63936a7c3d674d7079783a93"]
 .blog-categories-list a[href*="Clinical"]:hover:before {
   background: #ffffff;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="marketaccess"],
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="marketaccess"],
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="marketaccess"],
-.blog-item-category-wrapper a[href*="marketaccess"],
-.blog-categories-list a[href*="marketaccess"] {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="arket"],
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="arket"],
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="arket"],
+.blog-item-category-wrapper a[href*="arket"],
+.blog-categories-list a[href*="arket"] {
   border: 1px solid var(--marketaccess-lightblue) !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="marketaccess"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="marketaccess"]:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="marketaccess"]:before,
-.blog-item-category-wrapper a[href*="marketaccess"]:before,
-.blog-categories-list a[href*="marketaccess"]:before {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="arket"]:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="arket"]:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="arket"]:before,
+.blog-item-category-wrapper a[href*="arket"]:before,
+.blog-categories-list a[href*="arket"]:before {
   background: var(--marketaccess-lightblue);
 }
 section[data-section-id="63345cfd93596d2af59dedad"]
-  a[href*="marketaccess"].active-filter,
+  a[href*="arket"].active-filter,
 section[data-section-id="6389f6432a12130f5a0778ab"]
-  a[href*="marketaccess"].active-filter,
+  a[href*="arket"].active-filter,
 section[data-section-id="63936a7c3d674d7079783a93"]
-  a[href*="marketaccess"].active-filter,
-.blog-item-category-wrapper a[href*="marketaccess"].active-filter,
-.blog-categories-list a[href*="marketaccess"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="marketaccess"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="marketaccess"]:hover,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="marketaccess"]:hover,
-.blog-item-category-wrapper a[href*="marketaccess"]:hover,
-.blog-categories-list a[href*="marketaccess"]:hover {
+  a[href*="arket"].active-filter,
+.blog-item-category-wrapper a[href*="arket"].active-filter,
+.blog-categories-list a[href*="arket"].active-filter,
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="arket"]:hover,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="arket"]:hover,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="arket"]:hover,
+.blog-item-category-wrapper a[href*="arket"]:hover,
+.blog-categories-list a[href*="arket"]:hover {
   background: var(--marketaccess-lightblue);
   color: #ffffff !important;
 }
 section[data-section-id="63345cfd93596d2af59dedad"]
-  a[href*="marketaccess"].active-filter:before,
+  a[href*="arket"].active-filter:before,
 section[data-section-id="6389f6432a12130f5a0778ab"]
-  a[href*="marketaccess"].active-filter:before,
+  a[href*="arket"].active-filter:before,
 section[data-section-id="63936a7c3d674d7079783a93"]
-  a[href*="marketaccess"].active-filter:before,
-.blog-item-category-wrapper a[href*="marketaccess"].active-filter:before,
-.blog-categories-list a[href*="marketaccess"].active-filter:before,
+  a[href*="arket"].active-filter:before,
+.blog-item-category-wrapper a[href*="arket"].active-filter:before,
+.blog-categories-list a[href*="arket"].active-filter:before,
 section[data-section-id="63345cfd93596d2af59dedad"]
-  a[href*="marketaccess"]:hover:before,
+  a[href*="arket"]:hover:before,
 section[data-section-id="6389f6432a12130f5a0778ab"]
-  a[href*="marketaccess"]:hover:before,
+  a[href*="arket"]:hover:before,
 section[data-section-id="63936a7c3d674d7079783a93"]
-  a[href*="marketaccess"]:hover:before,
-.blog-item-category-wrapper a[href*="marketaccess"]:hover:before,
-.blog-categories-list a[href*="marketaccess"]:hover:before {
+  a[href*="arket"]:hover:before,
+.blog-item-category-wrapper a[href*="arket"]:hover:before,
+.blog-categories-list a[href*="arket"]:hover:before {
   background: #ffffff;
 }
 section[data-section-id="63345cfd93596d2af59dedad"] a[href*="egulat"],
