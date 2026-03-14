@@ -832,9 +832,9 @@ fetch(fetchUrl, {
           verticalTitle = "Regulatory";
           //vertical = "/services/regulatory";
           vertical = path.split('/')[1];
-        } else if (path.startsWith("/strategy")) {
-          verticalTitle = "Strategy";
-          //vertical = "/services/strategy";
+        } else if (path.startsWith("/marketaccess")) {
+          verticalTitle = "marketaccess";
+          //vertical = "/services/marketaccess";
           vertical = path.split('/')[1];
         } else if (path.startsWith("/health-economics")) {
           verticalTitle = "Health Economics";
@@ -949,7 +949,7 @@ function checkIfPathContainsSubstringAndAddClassToBody(substring, className, css
 // TODO check final urls - run it for each vertical
 
 checkIfPathContainsSubstringAndAddClassToBody('health-economics', 'health-economics', '--health-economics-brightpink');
-checkIfPathContainsSubstringAndAddClassToBody('/strategy', 'strategy', '--strategy-lightblue');
+checkIfPathContainsSubstringAndAddClassToBody('/marketaccess', 'marketaccess', '--marketaccess-lightblue');
 checkIfPathContainsSubstringAndAddClassToBody('/intellectual-property', 'intellectual-property', '--ip-darkblue');
 checkIfPathContainsSubstringAndAddClassToBody('/regulatory', 'regulatory', '--regulatory-mintgreen');
 checkIfPathContainsSubstringAndAddClassToBody('/clinical', 'clinical', '--clinical-purple');
