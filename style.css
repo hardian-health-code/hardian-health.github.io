@@ -1579,7 +1579,7 @@ section[data-section-id="63345cfd93596d2af59dedad"] a,
     background:var(--clinical-purple);
   }
 
-  &[href*="market access"]:before{
+  &[href*="Market Access"]:before{
     background:var(--marketaccess-lightblue);
   }
   &[href*="egulat"]:before{
