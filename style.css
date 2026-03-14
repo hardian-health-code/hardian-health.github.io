@@ -16,6 +16,9 @@
 .marketaccess {
   --current-service-color: var(--marketaccess-lightblue);
 }
+.market-access {
+  --current-service-color: var(--marketaccess-lightblue);
+}
 .clinical {
   --current-service-color: var(--clinical-purple);
 }
