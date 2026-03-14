@@ -7,14 +7,14 @@
   --neutral-lightgrey: #eef0f2;
   --neutral-darkgrey: #a6a6a6;
   --clinical-purple: #a37af5;
-  --strategy-lightblue: #5bcfff;
+  --marketaccess-lightblue: #5bcfff;
   --regulatory-mintgreen: #49dab0;
   --ip-darkblue: #3a6df5;
   --health-economics-brightpink: #ff9ff2;
   --timelinetitleleft: -28px;
 }
-.strategy {
-  --current-service-color: var(--strategy-lightblue);
+.marketaccess {
+  --current-service-color: var(--marketaccess-lightblue);
 }
 .clinical {
   --current-service-color: var(--clinical-purple);
@@ -81,9 +81,9 @@ p + pre {
   background: var(--health-economics-brightpink) !important;
 }
 .header-nav-folder-item
-  a[href*="/strategy"]
+  a[href*="/marketaccess"]
   .header-nav-folder-item-content:before {
-  background: var(--strategy-lightblue) !important;
+  background: var(--marketaccess-lightblue) !important;
 }
 .header-nav-folder-item
   a[href*="/intellectual-property"]
@@ -233,9 +233,9 @@ body:not(.header--menu-open)
   background-color: var(--health-economics-brightpink) !important;
 }
 .container.header-menu-nav-item
-  a[href*="/strategy"]
+  a[href*="/marketaccess"]
   .header-menu-nav-item-content:before {
-  background-color: var(--strategy-lightblue) !important;
+  background-color: var(--marketaccess-lightblue) !important;
 }
 .container.header-menu-nav-item
   a[href*="/intellectual-property"]
@@ -340,12 +340,12 @@ p {
   .blog-more-link,
 section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="regulatory"],
 section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="intellectual"],
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="strategy"],
+section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="marketaccess"],
 section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="economics"],
 section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="cli"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="regulatory"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="intellectual"],
-section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="strategy"],
+section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="marketaccess"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="economics"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="cli"],
 a.summary-read-more-link {
@@ -370,7 +370,7 @@ section[data-section-id="62f528d73cd06779e8eb3ee9"]
   > a[href*="intellectual"]:hover,
 section[data-section-id="62f528d73cd06779e8eb3ee9"]
   p
-  > a[href*="strategy"]:hover,
+  > a[href*="marketaccess"]:hover,
 section[data-section-id="62f528d73cd06779e8eb3ee9"]
   p
   > a[href*="economics"]:hover,
@@ -383,7 +383,7 @@ section[data-section-id="630906727a98a14798f4b3f4"]
   > a[href*="intellectual"]:hover,
 section[data-section-id="630906727a98a14798f4b3f4"]
   p
-  > a[href*="strategy"]:hover,
+  > a[href*="marketaccess"]:hover,
 section[data-section-id="630906727a98a14798f4b3f4"]
   p
   > a[href*="economics"]:hover,
@@ -403,7 +403,7 @@ section[data-section-id="62f528d73cd06779e8eb3ee9"]
   > a[href*="intellectual"]:hover:after,
 section[data-section-id="62f528d73cd06779e8eb3ee9"]
   p
-  > a[href*="strategy"]:hover:after,
+  > a[href*="marketaccess"]:hover:after,
 section[data-section-id="62f528d73cd06779e8eb3ee9"]
   p
   > a[href*="economics"]:hover:after,
@@ -418,7 +418,7 @@ section[data-section-id="630906727a98a14798f4b3f4"]
   > a[href*="intellectual"]:hover:after,
 section[data-section-id="630906727a98a14798f4b3f4"]
   p
-  > a[href*="strategy"]:hover:after,
+  > a[href*="marketaccess"]:hover:after,
 section[data-section-id="630906727a98a14798f4b3f4"]
   p
   > a[href*="economics"]:hover:after,
@@ -440,7 +440,7 @@ section[data-section-id="62f528d73cd06779e8eb3ee9"]
   > a[href*="intellectual"]:after,
 section[data-section-id="62f528d73cd06779e8eb3ee9"]
   p
-  > a[href*="strategy"]:after,
+  > a[href*="marketaccess"]:after,
 section[data-section-id="62f528d73cd06779e8eb3ee9"]
   p
   > a[href*="economics"]:after,
@@ -453,7 +453,7 @@ section[data-section-id="630906727a98a14798f4b3f4"]
   > a[href*="intellectual"]:after,
 section[data-section-id="630906727a98a14798f4b3f4"]
   p
-  > a[href*="strategy"]:after,
+  > a[href*="marketaccess"]:after,
 section[data-section-id="630906727a98a14798f4b3f4"]
   p
   > a[href*="economics"]:after,
@@ -690,7 +690,7 @@ section[data-section-id="630906727a98a14798f4b3f4"]
 
 //Brand Colors
 var(--clinical-purple):#A37AF5;
-var(--strategy-lightblue): #5BCFFF;
+var(--marketaccess-lightblue): #5BCFFF;
 var(--regulatory-mintgreen):#49DAB0;
 var(--ip-darkblue):#3A6DF5;
 var(--health-economics-brightpink): #FF9FF2;
@@ -780,7 +780,7 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4{
 }
 
 #block-a78ba45834402982aeb1 h4:before{
-  background:var(--strategy-lightblue);
+  background:var(--marketaccess-lightblue);
 }
 
 #block-yui_3_17_2_1_1660233301342_249459  h4:before{
@@ -828,8 +828,8 @@ section[data-section-id="630906727a98a14798f4b3f4"]
 }
 section[data-section-id="630906727a98a14798f4b3f4"]
   h4
-  a[href*="strategy"]:before {
-  background: var(--strategy-lightblue) !important;
+  a[href*="marketaccess"]:before {
+  background: var(--marketaccess-lightblue) !important;
 }
 section[data-section-id="630906727a98a14798f4b3f4"]
   h4
@@ -852,7 +852,7 @@ span.word:nth-of-type(1) {
 }
 
 span.word:nth-of-type(2) {
-    color: var(--strategy-lightblue)  !important;
+    color: var(--marketaccess-lightblue)  !important;
 }
 
 span.word:nth-of-type(3) {
@@ -887,7 +887,7 @@ https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d127
 https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff42ea11aa86570516a0c4/1677673194550/Circle+regulatory-mintgreen+%2349DAB0.png
 https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff42f7e9f52e0b60b703bf/1677673207327/Circle+health-economics-brightpink+%23FF9FF2.png
 https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff4304c6aade086717daaf/1677673220146/Circle+ip-darkblue+%233A6DF5.png
-https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac0a27f83474/1677673236016/Circle+strategy+light+blue+5BCFFF.png
+https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac0a27f83474/1677673236016/Circle+marketaccess+light+blue+5BCFFF.png
 */
 .section-background {
   background-position:
@@ -898,8 +898,8 @@ https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac
 }
 section[data-section-id="63fe6a99421d3c16149c8d55"] .section-background {
   background-image:
-    url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac0a27f83474/1677673236016/Circle+strategy+light+blue+5BCFFF.png),
-    url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac0a27f83474/1677673236016/Circle+strategy+light+blue+5BCFFF.png);
+    url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac0a27f83474/1677673236016/Circle+marketaccess+light+blue+5BCFFF.png),
+    url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac0a27f83474/1677673236016/Circle+marketaccess+light+blue+5BCFFF.png);
 }
 section[data-section-id="63fe67382ca07217b03f6cb4"] .section-background {
   background-image:
@@ -1323,14 +1323,14 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="trategy"],
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="trategy"],
 .blog-item-category-wrapper a[href*="trategy"],
 .blog-categories-list a[href*="trategy"] {
-  border: 1px solid var(--strategy-lightblue) !important;
+  border: 1px solid var(--marketaccess-lightblue) !important;
 }
 section[data-section-id="63345cfd93596d2af59dedad"] a[href*="trategy"]:before,
 section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="trategy"]:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="trategy"]:before,
 .blog-item-category-wrapper a[href*="trategy"]:before,
 .blog-categories-list a[href*="trategy"]:before {
-  background: var(--strategy-lightblue);
+  background: var(--marketaccess-lightblue);
 }
 section[data-section-id="63345cfd93596d2af59dedad"]
   a[href*="trategy"].active-filter,
@@ -1345,7 +1345,7 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="trategy"]:hover,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="trategy"]:hover,
 .blog-item-category-wrapper a[href*="trategy"]:hover,
 .blog-categories-list a[href*="trategy"]:hover {
-  background: var(--strategy-lightblue);
+  background: var(--marketaccess-lightblue);
   color: #ffffff !important;
 }
 section[data-section-id="63345cfd93596d2af59dedad"]
@@ -1580,7 +1580,7 @@ section[data-section-id="63345cfd93596d2af59dedad"] a,
   }
 
   &[href*="trategy"]:before{
-    background:var(--strategy-lightblue);
+    background:var(--marketaccess-lightblue);
   }
   &[href*="egulat"]:before{
     background:var(--regulatory-mintgreen);
@@ -2910,7 +2910,7 @@ CUBE
   background: var(--health-economics-brightpink);
 }
 .cube .sticker.yellow {
-  background: var(--strategy-lightblue);
+  background: var(--marketaccess-lightblue);
 }
 /*
 
