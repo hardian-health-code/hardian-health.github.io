@@ -1318,33 +1318,33 @@ section[data-section-id="63936a7c3d674d7079783a93"]
 .blog-categories-list a[href*="Clinical"]:hover:before {
   background: #ffffff;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="market access"],
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="market access"],
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="market access"],
-.blog-item-category-wrapper a[href*="market access"],
-.blog-categories-list a[href*="market access"] {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="marketaccess"],
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="marketaccess"],
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="marketaccess"],
+.blog-item-category-wrapper a[href*="marketaccess"],
+.blog-categories-list a[href*="marketaccess"] {
   border: 1px solid var(--marketaccess-lightblue) !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="market access"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="market access"]:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="market access"]:before,
-.blog-item-category-wrapper a[href*="market access"]:before,
-.blog-categories-list a[href*="market access"]:before {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="marketaccess"]:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="marketaccess"]:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="marketaccess"]:before,
+.blog-item-category-wrapper a[href*="marketaccess"]:before,
+.blog-categories-list a[href*="marketaccess"]:before {
   background: var(--marketaccess-lightblue);
 }
 section[data-section-id="63345cfd93596d2af59dedad"]
-  a[href*="market access"].active-filter,
+  a[href*="marketaccess"].active-filter,
 section[data-section-id="6389f6432a12130f5a0778ab"]
-  a[href*="market access"].active-filter,
+  a[href*="marketaccess"].active-filter,
 section[data-section-id="63936a7c3d674d7079783a93"]
-  a[href*="market access"].active-filter,
-.blog-item-category-wrapper a[href*="market access"].active-filter,
-.blog-categories-list a[href*="market access"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="market access"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="market access"]:hover,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="market access"]:hover,
-.blog-item-category-wrapper a[href*="market access"]:hover,
-.blog-categories-list a[href*="market access"]:hover {
+  a[href*="marketaccess"].active-filter,
+.blog-item-category-wrapper a[href*="marketaccess"].active-filter,
+.blog-categories-list a[href*="marketaccess"].active-filter,
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="marketaccess"]:hover,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="marketaccess"]:hover,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="marketaccess"]:hover,
+.blog-item-category-wrapper a[href*="marketaccess"]:hover,
+.blog-categories-list a[href*="marketaccess"]:hover {
   background: var(--marketaccess-lightblue);
   color: #ffffff !important;
 }
@@ -1354,16 +1354,16 @@ section[data-section-id="6389f6432a12130f5a0778ab"]
   a[href*="market access"].active-filter:before,
 section[data-section-id="63936a7c3d674d7079783a93"]
   a[href*="market access"].active-filter:before,
-.blog-item-category-wrapper a[href*="market access"].active-filter:before,
-.blog-categories-list a[href*="market access"].active-filter:before,
+.blog-item-category-wrapper a[href*="marketaccess"].active-filter:before,
+.blog-categories-list a[href*="marketaccess"].active-filter:before,
 section[data-section-id="63345cfd93596d2af59dedad"]
-  a[href*="market access"]:hover:before,
+  a[href*="marketaccess"]:hover:before,
 section[data-section-id="6389f6432a12130f5a0778ab"]
-  a[href*="market access"]:hover:before,
+  a[href*="marketaccess"]:hover:before,
 section[data-section-id="63936a7c3d674d7079783a93"]
-  a[href*="market access"]:hover:before,
-.blog-item-category-wrapper a[href*="market access"]:hover:before,
-.blog-categories-list a[href*="market access"]:hover:before {
+  a[href*="marketaccess"]:hover:before,
+.blog-item-category-wrapper a[href*="marketaccess"]:hover:before,
+.blog-categories-list a[href*="marketaccess"]:hover:before {
   background: #ffffff;
 }
 section[data-section-id="63345cfd93596d2af59dedad"] a[href*="egulat"],
