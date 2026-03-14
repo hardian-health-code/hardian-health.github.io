@@ -1318,52 +1318,52 @@ section[data-section-id="63936a7c3d674d7079783a93"]
 .blog-categories-list a[href*="Clinical"]:hover:before {
   background: #ffffff;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="trategy"],
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="trategy"],
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="trategy"],
-.blog-item-category-wrapper a[href*="trategy"],
-.blog-categories-list a[href*="trategy"] {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="market access"],
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="market access"],
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="market access"],
+.blog-item-category-wrapper a[href*="market access"],
+.blog-categories-list a[href*="market access"] {
   border: 1px solid var(--marketaccess-lightblue) !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="trategy"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="trategy"]:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="trategy"]:before,
-.blog-item-category-wrapper a[href*="trategy"]:before,
-.blog-categories-list a[href*="trategy"]:before {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="market access"]:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="market access"]:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="market access"]:before,
+.blog-item-category-wrapper a[href*="market access"]:before,
+.blog-categories-list a[href*="market access"]:before {
   background: var(--marketaccess-lightblue);
 }
 section[data-section-id="63345cfd93596d2af59dedad"]
-  a[href*="trategy"].active-filter,
+  a[href*="market access"].active-filter,
 section[data-section-id="6389f6432a12130f5a0778ab"]
-  a[href*="trategy"].active-filter,
+  a[href*="market access"].active-filter,
 section[data-section-id="63936a7c3d674d7079783a93"]
-  a[href*="trategy"].active-filter,
-.blog-item-category-wrapper a[href*="trategy"].active-filter,
-.blog-categories-list a[href*="trategy"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="trategy"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="trategy"]:hover,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="trategy"]:hover,
-.blog-item-category-wrapper a[href*="trategy"]:hover,
-.blog-categories-list a[href*="trategy"]:hover {
+  a[href*="market access"].active-filter,
+.blog-item-category-wrapper a[href*="market access"].active-filter,
+.blog-categories-list a[href*="market access"].active-filter,
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="market access"]:hover,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="market access"]:hover,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="market access"]:hover,
+.blog-item-category-wrapper a[href*="market access"]:hover,
+.blog-categories-list a[href*="market access"]:hover {
   background: var(--marketaccess-lightblue);
   color: #ffffff !important;
 }
 section[data-section-id="63345cfd93596d2af59dedad"]
-  a[href*="trategy"].active-filter:before,
+  a[href*="market access"].active-filter:before,
 section[data-section-id="6389f6432a12130f5a0778ab"]
-  a[href*="trategy"].active-filter:before,
+  a[href*="market access"].active-filter:before,
 section[data-section-id="63936a7c3d674d7079783a93"]
-  a[href*="trategy"].active-filter:before,
-.blog-item-category-wrapper a[href*="trategy"].active-filter:before,
-.blog-categories-list a[href*="trategy"].active-filter:before,
+  a[href*="market access"].active-filter:before,
+.blog-item-category-wrapper a[href*="market access"].active-filter:before,
+.blog-categories-list a[href*="market access"].active-filter:before,
 section[data-section-id="63345cfd93596d2af59dedad"]
-  a[href*="trategy"]:hover:before,
+  a[href*="market access"]:hover:before,
 section[data-section-id="6389f6432a12130f5a0778ab"]
-  a[href*="trategy"]:hover:before,
+  a[href*="market access"]:hover:before,
 section[data-section-id="63936a7c3d674d7079783a93"]
-  a[href*="trategy"]:hover:before,
-.blog-item-category-wrapper a[href*="trategy"]:hover:before,
-.blog-categories-list a[href*="trategy"]:hover:before {
+  a[href*="market access"]:hover:before,
+.blog-item-category-wrapper a[href*="market access"]:hover:before,
+.blog-categories-list a[href*="market access"]:hover:before {
   background: #ffffff;
 }
 section[data-section-id="63345cfd93596d2af59dedad"] a[href*="egulat"],
@@ -1579,7 +1579,7 @@ section[data-section-id="63345cfd93596d2af59dedad"] a,
     background:var(--clinical-purple);
   }
 
-  &[href*="trategy"]:before{
+  &[href*="market access"]:before{
     background:var(--marketaccess-lightblue);
   }
   &[href*="egulat"]:before{
