@@ -1325,74 +1325,74 @@ section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ealth"]:hover:befor
   background: #FFFFFF;
 }
 
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Market"],
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Market"],
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Market"],
-.blog-item-category-wrapper a[href*="Market"],
-.blog-categories-list a[href*="Market"] {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Market"],
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Market"],
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Market"],
+.blog-item-category-wrapper a[href*="category/Market"],
+.blog-categories-list a[href*="category/Market"] {
   border: 1px solid var(--market-access-lightblue) !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Market"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Market"]:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Market"]:before,
-.blog-item-category-wrapper a[href*="Market"]:before,
-.blog-categories-list a[href*="Market"]:before {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Market"]:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Market"]:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Market"]:before,
+.blog-item-category-wrapper a[href*="category/Market"]:before,
+.blog-categories-list a[href*="category/Market"]:before {
   background: var(--market-access-lightblue);
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Market"].active-filter,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Market"].active-filter,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Market"].active-filter,
-.blog-item-category-wrapper a[href*="Market"].active-filter,
-.blog-categories-list a[href*="Market"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Market"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Market"]:hover,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Market"]:hover,
-.blog-item-category-wrapper a[href*="Market"]:hover,
-.blog-categories-list a[href*="Market"]:hover {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Market"].active-filter,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Market"].active-filter,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Market"].active-filter,
+.blog-item-category-wrapper a[href*="category/Market"].active-filter,
+.blog-categories-list a[href*="category/Market"].active-filter,
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Market"]:hover,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Market"]:hover,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Market"]:hover,
+.blog-item-category-wrapper a[href*="category/Market"]:hover,
+.blog-categories-list a[href*="category/Market"]:hover {
   background: var(--market-access-lightblue);
   color: #FFFFFF !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Market"]:hover:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Market"]:hover:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Market"]:hover:before,
-.blog-item-category-wrapper a[href*="Market"]:hover:before,
-.blog-categories-list a[href*="Market"]:hover:before {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Market"]:hover:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Market"]:hover:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Market"]:hover:before,
+.blog-item-category-wrapper a[href*="category/Market"]:hover:before,
+.blog-categories-list a[href*="category/Market"]:hover:before {
   background: #FFFFFF;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Case"],
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Case"],
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Case"],
-.blog-item-category-wrapper a[href*="Case"],
-.blog-categories-list a[href*="Case"] {
+
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Case"],
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Case"],
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Case"],
+.blog-item-category-wrapper a[href*="category/Case"],
+.blog-categories-list a[href*="category/Case"] {
   border: 1px solid var(--case-study-orange) !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Case"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Case"]:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Case"]:before,
-.blog-item-category-wrapper a[href*="Case"]:before,
-.blog-categories-list a[href*="Case"]:before {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Case"]:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Case"]:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Case"]:before,
+.blog-item-category-wrapper a[href*="category/Case"]:before,
+.blog-categories-list a[href*="category/Case"]:before {
   background: var(--case-study-orange);
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Case"].active-filter,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Case"].active-filter,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Case"].active-filter,
-.blog-item-category-wrapper a[href*="Case"].active-filter,
-.blog-categories-list a[href*="Case"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Case"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Case"]:hover,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Case"]:hover,
-.blog-item-category-wrapper a[href*="Case"]:hover,
-.blog-categories-list a[href*="Case"]:hover {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Case"].active-filter,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Case"].active-filter,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Case"].active-filter,
+.blog-item-category-wrapper a[href*="category/Case"].active-filter,
+.blog-categories-list a[href*="category/Case"].active-filter,
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Case"]:hover,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Case"]:hover,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Case"]:hover,
+.blog-item-category-wrapper a[href*="category/Case"]:hover,
+.blog-categories-list a[href*="category/Case"]:hover {
   background: var(--case-study-orange);
   color: #FFFFFF !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Case"]:hover:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Case"]:hover:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Case"]:hover:before,
-.blog-item-category-wrapper a[href*="Case"]:hover:before,
-.blog-categories-list a[href*="Case"]:hover:before {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Case"]:hover:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Case"]:hover:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Case"]:hover:before,
+.blog-item-category-wrapper a[href*="category/Case"]:hover:before,
+.blog-categories-list a[href*="category/Case"]:hover:before {
   background: #FFFFFF;
-	
 }
 
 
