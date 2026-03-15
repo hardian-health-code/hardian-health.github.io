@@ -217,6 +217,9 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 .container.header-menu-nav-item a[href*="/intellectual-property"] .header-menu-nav-item-content:before {
   background-color: var(--ip-darkblue) !important;
 }
+.container.header-menu-nav-item a[href*="/marketaccess"] .header-menu-nav-item-content:before {
+  background-color: var(--marketaccess-lightblue) !important;
+}
 
 /* For external menu items that don't have .header-menu-nav-item-content wrapper */
 .container.header-menu-nav-item.header-menu-nav-item--external {
