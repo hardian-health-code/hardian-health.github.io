@@ -31,6 +31,9 @@
 .health-economics {
   --current-service-color: var(--health-economics-brightpink);
 }
+.marketaccess {
+  --current-service-color: var(--marketaccess-lightblue);
+}
 /*********
  TEAM PAGE
 **********/
@@ -91,6 +94,9 @@ p + pre {
 }
 .header-nav-folder-item a[href*="/news"] .header-nav-folder-item-content:before {
   background: var(--ip-darkblue) !important;
+}
+.header-nav-folder-item a[href*="/marketaccess"] .header-nav-folder-item-content:before {
+  background: var(--marketaccess-lightblue) !important;
 }
 /* External link styles - Squarespace-specific with higher specificity */
 .header-nav-folder-item.header-nav-folder-item--external a {
