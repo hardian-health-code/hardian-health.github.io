@@ -733,6 +733,9 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="intellectual"]:b
 section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="health-economics"]:before {
   background: var(--health-economics-brightpink) !important;
 }
+section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="marketaccess"]:before {
+  background: var(--marketaccess-lightblue) !important;
+}
 /*
 span.word:nth-of-type(1) {
     color: var(--clinical-purple) !important;
