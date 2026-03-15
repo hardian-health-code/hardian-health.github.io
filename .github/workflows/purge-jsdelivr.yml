@@ -1,0 +1,15 @@
+name: Purge jsDelivr Cache
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge jsDelivr cache
+        run: |
+          curl -X POST "https://purge.jsdelivr.net/gh/hardian-health-code/hardian-health.github.io@master/style.css"
+          curl -X POST "https://purge.jsdelivr.net/gh/hardian-health-code/hardian-health.github.io@master/header.js"
