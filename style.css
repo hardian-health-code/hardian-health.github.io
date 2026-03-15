@@ -322,6 +322,7 @@ section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="intellectual"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="strategy"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="economics"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="cli"],
+section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="marketaccess"],
 a.summary-read-more-link {
   text-decoration: none !important;
   transition: 0.3s all ease;
@@ -343,6 +344,7 @@ section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="intellectual"]:
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="strategy"]:hover,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="economics"]:hover,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="cli"]:hover,
+section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="marketaccess"]:hover,
 a.summary-read-more-link:hover {
   left: 2px;
 }
@@ -357,6 +359,7 @@ section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="intellectual"]:
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="strategy"]:hover:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="economics"]:hover:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="cli"]:hover:after,
+section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="marketaccess"]:hover:after,
 a.summary-read-more-link:hover:after {
   left: 5px;
 }
@@ -371,6 +374,7 @@ section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="intellectual"]:
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="strategy"]:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="economics"]:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="cli"]:after,
+section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="marketaccess"]:after,
 a.summary-read-more-link:after {
   transition: 0.3s all ease;
   content: " →";
