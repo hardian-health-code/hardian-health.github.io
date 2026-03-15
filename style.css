@@ -1491,8 +1491,8 @@ section[data-section-id="63345cfd93596d2af59dedad"] a,
 .blog-categories-list a:first-of-type {
   display: inline-block;
 }
-.blog-category-filtered .blog-categories-list a:first-of-type {
-  display: none;
+.blog-category-filtered .blog-categories-list a[href="/insights"] {
+  display: inline-block !important;
 }
 .blog-category-filtered .blog-post-category-current-filter {
   display: inline-block !important;
