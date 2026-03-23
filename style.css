@@ -14,6 +14,7 @@
   --market-access-lightblue: #5BCFFF; 
   --marketaccess-lightblue: #5BCFFF;  
   --case-study-orange:    #FF6600;
+  --publications-lightblue: #5BCFFF;
   --timelinetitleleft: -28px;
 }
 .strategy {
@@ -97,6 +98,9 @@ p + pre {
 }
 .header-nav-folder-item a[href*="/marketaccess"] .header-nav-folder-item-content:before {
   background: var(--marketaccess-lightblue) !important;
+}
+.header-nav-folder-item a[href*="/publications"] .header-nav-folder-item-content:before {
+  background: var(--publications-lightblue) !important;
 }
 /* External link styles - Squarespace-specific with higher specificity */
 .header-nav-folder-item.header-nav-folder-item--external a {
