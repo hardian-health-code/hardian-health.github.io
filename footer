@@ -1,0 +1,233 @@
+<div class="hardian-fullwidth-footer">
+  <div class="footer-inner-wrapper">
+    <div class="footer-grid">
+      
+      <div class="footer-col brand-info">
+        <div class="footer-logo-container">
+          <img src="https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/86689200-19ae-4ecf-b0cc-817df78e9503/HHcropped.png?content-type=image%2Fpng" alt="Hardian Health" class="footer-logo">
+        </div>
+        <p>Bridging the gap between healthtech innovation and global market access.</p>
+        
+        <div class="iso-badge-container">
+          <span class="iso-badge">ISO 9001 Certified</span>
+          <span class="iso-badge">ISO 27001 Certified</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Services</h4>
+        <ul class="footer-links">
+          <li><a href="/regulatory">Regulatory</a></li>
+          <li><a href="/clinical">Clinical</a></li>
+          <li><a href="/health-economics">Health Economics</a></li>
+          <li><a href="/marketaccess">Market Access</a></li>
+          <li><a href="/intellectual-property">Intellectual Property</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="/82304-2">82304-2 Assessment</a></li>
+          <li><a href="/samd-training">Free SaMD Training</a></li>
+          <li><a href="/newsletter">Newsletter</a></li>
+          <li><a href="/devices-database">Devices Database</a></li>
+          <li><a href="/publications">Publications</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-links">
+          <li><a href="/hardian-team">Team</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/insights">Insights</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="https://www.linkedin.com/company/hardian-health/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="legal-text">
+        <p>Hardian Health is a trading name of Hardian Limited. Registered company number 11237413.</p>
+        <p>167-169 Great Portland Street, London, W1W 5PF</p>
+        <p>
+          Member of the 
+          <a href="https://www.bsigroup.com/en-GB/" target="_blank" class="static-bold">British Standards Institution</a> and 
+          <a href="https://www.topra.org/" target="_blank" class="static-bold">TOPRA</a>.
+        </p>
+      </div>
+      <div class="legal-links">
+        <a href="https://www.hardianhealth.com/privacy-policy" class="static-bold">Privacy Policy</a>
+        <span class="separator">|</span>
+        <a href="https://www.hardianhealth.com/modern-slavery-statement" class="static-bold">Modern Slavery Statement</a>
+        <span class="separator">|</span>
+        <span class="credit-wrapper">
+          Website by <a href="https://conversiontracking.io" target="_blank" class="static-bold">conversiontracking.io</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* 1. Full Width & Flush Top Setup */
+  .hardian-fullwidth-footer {
+    background-color: #1c1d1e; 
+    color: #ffffff !important;
+    font-family: 'Open Sans', sans-serif !important;
+    padding: 0px 0 40px; 
+    margin-top: -50px !important; 
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .footer-inner-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5vw;
+    box-sizing: border-box;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-top: 80px; 
+  }
+
+  /* Logo Sizing (196px) */
+  .footer-logo-container {
+    display: flex !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    margin-bottom: 25px !important;
+  }
+
+  .footer-logo {
+    width: 196px !important; 
+    height: auto !important;
+    display: block !important;
+    max-width: 196px !important;
+    margin: 0 !important;
+  }
+
+  .brand-info p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #ffffff !important;
+    max-width: 320px;
+    margin: 0;
+  }
+
+  /* ISO Badges Styling (Slightly Lowered) */
+  .iso-badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px; /* Increased from 15px to lower the badges */
+  }
+
+  .iso-badge {
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 8px; 
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff !important;
+    display: inline-block;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+
+  .footer-heading {
+    color: #ffffff !important;
+    font-size: 14px !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 30px 0 !important;
+    font-weight: 700 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+
+  .footer-links {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .footer-links li {
+    margin-bottom: 14px;
+  }
+
+  .footer-links a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 15px;
+    display: inline-block;
+    transition: font-weight 0.2s ease-in-out;
+    font-weight: 400;
+  }
+
+  .footer-links a:hover {
+    font-weight: 700 !important;
+    letter-spacing: -0.2px;
+  }
+
+  .static-bold, .credit-wrapper {
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+  }
+
+  .static-bold:hover { opacity: 0.7; }
+
+  /* Bottom Bar */
+  .footer-bottom {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .legal-text p {
+    font-size: 12px !important;
+    color: #ffffff !important;
+    margin: 4px 0;
+    opacity: 0.8;
+  }
+
+  .separator { margin: 0 10px; color: #ffffff; opacity: 0.3; }
+
+  @media (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .brand-info { grid-column: span 2; }
+  }
+
+  @media (max-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 35px; }
+    .brand-info { grid-column: span 1; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .legal-links { display: flex; flex-direction: column; gap: 12px; }
+    .separator { display: none; }
+    .hardian-fullwidth-footer { margin-top: -30px !important; }
+  }
+</style>
