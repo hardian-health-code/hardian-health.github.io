@@ -1,22 +1,27 @@
-//Place this code inside the code block on the Publications page//
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hardian Health — Publications</title>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  /* --- HARDIAN HEALTH EXACT PARAGRAPH 2 MATCH WITH BOLD TITLES --- */
   :root {
-    --font-grid-match: 1rem;   
-    --font-base: 1rem;     
-    --font-small: 0.85rem; 
+    --font-grid-match: 1rem;
+    --font-base: 1rem;
+    --font-small: 0.85rem;
+    --accent: #A37AF5;
+    --accent-hover: #8B5CF6;
   }
 
   #pubmed-container {
     font-family: 'Open Sans', sans-serif;
     color: #333;
-    position: relative; 
-    line-height: 1.7em; 
+    position: relative;
+    line-height: 1.7em;
   }
-  
+
   .pub-header {
     display: flex;
     justify-content: space-between;
@@ -26,36 +31,33 @@
     border-radius: 8px;
     transition: background-color 0.3s ease;
   }
-
   .pub-header:hover { background-color: #f7f3ff; }
 
   .pub-title {
-    color: #000000;
-    font-weight: 700; 
-    font-size: var(--font-grid-match); 
+    color: #000;
+    font-weight: 700;
+    font-size: var(--font-grid-match);
     letter-spacing: 0em;
   }
 
   .pub-journal-date {
-    color: #A37AF5;
-    font-weight: 700; 
-    font-size: var(--font-grid-match); 
+    color: var(--accent);
+    font-weight: 700;
+    font-size: var(--font-grid-match);
     margin-left: 8px;
     letter-spacing: 0em;
   }
 
   .authors-label { color: #000; font-weight: 700; }
 
-  .hardian-author { 
-    color: #A37AF5; 
-    font-weight: 700; 
+  .hardian-author {
+    color: var(--accent);
+    font-weight: 700;
     cursor: pointer;
     transition: text-decoration 0.2s ease;
   }
-  
   .hardian-author:hover { text-decoration: underline; }
 
-  /* Counter & Clear Filters Container */
   .pub-meta-row {
     display: flex;
     align-items: center;
@@ -64,28 +66,26 @@
     flex-wrap: wrap;
   }
 
-  .pub-counter { 
-    font-size: var(--font-small); 
-    font-weight: 400; 
-    color: #888; 
-    text-transform: uppercase; 
-    letter-spacing: 0.05em; 
+  .pub-counter {
+    font-size: var(--font-small);
+    font-weight: 400;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
-  /* Vertical Divider */
   .pub-divider {
     width: 1px;
     height: 14px;
-    background-color: #A37AF5;
+    background-color: var(--accent);
     display: inline-block;
   }
 
-  /* Clear Filters Button */
   .clear-filters-btn {
     font-family: 'Open Sans', sans-serif;
     font-size: var(--font-small);
     font-weight: 600;
-    color: #A37AF5;
+    color: var(--accent);
     background: none;
     border: none;
     cursor: pointer;
@@ -94,57 +94,70 @@
     padding: 0;
     transition: opacity 0.2s ease;
   }
-
   .clear-filters-btn:hover { opacity: 0.7; }
 
   #loading-screen { text-align: center; padding: 60px 20px; }
   .loading-text { font-size: var(--font-base); font-weight: 600; margin-bottom: 20px; }
-  .loading-bar-container { width: 100%; max-width: 250px; height: 4px; background-color: #eee; border-radius: 10px; margin: 0 auto; overflow: hidden; position: relative; }
-  .loading-bar { height: 100%; width: 30%; background-color: #A37AF5; position: absolute; left: -30%; animation: loadingSweep 1.5s ease-in-out infinite; }
+  .loading-bar-container {
+    width: 100%; max-width: 250px; height: 4px; background-color: #eee;
+    border-radius: 10px; margin: 0 auto; overflow: hidden; position: relative;
+  }
+  .loading-bar {
+    height: 100%; width: 30%; background-color: var(--accent);
+    position: absolute; left: -30%;
+    animation: loadingSweep 1.5s ease-in-out infinite;
+  }
   @keyframes loadingSweep { 0% { left: -30%; } 100% { left: 100%; } }
 
   #main-content { display: none; }
 
-  .journal-ribbon { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 15px; 
-    margin-bottom: 30px; 
-    padding: 0 10px 15px 10px; 
-    flex-wrap: wrap; 
-    width: 100%; 
+  .journal-ribbon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 0 10px 15px 10px;
+    flex-wrap: wrap;
+    width: 100%;
     box-sizing: border-box;
   }
 
-  .journal-logo { 
-    height: auto; 
-    max-height: 28px; 
-    max-width: 120px; 
-    object-fit: contain; 
-    cursor: pointer; 
-    filter: grayscale(100%); 
-    opacity: 0.5; 
+  .journal-logo {
+    height: auto;
+    max-height: 28px;
+    max-width: 120px;
+    object-fit: contain;
+    cursor: pointer;
+    filter: grayscale(100%);
+    opacity: 0.5;
     transition: all 0.3s ease;
-    flex: 0 1 auto; 
+    flex: 0 1 auto;
   }
-  
   .journal-logo[alt="Nature Medicine"] { height: 30px; }
   .journal-logo:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
-  .journal-logo.active { filter: grayscale(0%); opacity: 1; border-bottom: 2px solid #A37AF5; padding-bottom: 4px; }
+  .journal-logo.active { filter: grayscale(0%); opacity: 1; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
 
-  .pub-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 15px; }
-  #pub-search, .pub-controls select { 
-    padding: 8px 12px; 
-    font-family: 'Open Sans', sans-serif; 
-    font-size: var(--font-base); 
-    border: 1px solid #A37AF5; 
-    border-radius: 8px; 
-    outline: none; 
-    background-color: #fff; 
+  .pub-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  #pub-search, .pub-controls select {
+    padding: 8px 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--font-base);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    outline: none;
+    background-color: #fff;
   }
   #pub-search { width: 100%; max-width: 320px; }
-  
+
   .pub-item { border-bottom: 1px solid #eee; padding: 8px 0; }
   .pub-icon { font-size: 22px; color: #000; margin-top: 2px; font-weight: 400; }
 
@@ -152,42 +165,55 @@
   .pub-abstract { margin-bottom: 15px; font-size: var(--font-base); color: #444; }
   .pub-authors { margin-bottom: 20px; font-size: var(--font-small); color: #666; }
 
-  .pub-btn { 
-    display: inline-block; 
-    border: 1px solid #A37AF5; 
-    color: #A37AF5 !important; 
-    padding: 10px 20px; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    font-weight: 600; 
-    font-size: var(--font-small); 
-    text-transform: uppercase; 
-    letter-spacing: 0.1em; 
-    transition: all 0.2s ease; 
+  .pub-btn {
+    display: inline-block;
+    border: 1px solid var(--accent);
+    color: var(--accent) !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--font-small);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
   }
-  .pub-btn:hover { background-color: #A37AF5; color: #fff !important; }
+  .pub-btn:hover { background-color: var(--accent); color: #fff !important; }
 
-  #scroll-to-top { display: none; position: fixed; bottom: 25px; right: 20px; background-color: #A37AF5; color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; font-size: 18px; cursor: pointer; z-index: 99; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  #scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 25px; right: 20px;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 99;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
 
   @media (max-width: 768px) {
     .pub-header { flex-direction: column; }
     .pub-icon { align-self: flex-end; }
     .pub-journal-date { margin-left: 0; display: block; margin-top: 4px; }
     #scroll-to-top.show { display: block; }
-    .journal-ribbon { gap: 10px; } 
-    .journal-logo { max-height: 22px; } 
+    .journal-ribbon { gap: 10px; }
+    .journal-logo { max-height: 22px; }
   }
 </style>
 
 <div id="pubmed-container">
   <div id="loading-screen">
-    <div class="loading-text">Just a second - loading papers...</div>
+    <div class="loading-text">Just a second — loading papers...</div>
     <div class="loading-bar-container"><div class="loading-bar"></div></div>
   </div>
 
   <div id="main-content">
     <div id="journal-ribbon" class="journal-ribbon"></div>
-    
+
     <div class="pub-meta-row">
       <div id="pub-counter" class="pub-counter"></div>
       <div id="pub-reset-area" style="display:none; align-items:center; gap:15px;">
@@ -197,206 +223,395 @@
     </div>
 
     <div class="pub-controls">
-      <input type="text" id="pub-search" placeholder="Search publications..." onkeyup="handleSearchInput(this.value)">
+      <input type="text" id="pub-search" placeholder="Search publications..." oninput="scheduleSearch(this.value)">
       <select id="pub-sort" onchange="sortPublications(this.value)">
         <option value="date-desc">Newest First</option>
         <option value="date-asc">Oldest First</option>
-        <option value="alpha-asc">Title A-Z</option>
+        <option value="alpha-asc">Title A–Z</option>
       </select>
     </div>
+
     <div id="pub-list"></div>
   </div>
+
   <button id="scroll-to-top" onclick="scrollToTop()">↑</button>
 </div>
 
 <script>
-  const teamLastNames = ['Harvey', 'Pogose', 'Howes', 'Gregory', 'Tanna', 'Ribeiro', 'Rogers', 'Bell', 'Lock', 'Melakh', 'Taher', 'Revell Ward', 'Revell-Ward', 'Eschauzier'];
+  // ─── Configuration ────────────────────────────────────────────────────────
 
-  const journalLogos = [
-    { name: "BMJ", match: "BMJ_GROUP", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/c5600dc5-7515-428d-864c-e337c271b86d/BMJ.jpg?content-type=image%2Fjpeg" },
-    { name: "Nature Medicine", match: "Nature Medicine", url: "https://upload.wikimedia.org/wikipedia/commons/d/db/Nature_journal_logo.svg" },
-    { name: "NPJ Digital Medicine", match: "NPJ Digital Medicine", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/8a30cc36-11a2-490e-930b-5b8890ff2931/NPJ.jpg?content-type=image%2Fjpeg" },
-    { name: "European Radiology", match: "EURO_RAD", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/61d3b5e0-d18d-448f-8731-b6125deb2527/EJR-logo-simple.jpg?content-type=image%2Fjpeg" },
-    { name: "British Journal of Radiology", match: "BJR_GROUP", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/d19fe55a-e72d-4fe9-9cd0-133adfd845c1/BJR.png?content-type=image%2Fpng" },
-    { name: "Journal of Medical Imaging and Radiation Sciences", match: "JMIR", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/ec6e41ad-f357-453b-b454-1fba334462d7/JMIR.png?content-type=image%2Fpng" }
+  const teamLastNames = [
+    'Harvey', 'Pogose', 'Howes', 'Gregory', 'Tanna', 'Ribeiro', 'Rogers',
+    'Bell', 'Lock', 'Melakh', 'Taher', 'Revell Ward', 'Revell-Ward', 'Eschauzier',
   ];
 
-  let publicationsData = []; 
-  let filteredData = [];     
-  let activeJournalFilter = "";
-  let currentSearchQuery = "";
+  const journalLogos = [
+    { name: "BMJ",                                        match: "BMJ_GROUP", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/c5600dc5-7515-428d-864c-e337c271b86d/BMJ.jpg?content-type=image%2Fjpeg" },
+    { name: "Nature Medicine",                            match: "Nature Medicine", url: "https://upload.wikimedia.org/wikipedia/commons/d/db/Nature_journal_logo.svg" },
+    { name: "NPJ Digital Medicine",                       match: "NPJ Digital Medicine", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/8a30cc36-11a2-490e-930b-5b8890ff2931/NPJ.jpg?content-type=image%2Fjpeg" },
+    { name: "European Radiology",                         match: "EURO_RAD", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/61d3b5e0-d18d-448f-8731-b6125deb2527/EJR-logo-simple.jpg?content-type=image%2Fjpeg" },
+    { name: "British Journal of Radiology",               match: "BJR_GROUP", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/d19fe55a-e72d-4fe9-9cd0-133adfd845c1/BJR.png?content-type=image%2Fpng" },
+    { name: "Journal of Medical Imaging and Radiation Sciences", match: "JMIR_GROUP", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/ec6e41ad-f357-453b-b454-1fba334462d7/JMIR.png?content-type=image%2Fpng" },
+  ];
+
+  // ─── State ────────────────────────────────────────────────────────────────
+
+  let publicationsData = [];
+  let filteredData     = [];
+  let activeJournalFilter  = "";
+  let currentSearchQuery   = "";
+  let searchDebounceTimer  = null;
+  // Tracks which PMIDs are currently expanded (survives re-renders)
+  const expandedIds = new Set();
+
+  // ─── Utilities ────────────────────────────────────────────────────────────
+
+  /**
+   * Safely escape a string for insertion into HTML text content.
+   * Prevents XSS when rendering API-sourced strings via innerHTML.
+   */
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str
+      .replace(/&/g,  '&amp;')
+      .replace(/</g,  '&lt;')
+      .replace(/>/g,  '&gt;')
+      .replace(/"/g,  '&quot;')
+      .replace(/'/g,  '&#39;');
+  }
+
+  /**
+   * Parse a PubMed date from year / month / day fields into a real Date.
+   * Falls back gracefully when month or day are absent so sort order
+   * within a year is deterministic rather than all collapsing to Jan 1.
+   *
+   * FIX: was `new Date(year)` which always resolves to 1 Jan UTC,
+   * making same-year sort order arbitrary.
+   */
+  function parsePubDate(article) {
+    const monthNames = {
+      Jan:1, Feb:2, Mar:3, Apr:4, May:5, Jun:6,
+      Jul:7, Aug:8, Sep:9, Oct:10, Nov:11, Dec:12,
+    };
+
+    // Prefer ArticleDate (actual publication) over PubDate (issue date)
+    const articleDate = article.querySelector("ArticleDate");
+    if (articleDate) {
+      const y = articleDate.querySelector("Year")?.textContent;
+      const m = articleDate.querySelector("Month")?.textContent;
+      const d = articleDate.querySelector("Day")?.textContent;
+      if (y) return new Date(
+        parseInt(y),
+        m ? (parseInt(m) - 1) : 0,
+        d ? parseInt(d) : 1
+      );
+    }
+
+    const pubDate = article.querySelector("PubDate");
+    if (pubDate) {
+      const y = pubDate.querySelector("Year")?.textContent;
+      const m = pubDate.querySelector("Month")?.textContent;
+      const d = pubDate.querySelector("Day")?.textContent;
+      if (y) {
+        const month = m
+          ? (monthNames[m] !== undefined ? monthNames[m] - 1 : parseInt(m) - 1)
+          : 0;
+        return new Date(parseInt(y), month, d ? parseInt(d) : 1);
+      }
+    }
+
+    return new Date(0); // absolute fallback
+  }
+
+  // ─── Journal filter matching ───────────────────────────────────────────────
+
+  /**
+   * FIX: Added explicit JMIR_GROUP case. The old code used match: "JMIR"
+   * and fell through to the generic includes() branch, which checked
+   * whether the journal name contained the string "jmir" — it doesn't.
+   * The journal is "Journal of Medical Imaging and Radiation Sciences".
+   */
+  function matchesJournalFilter(journalName, filterKey) {
+    if (!filterKey) return true;
+    const j = journalName.toLowerCase();
+    switch (filterKey) {
+      case 'EURO_RAD':
+        return j === 'european radiology' || j === 'european journal of radiology';
+      case 'BJR_GROUP':
+        return j.includes('bjr') || j.includes('british journal of radiology');
+      case 'BMJ_GROUP':
+        return j.includes('bmj') || j.includes('british medical journal');
+      case 'JMIR_GROUP':
+        return j.includes('journal of medical imaging') || j.includes('jmirs') || j.includes('j med imaging');
+      default:
+        return j.includes(filterKey.toLowerCase());
+    }
+  }
+
+  // ─── Search debounce ──────────────────────────────────────────────────────
+
+  /**
+   * FIX: was `onkeyup` calling applyFilters on every keystroke.
+   * Now debounced 250ms so the DOM is only re-rendered once the
+   * user pauses typing, not on every character.
+   */
+  function scheduleSearch(query) {
+    clearTimeout(searchDebounceTimer);
+    searchDebounceTimer = setTimeout(() => {
+      currentSearchQuery = query;
+      applyFilters();
+    }, 250);
+  }
+
+  // ─── Data fetching ────────────────────────────────────────────────────────
 
   async function initApp() {
-      renderJournalRibbon();
-      try {
-          await loadPubMedAPI();
-          document.getElementById('loading-screen').style.display = 'none';
-          document.getElementById('main-content').style.display = 'block';
-      } catch (error) {
-          document.getElementById('loading-screen').style.display = 'none';
-          document.getElementById('main-content').style.display = 'block';
-          document.getElementById('pub-list').innerHTML = `<p>Service temporarily unavailable.</p>`;
-      }
+    renderJournalRibbon();
+    try {
+      await loadPubMedAPI();
+    } catch (err) {
+      document.getElementById('pub-list').innerHTML =
+        '<p>Service temporarily unavailable. Please try again later.</p>';
+    } finally {
+      document.getElementById('loading-screen').style.display = 'none';
+      document.getElementById('main-content').style.display  = 'block';
+    }
   }
 
   async function loadPubMedAPI() {
-    const searchTerm = encodeURIComponent('Hardian[Affiliation] AND 2018:3000[pdat] AND English[Language]');
-    const searchRes = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${searchTerm}&retmode=json&retmax=50`);
+    const term = encodeURIComponent('Hardian[Affiliation] AND 2018:3000[pdat] AND English[Language]');
+    const searchRes  = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${term}&retmode=json&retmax=50`);
     const searchData = await searchRes.json();
-    const idList = searchData.esearchresult.idlist;
-    if (!idList || idList.length === 0) throw new Error("No items");
+    const idList     = searchData.esearchresult?.idlist ?? [];
+    if (!idList.length) throw new Error("No results");
 
-    const fetchRes = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=${idList.join(',')}&retmode=xml`);
-    const fetchResText = await fetchRes.text();
-    const xmlDoc = (new DOMParser()).parseFromString(fetchResText, "text/xml");
-    const articles = xmlDoc.querySelectorAll("PubmedArticle");
-    
+    const fetchRes  = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=${idList.join(',')}&retmode=xml`);
+    const xmlText   = await fetchRes.text();
+    const xmlDoc    = new DOMParser().parseFromString(xmlText, "text/xml");
+    const articles  = xmlDoc.querySelectorAll("PubmedArticle");
+
     const seenTitles = new Set();
+
     Array.from(articles).forEach(article => {
-        const title = article.querySelector("ArticleTitle")?.textContent || "No Title";
-        const journal = article.querySelector("Journal > Title")?.textContent || "";
-        let year = article.querySelector("PubDate > Year")?.textContent || article.querySelector("ArticleDate > Year")?.textContent || "";
-        const abstractNodes = article.querySelectorAll("AbstractText");
-        const abstract = abstractNodes.length ? Array.from(abstractNodes).map(n => n.textContent).join(" ") : "No abstract available.";
-        
-        const authorsList = Array.from(article.querySelectorAll("Author")).map(a => {
-            const ln = a.querySelector("LastName")?.textContent || "";
-            const ini = a.querySelector("Initials")?.textContent || "";
-            return ini ? `${ln} ${ini}` : ln;
-        }).filter(n => n);
+      const rawTitle   = article.querySelector("ArticleTitle")?.textContent ?? "No Title";
+      const journal    = article.querySelector("Journal > Title")?.textContent ?? "";
 
-        const formattedAuthors = authorsList.map(author => {
-            for (let name of teamLastNames) {
-              if ((new RegExp(`\\b${name}\\b`, 'i')).test(author)) {
-                  return `<span class="hardian-author" onclick="event.stopPropagation(); filterByAuthor('${author}')">${author}</span>`;
-              }
-            }
-            return author; 
-        }).join(', ');
+      // FIX: proper date parsing (was `new Date(year)`)
+      const dateObj    = parsePubDate(article);
+      const year       = dateObj.getFullYear().toString();
 
-        const pmid = article.querySelector("PMID")?.textContent || "";
-        const pub = { title, journal, year, dateObj: new Date(year || "1970"), abstract, authors: formattedAuthors, link: `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` };
-        const normTitle = title.toLowerCase().trim();
-        if (!normTitle.includes('author reply') && !seenTitles.has(normTitle)) {
-            seenTitles.add(normTitle);
-            publicationsData.push(pub);
+      const abstractNodes = article.querySelectorAll("AbstractText");
+      const rawAbstract   = abstractNodes.length
+        ? Array.from(abstractNodes).map(n => n.textContent).join(" ")
+        : "No abstract available.";
+
+      const authorsList = Array.from(article.querySelectorAll("Author")).map(a => {
+        const ln  = a.querySelector("LastName")?.textContent  ?? "";
+        const ini = a.querySelector("Initials")?.textContent  ?? "";
+        return ini ? `${ln} ${ini}` : ln;
+      }).filter(Boolean);
+
+      // FIX: escapeHtml() on all API-sourced strings before innerHTML insertion
+      const formattedAuthors = authorsList.map(author => {
+        for (const name of teamLastNames) {
+          if (new RegExp(`\\b${name}\\b`, 'i').test(author)) {
+            return `<span class="hardian-author" onclick="filterByAuthor('${escapeHtml(author)}')">${escapeHtml(author)}</span>`;
+          }
         }
+        return escapeHtml(author);
+      }).join(', ');
+
+      const pmid = article.querySelector("PMID")?.textContent ?? "";
+      // FIX: use PMID as stable accordion ID instead of render-index
+      const id   = `pub-${pmid}`;
+
+      const normTitle = rawTitle.toLowerCase().trim();
+      if (normTitle.includes('author reply') || seenTitles.has(normTitle)) return;
+      seenTitles.add(normTitle);
+
+      publicationsData.push({
+        id,
+        title:   rawTitle,   // kept raw for display via textContent (safe)
+        journal,
+        year,
+        dateObj,
+        abstract:        rawAbstract,
+        authorsFormatted: formattedAuthors,
+        authorsPlain:    authorsList.join(', ').toLowerCase(), // for search
+        link:            `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`,
+      });
     });
-    applyFilters(); 
+
+    applyFilters();
   }
 
+  // ─── Filter / sort ────────────────────────────────────────────────────────
+
   function filterByAuthor(authorName) {
-    const searchInput = document.getElementById('pub-search');
-    searchInput.value = authorName;
+    document.getElementById('pub-search').value = authorName;
     currentSearchQuery = authorName;
     applyFilters();
     document.getElementById('pubmed-container').scrollIntoView({ behavior: 'smooth' });
   }
 
-  // RESET FUNCTION: Clears search input and deselects logos
   function clearAllFilters() {
-    currentSearchQuery = "";
-    activeJournalFilter = "";
+    currentSearchQuery   = "";
+    activeJournalFilter  = "";
     document.getElementById('pub-search').value = "";
     renderJournalRibbon();
     applyFilters();
   }
 
+  function applyFilters() {
+    const q = currentSearchQuery.toLowerCase();
+
+    filteredData = publicationsData.filter(p => {
+      const matchesJ = matchesJournalFilter(p.journal, activeJournalFilter);
+      const matchesS = !q ||
+        p.title.toLowerCase().includes(q)    ||
+        p.abstract.toLowerCase().includes(q) ||
+        p.year.includes(q)                   ||
+        p.journal.toLowerCase().includes(q)  ||
+        p.authorsPlain.includes(q);
+      return matchesJ && matchesS;
+    });
+
+    const resetArea = document.getElementById('pub-reset-area');
+    resetArea.style.display = (activeJournalFilter || currentSearchQuery) ? 'flex' : 'none';
+
+    sortPublications(document.getElementById('pub-sort').value);
+  }
+
+  function sortPublications(mode) {
+    if (mode === 'date-desc') filteredData.sort((a, b) => b.dateObj - a.dateObj);
+    else if (mode === 'date-asc')  filteredData.sort((a, b) => a.dateObj - b.dateObj);
+    else filteredData.sort((a, b) => a.title.localeCompare(b.title));
+    renderPublications();
+  }
+
+  // ─── Rendering ────────────────────────────────────────────────────────────
+
   function renderJournalRibbon() {
     const ribbon = document.getElementById('journal-ribbon');
-    ribbon.innerHTML = ''; 
+    ribbon.innerHTML = '';
     journalLogos.forEach(logo => {
       const img = document.createElement('img');
-      img.src = logo.url;
-      img.alt = logo.name;
+      img.src       = logo.url;
+      img.alt       = logo.name;
       img.className = 'journal-logo' + (activeJournalFilter === logo.match ? ' active' : '');
-      img.onclick = () => {
+      img.onclick   = () => {
         activeJournalFilter = activeJournalFilter === logo.match ? "" : logo.match;
-        renderJournalRibbon(); 
-        applyFilters();        
+        renderJournalRibbon();
+        applyFilters();
       };
       ribbon.appendChild(img);
     });
   }
 
-  function handleSearchInput(q) { currentSearchQuery = q; applyFilters(); }
+  function renderPublications() {
+    const list     = document.getElementById('pub-list');
+    const counter  = document.getElementById('pub-counter');
+    list.innerHTML = '';
 
-  function applyFilters() {
-    filteredData = publicationsData.filter(p => {
-      let matchesJ = true;
-      if (activeJournalFilter !== "") {
-        const jName = p.journal.toLowerCase();
-        if (activeJournalFilter === "EURO_RAD") {
-            matchesJ = (jName === "european radiology" || jName === "european journal of radiology");
-        } else if (activeJournalFilter === "BJR_GROUP") {
-            matchesJ = (jName.includes("bjr") || jName.includes("british journal of radiology"));
-        } else if (activeJournalFilter === "BMJ_GROUP") {
-            matchesJ = (jName.includes("bmj") || jName.includes("british medical journal"));
-        } else {
-            matchesJ = jName.includes(activeJournalFilter.toLowerCase());
-        }
-      }
-      const q = currentSearchQuery.toLowerCase();
-      const matchesS = currentSearchQuery === "" || p.title.toLowerCase().includes(q) || p.abstract.toLowerCase().includes(q) || p.year.toString().includes(q) || p.journal.toLowerCase().includes(q) || p.authors.toLowerCase().includes(q);
-      return matchesJ && matchesS;
-    });
+    const count = filteredData.length;
+    counter.textContent = `${count} PUBLICATION${count === 1 ? '' : 'S'} FOUND`;
 
-    // Toggle visibility of the "Clear Filters" section
-    const resetArea = document.getElementById('pub-reset-area');
-    if (activeJournalFilter !== "" || currentSearchQuery !== "") {
-      resetArea.style.display = "flex";
-    } else {
-      resetArea.style.display = "none";
+    if (!count) {
+      list.innerHTML = '<p>No results found.</p>';
+      return;
     }
 
-    sortPublications(document.getElementById('pub-sort').value);
-  }
+    filteredData.forEach(p => {
+      const isOpen = expandedIds.has(p.id);
 
-  function sortPublications(m) {
-    if (m === 'date-desc') filteredData.sort((a, b) => b.dateObj - a.dateObj);
-    else if (m === 'date-asc') filteredData.sort((a, b) => a.dateObj - b.dateObj);
-    else filteredData.sort((a, b) => a.title.localeCompare(b.title));
-    renderPublications();
-  }
+      const item = document.createElement('div');
+      item.className = 'pub-item';
 
-  function renderPublications() {
-    const list = document.getElementById('pub-list');
-    const countDisp = document.getElementById('pub-counter');
-    list.innerHTML = ''; 
-    const count = filteredData.length;
-    countDisp.textContent = `${count} PUBLICATION${count === 1 ? '' : 'S'} FOUND`;
-    if (!count) { list.innerHTML = '<p>No results found.</p>'; return; }
+      // FIX: use p.id (PMID-based) for accordion state instead of render index.
+      // FIX: title/journal/abstract set via textContent to prevent XSS —
+      //      authorsFormatted is pre-escaped and only contains safe spans.
+      const header = document.createElement('div');
+      header.className = 'pub-header';
+      header.onclick   = () => toggleAccordion(p.id);
 
-    filteredData.forEach((p, i) => {
-      const d = document.createElement('div');
-      d.className = 'pub-item';
-      d.innerHTML = `
-        <div class="pub-header" onclick="toggleAccordion(${i})">
-          <div class="pub-title-area">
-            <span class="pub-title">${p.title}</span>
-            <span class="pub-journal-date">${p.journal ? p.journal + ' ' : ''}(${p.year})</span>
-          </div>
-          <div class="pub-icon" id="icon-${i}">+</div>
-        </div>
-        <div class="pub-content" id="content-${i}">
-          <div class="pub-abstract">${p.abstract}</div>
-          ${p.authors ? `<div class="pub-authors"><span class="authors-label">Authors:</span> ${p.authors}</div>` : ''}
-          <a href="${p.link}" target="_blank" class="pub-btn">View Full Paper</a>
-        </div>
-      `;
-      list.appendChild(d);
+      const titleArea = document.createElement('div');
+      titleArea.className = 'pub-title-area';
+
+      const titleSpan = document.createElement('span');
+      titleSpan.className   = 'pub-title';
+      titleSpan.textContent = p.title;           // safe: textContent
+
+      const journalSpan = document.createElement('span');
+      journalSpan.className   = 'pub-journal-date';
+      journalSpan.textContent = `${p.journal ? p.journal + ' ' : ''}(${p.year})`;
+
+      titleArea.appendChild(titleSpan);
+      titleArea.appendChild(journalSpan);
+
+      const icon = document.createElement('div');
+      icon.className = 'pub-icon';
+      icon.id        = `icon-${p.id}`;
+      icon.textContent = isOpen ? '−' : '+';
+
+      header.appendChild(titleArea);
+      header.appendChild(icon);
+
+      const content = document.createElement('div');
+      content.className    = 'pub-content';
+      content.id           = `content-${p.id}`;
+      content.style.display = isOpen ? 'block' : 'none';
+
+      const abstract = document.createElement('div');
+      abstract.className   = 'pub-abstract';
+      abstract.textContent = p.abstract;         // safe: textContent
+
+      const authors = document.createElement('div');
+      authors.className = 'pub-authors';
+      authors.innerHTML = `<span class="authors-label">Authors:</span> ${p.authorsFormatted}`;
+
+      const btn = document.createElement('a');
+      btn.href      = p.link;
+      btn.target    = '_blank';
+      btn.className = 'pub-btn';
+      btn.rel       = 'noopener noreferrer';
+      btn.textContent = 'View Full Paper';
+
+      content.appendChild(abstract);
+      if (p.authorsFormatted) content.appendChild(authors);
+      content.appendChild(btn);
+
+      item.appendChild(header);
+      item.appendChild(content);
+      list.appendChild(item);
     });
   }
 
-  function toggleAccordion(i) {
-    const c = document.getElementById(`content-${i}`);
-    const ic = document.getElementById(`icon-${i}`);
-    const open = c.style.display === 'block';
-    c.style.display = open ? 'none' : 'block';
-    ic.textContent = open ? '+' : '-';
+  // ─── Accordion ────────────────────────────────────────────────────────────
+
+  /**
+   * FIX: state is tracked by PMID-based ID in `expandedIds`, not by
+   * render index. Survives filter/sort re-renders correctly.
+   */
+  function toggleAccordion(id) {
+    const content = document.getElementById(`content-${id}`);
+    const icon    = document.getElementById(`icon-${id}`);
+    const isOpen  = content.style.display === 'block';
+
+    if (isOpen) {
+      content.style.display = 'none';
+      icon.textContent      = '+';
+      expandedIds.delete(id);
+    } else {
+      content.style.display = 'block';
+      icon.textContent      = '−';
+      expandedIds.add(id);
+    }
   }
 
+  // ─── Scroll to top ────────────────────────────────────────────────────────
+
   function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
   window.addEventListener('scroll', () => {
     const btn = document.getElementById('scroll-to-top');
     window.scrollY > 400 ? btn.classList.add('show') : btn.classList.remove('show');
@@ -404,3 +619,7 @@
 
   window.addEventListener('DOMContentLoaded', initApp);
 </script>
+</head>
+<body>
+</body>
+</html>
