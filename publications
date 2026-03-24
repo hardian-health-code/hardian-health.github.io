@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hardian Health — Publications</title>
+<!-- Hardian Health — PubMed Publications Widget -->
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -246,12 +241,12 @@
   ];
 
   const journalLogos = [
-    { name: "BMJ",                                        match: "BMJ_GROUP", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/c5600dc5-7515-428d-864c-e337c271b86d/BMJ.jpg?content-type=image%2Fjpeg" },
-    { name: "Nature Medicine",                            match: "Nature Medicine", url: "https://upload.wikimedia.org/wikipedia/commons/d/db/Nature_journal_logo.svg" },
-    { name: "NPJ Digital Medicine",                       match: "NPJ Digital Medicine", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/8a30cc36-11a2-490e-930b-5b8890ff2931/NPJ.jpg?content-type=image%2Fjpeg" },
-    { name: "European Radiology",                         match: "EURO_RAD", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/61d3b5e0-d18d-448f-8731-b6125deb2527/EJR-logo-simple.jpg?content-type=image%2Fjpeg" },
-    { name: "British Journal of Radiology",               match: "BJR_GROUP", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/d19fe55a-e72d-4fe9-9cd0-133adfd845c1/BJR.png?content-type=image%2Fpng" },
-    { name: "Journal of Medical Imaging and Radiation Sciences", match: "JMIR_GROUP", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/ec6e41ad-f357-453b-b454-1fba334462d7/JMIR.png?content-type=image%2Fpng" },
+    { name: "BMJ",                                             match: "BMJ_GROUP",       url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/c5600dc5-7515-428d-864c-e337c271b86d/BMJ.jpg?content-type=image%2Fjpeg" },
+    { name: "Nature Medicine",                                 match: "Nature Medicine",  url: "https://upload.wikimedia.org/wikipedia/commons/d/db/Nature_journal_logo.svg" },
+    { name: "NPJ Digital Medicine",                            match: "NPJ Digital Medicine", url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/8a30cc36-11a2-490e-930b-5b8890ff2931/NPJ.jpg?content-type=image%2Fjpeg" },
+    { name: "European Radiology",                              match: "EURO_RAD",         url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/61d3b5e0-d18d-448f-8731-b6125deb2527/EJR-logo-simple.jpg?content-type=image%2Fjpeg" },
+    { name: "British Journal of Radiology",                    match: "BJR_GROUP",        url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/d19fe55a-e72d-4fe9-9cd0-133adfd845c1/BJR.png?content-type=image%2Fpng" },
+    { name: "Journal of Medical Imaging and Radiation Sciences", match: "JMIR_GROUP",    url: "https://images.squarespace-cdn.com/content/62f5262a0b58c94a255a69ba/ec6e41ad-f357-453b-b454-1fba334462d7/JMIR.png?content-type=image%2Fpng" },
   ];
 
   // ─── State ────────────────────────────────────────────────────────────────
@@ -261,15 +256,10 @@
   let activeJournalFilter  = "";
   let currentSearchQuery   = "";
   let searchDebounceTimer  = null;
-  // Tracks which PMIDs are currently expanded (survives re-renders)
   const expandedIds = new Set();
 
   // ─── Utilities ────────────────────────────────────────────────────────────
 
-  /**
-   * Safely escape a string for insertion into HTML text content.
-   * Prevents XSS when rendering API-sourced strings via innerHTML.
-   */
   function escapeHtml(str) {
     if (!str) return '';
     return str
@@ -280,21 +270,12 @@
       .replace(/'/g,  '&#39;');
   }
 
-  /**
-   * Parse a PubMed date from year / month / day fields into a real Date.
-   * Falls back gracefully when month or day are absent so sort order
-   * within a year is deterministic rather than all collapsing to Jan 1.
-   *
-   * FIX: was `new Date(year)` which always resolves to 1 Jan UTC,
-   * making same-year sort order arbitrary.
-   */
   function parsePubDate(article) {
     const monthNames = {
       Jan:1, Feb:2, Mar:3, Apr:4, May:5, Jun:6,
       Jul:7, Aug:8, Sep:9, Oct:10, Nov:11, Dec:12,
     };
 
-    // Prefer ArticleDate (actual publication) over PubDate (issue date)
     const articleDate = article.querySelector("ArticleDate");
     if (articleDate) {
       const y = articleDate.querySelector("Year")?.textContent;
@@ -320,17 +301,11 @@
       }
     }
 
-    return new Date(0); // absolute fallback
+    return new Date(0);
   }
 
   // ─── Journal filter matching ───────────────────────────────────────────────
 
-  /**
-   * FIX: Added explicit JMIR_GROUP case. The old code used match: "JMIR"
-   * and fell through to the generic includes() branch, which checked
-   * whether the journal name contained the string "jmir" — it doesn't.
-   * The journal is "Journal of Medical Imaging and Radiation Sciences".
-   */
   function matchesJournalFilter(journalName, filterKey) {
     if (!filterKey) return true;
     const j = journalName.toLowerCase();
@@ -350,11 +325,6 @@
 
   // ─── Search debounce ──────────────────────────────────────────────────────
 
-  /**
-   * FIX: was `onkeyup` calling applyFilters on every keystroke.
-   * Now debounced 250ms so the DOM is only re-rendered once the
-   * user pauses typing, not on every character.
-   */
   function scheduleSearch(query) {
     clearTimeout(searchDebounceTimer);
     searchDebounceTimer = setTimeout(() => {
@@ -396,7 +366,6 @@
       const rawTitle   = article.querySelector("ArticleTitle")?.textContent ?? "No Title";
       const journal    = article.querySelector("Journal > Title")?.textContent ?? "";
 
-      // FIX: proper date parsing (was `new Date(year)`)
       const dateObj    = parsePubDate(article);
       const year       = dateObj.getFullYear().toString();
 
@@ -411,7 +380,6 @@
         return ini ? `${ln} ${ini}` : ln;
       }).filter(Boolean);
 
-      // FIX: escapeHtml() on all API-sourced strings before innerHTML insertion
       const formattedAuthors = authorsList.map(author => {
         for (const name of teamLastNames) {
           if (new RegExp(`\\b${name}\\b`, 'i').test(author)) {
@@ -422,7 +390,6 @@
       }).join(', ');
 
       const pmid = article.querySelector("PMID")?.textContent ?? "";
-      // FIX: use PMID as stable accordion ID instead of render-index
       const id   = `pub-${pmid}`;
 
       const normTitle = rawTitle.toLowerCase().trim();
@@ -431,14 +398,14 @@
 
       publicationsData.push({
         id,
-        title:   rawTitle,   // kept raw for display via textContent (safe)
+        title:   rawTitle,
         journal,
         year,
         dateObj,
-        abstract:        rawAbstract,
+        abstract:         rawAbstract,
         authorsFormatted: formattedAuthors,
-        authorsPlain:    authorsList.join(', ').toLowerCase(), // for search
-        link:            `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`,
+        authorsPlain:     authorsList.join(', ').toLowerCase(),
+        link:             `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`,
       });
     });
 
@@ -527,9 +494,6 @@
       const item = document.createElement('div');
       item.className = 'pub-item';
 
-      // FIX: use p.id (PMID-based) for accordion state instead of render index.
-      // FIX: title/journal/abstract set via textContent to prevent XSS —
-      //      authorsFormatted is pre-escaped and only contains safe spans.
       const header = document.createElement('div');
       header.className = 'pub-header';
       header.onclick   = () => toggleAccordion(p.id);
@@ -539,7 +503,7 @@
 
       const titleSpan = document.createElement('span');
       titleSpan.className   = 'pub-title';
-      titleSpan.textContent = p.title;           // safe: textContent
+      titleSpan.textContent = p.title;
 
       const journalSpan = document.createElement('span');
       journalSpan.className   = 'pub-journal-date';
@@ -549,31 +513,31 @@
       titleArea.appendChild(journalSpan);
 
       const icon = document.createElement('div');
-      icon.className = 'pub-icon';
-      icon.id        = `icon-${p.id}`;
+      icon.className   = 'pub-icon';
+      icon.id          = `icon-${p.id}`;
       icon.textContent = isOpen ? '−' : '+';
 
       header.appendChild(titleArea);
       header.appendChild(icon);
 
       const content = document.createElement('div');
-      content.className    = 'pub-content';
-      content.id           = `content-${p.id}`;
+      content.className     = 'pub-content';
+      content.id            = `content-${p.id}`;
       content.style.display = isOpen ? 'block' : 'none';
 
       const abstract = document.createElement('div');
       abstract.className   = 'pub-abstract';
-      abstract.textContent = p.abstract;         // safe: textContent
+      abstract.textContent = p.abstract;
 
       const authors = document.createElement('div');
       authors.className = 'pub-authors';
       authors.innerHTML = `<span class="authors-label">Authors:</span> ${p.authorsFormatted}`;
 
       const btn = document.createElement('a');
-      btn.href      = p.link;
-      btn.target    = '_blank';
-      btn.className = 'pub-btn';
-      btn.rel       = 'noopener noreferrer';
+      btn.href        = p.link;
+      btn.target      = '_blank';
+      btn.className   = 'pub-btn';
+      btn.rel         = 'noopener noreferrer';
       btn.textContent = 'View Full Paper';
 
       content.appendChild(abstract);
@@ -588,10 +552,6 @@
 
   // ─── Accordion ────────────────────────────────────────────────────────────
 
-  /**
-   * FIX: state is tracked by PMID-based ID in `expandedIds`, not by
-   * render index. Survives filter/sort re-renders correctly.
-   */
   function toggleAccordion(id) {
     const content = document.getElementById(`content-${id}`);
     const icon    = document.getElementById(`icon-${id}`);
@@ -617,9 +577,7 @@
     window.scrollY > 400 ? btn.classList.add('show') : btn.classList.remove('show');
   });
 
-  window.addEventListener('DOMContentLoaded', initApp);
+  // Squarespace: the page is already loaded when a code block executes,
+  // so DOMContentLoaded has already fired. Call initApp() directly instead.
+  initApp();
 </script>
-</head>
-<body>
-</body>
-</html>
