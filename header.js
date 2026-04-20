@@ -51,6 +51,7 @@ $( document ).ready(function() {
       
       //move categories and tags after author
           $("<div class='custom-metabox'></div>").insertAfter(".blog-item-author-profile-wrapper");
+          $(".blog-meta-item--date").prependTo(".custom-metabox");
           $("div.blog-meta-item.blog-meta-item--tags").prependTo(".custom-metabox");
           $("div.blog-meta-item.blog-meta-item--categories").prependTo(".custom-metabox");
           
@@ -205,7 +206,7 @@ console.log(blogSingleDateSplitted);
     var year = blogSingleDateSplitted[0];
     var month = blogSingleDateSplitted[1];
     var day = blogSingleDateSplitted[2]
-    $(".blog-meta-item--date span").html(year + "-" + month + "-" + day).addClass("dateFormatted-and-ready-to-show");
+    $(".blog-meta-item--date").html(year + "-" + month + "-" + day).addClass("dateFormatted-and-ready-to-show");
 
 }
 else{
