@@ -49,11 +49,10 @@ $( document ).ready(function() {
       console.log("blog page and article found. LEt's fix meta categories and tags");
   
       
-      //move categories and tags after author
-          $("<div class='custom-metabox'></div>").insertAfter(".blog-item-author-profile-wrapper");
-          $(".blog-meta-item--date").prependTo(".custom-metabox");
-          $("div.blog-meta-item.blog-meta-item--tags").prependTo(".custom-metabox");
-          $("div.blog-meta-item.blog-meta-item--categories").prependTo(".custom-metabox");
+//move categories and tags after author
+$("<div class='custom-metabox'></div>").insertAfter(".blog-item-author-profile-wrapper");
+$(".blog-meta-item--date").prependTo(".custom-metabox"); /* <-- ADD THIS LINE TO RESCUE THE DATE */
+$("div.blog-meta-item.blog-meta-item--tags").prependTo(".custom-metabox");
           
           
           //create labeels for categories and tags
@@ -183,38 +182,25 @@ $(document).ready(function() {
   
 
 /**
- * SINGLE POST DATE FORMAT
+ * SINGLE POST DATE FORMAT (REPAIRED)
  */
+$( document ).ready(function() {    
+    // Check if the metadata exists
+    if(document.querySelector("meta[itemprop='datePublished']")){
+        var publishDate = $('meta[itemprop="datePublished"]').attr("content");
+        
+        // Safely extract the YYYY-MM-DD format
+        var dateOnly = publishDate.split("T")[0]; 
 
-  $( document ).ready(function() {    
-    //❗IF BLOG POST SINGLE  DATE FORMAT 
-if(document.querySelector("meta[itemprop=datePublished]")){
-
-  //if(document.querySelector("meta[itemprop=datePublished]").getAttribute("content") === "Description of the webpage")
-
-    //console.log("BLOG SINGLE POST WITH DATE FOR IT");
-    
-    //insights post single - <meta itemprop="datePublished" content="2022-09-14T16:31:36+0300">
-    console.log("yes");
-     var blogSinglePublishDate = $('meta[itemprop="datePublished"]').attr("content")
-    console.log(blogSinglePublishDate);
-    var blogSingleDateArray = blogSinglePublishDate.split("T");
-    console.log(blogSingleDateArray);
-    var blogSingleDateSplitted = blogSingleDateArray[0].split("-");
-console.log(blogSingleDateSplitted);
-
-    var year = blogSingleDateSplitted[0];
-    var month = blogSingleDateSplitted[1];
-    var day = blogSingleDateSplitted[2]
-    $(".blog-meta-item--date").html(year + "-" + month + "-" + day).addClass("dateFormatted-and-ready-to-show");
-
-}
-else{
-  console.log("No meta description for blog date");
-
-}
-
-}); 
+        // Inject it directly into the <time> tag, avoiding the missing 'span' bug
+        $(".blog-meta-item--date time.blog-date").text(dateOnly);
+        
+        // Add the visibility classes just in case
+        $(".blog-meta-item--date").addClass("dateFormatted-and-ready-to-show");
+    } else {
+        console.log("No meta description for blog date found.");
+    }
+});
 
 
 
