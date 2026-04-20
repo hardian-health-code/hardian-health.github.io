@@ -1055,12 +1055,13 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 {
   background-position: 0 100%;
   background-position: 0 calc(100% - 0.1em);
 }
-.blog-meta-item--date span,
-time.summary-metadata-item--date,
-.blog-meta-primary time.blog-date {
-  transition: 0.2s opacity ease;
-  opacity: 0 !important;
-}
+
+/**/DATE for BLOGS/**/
+
+
+
+/**/
+
 html body #page .dateFormatted-and-ready-to-show,
 .dateFormatted-and-ready-to-show * {
   opacity: 1 !important;
