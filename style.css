@@ -297,8 +297,8 @@ p {
 
 }  */
 }
-.blog-item-content-wrapper .blog-item-meta-wrapper { 
-  order: 1; 
+.blog-item-content-wrapper .blog-meta-item--date {
+  order: 1;
 }
 .blog-item-content-wrapper .blog-item-author-profile-wrapper {
   order: 2;
