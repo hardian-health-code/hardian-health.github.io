@@ -2875,3 +2875,9 @@ CUBE
     display: inline-block !important;
     visibility: visible !important;
 }
+/* Remove the native Squarespace bullet delimiter from the date */
+.blog-meta-item--date::after,
+.blog-meta-item::after {
+    content: none !important;
+    display: none !important;
+}
