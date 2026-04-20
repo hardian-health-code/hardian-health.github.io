@@ -2867,3 +2867,11 @@ CUBE
     min-height: 700px;
   }
 }
+/* Force Date Visibility on Blog Posts */
+.blog-meta-item--date, 
+.blog-meta-item--date time.blog-date,
+.blog-meta-item--date span {
+    opacity: 1 !important;
+    display: inline-block !important;
+    visibility: visible !important;
+}
