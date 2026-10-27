@@ -790,25 +790,34 @@ if (window.location.pathname === '/contact') {
     window.dataLayer.push({ 'event': 'contact-form-submit' });
     if (window.lintrk) window.lintrk('track', { conversion_id: 15337562 });
 
-    // wait for Squarespace to swap the form for the thank-you message, then show the message and the cube
-    // in place of the intro text above the form, and hide the form block
+    // show the thank-you message and the cube in place of the intro text above the form, and hide the form block.
+    // The message comes from the form's settings on the page, so this needn't wait for Squarespace to show it.
+    var formContext = null;
+    try { formContext = JSON.parse(document.querySelector('.sqs-block-form .sqs-form-block-context').textContent); } catch (e) {}
+    var messageHtml = formContext && formContext.formSubmissionMessage && formContext.formSubmissionMessage.html;
+
     var tries = 0;
     var addCube = function () {
       var block = document.querySelector('.sqs-block-form');
       if (!block) return;
-      if (block.querySelector('form') && tries++ < 50) return setTimeout(addCube, 100);
       if (document.querySelector('.hh-form-submitted')) return;
 
-      // the message box is the bordered element around the message, or failing that the message's container
-      var firstLine = block.querySelector('p');
-      var message = firstLine ? firstLine.parentElement : null;
-      for (var el = firstLine; el && el !== block; el = el.parentElement) {
-        if (parseFloat(getComputedStyle(el).borderTopWidth) > 0) message = el;
+      // without the settings, wait for Squarespace to swap the form for the message and copy it from there
+      var message = null;
+      if (!messageHtml) {
+        if (block.querySelector('form') && tries++ < 50) return setTimeout(addCube, 100);
+        // the message box is the bordered element around the message, or failing that the message's container
+        var firstLine = block.querySelector('p');
+        message = firstLine ? firstLine.parentElement : null;
+        for (var el = firstLine; el && el !== block; el = el.parentElement) {
+          if (parseFloat(getComputedStyle(el).borderTopWidth) > 0) message = el;
+        }
+        messageHtml = message ? message.innerHTML : '';
       }
 
       var submitted = document.createElement('div');
       submitted.className = 'hh-form-submitted';
-      submitted.innerHTML = '<div class="hh-form-message">' + (message ? message.innerHTML : '') + '</div>' +
+      submitted.innerHTML = '<div class="hh-form-message">' + messageHtml + '</div>' +
         '<div class="hh-form-thanks"><div data-hardian-cube data-background="transparent"></div></div>';
 
       var formCell = block.closest('.fe-block');
@@ -818,7 +827,7 @@ if (window.location.pathname === '/contact') {
       });
       var intro = introCell && introCell.querySelector('.sqs-html-content');
 
-      if (intro && formCell && message) {
+      if (intro && formCell && messageHtml) {
         intro.querySelectorAll('p').forEach(function (p) { p.style.display = 'none'; });
         intro.appendChild(submitted);
         // stretch the intro over the rows the form used, and let those rows shrink to fit,
