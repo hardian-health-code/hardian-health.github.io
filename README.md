@@ -10,6 +10,7 @@ Every commit to `master` is deployed by Cloudflare Pages to https://hardian-heal
 Other files:
 
 - `footer.html`, `publications.html`: reference copies of code pasted into Squarespace code blocks (the site footer and the Publications widget). Changing them here does not change the site; paste the new version into Squarespace.
+- `squarespace/contact-form-post-submit.html`: the contact form's Post-Submit HTML (GTM event, and the cube under the thank-you message). Paste it into the form's Advanced settings in Squarespace.
 - `backup/`: rollback copies of the live files. See the README inside.
 
 The Cube on /cube lives in its own repo, [hardian-health-code/Cube](https://github.com/hardian-health-code/Cube), and is embedded from there.

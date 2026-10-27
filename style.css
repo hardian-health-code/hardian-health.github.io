@@ -1854,3 +1854,42 @@ canvas {
 .blog-meta-item--author {
     display: none !important;
 }
+/* Contact form thank-you message (.hh-form-submitted is added by the form's post-submit HTML) */
+.hh-form-submitted {
+  text-align: center;
+}
+.hh-form-submitted p {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 1.25rem !important;
+  line-height: 1.6 !important;
+  color: var(--neutral-black) !important;
+  max-width: 34em;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.hh-form-submitted p a {
+  color: var(--clinical-purple) !important;
+  font-weight: 500;
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.2em;
+}
+.hh-form-submitted p a:hover {
+  color: var(--neutral-black) !important;
+}
+.hh-form-thanks {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--neutral-lightgrey);
+}
+.hh-form-thanks [data-hardian-cube] {
+  height: 420px;
+}
+@media (max-width: 767px) {
+  .hh-form-submitted p {
+    font-size: 1.1rem !important;
+  }
+  .hh-form-thanks [data-hardian-cube] {
+    height: 340px;
+  }
+}
