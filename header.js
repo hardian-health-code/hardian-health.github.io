@@ -765,7 +765,8 @@ $(document).ready(function () {
 
 
 /**
- * CONTACT FORM THANK-YOU: cube, styling, GTM and LinkedIn conversion
+ * CONTACT FORM THANK-YOU: cube, styling and the GTM event
+ * (GTM's "LinkedIn Insight contact submit" tag sends the LinkedIn conversion from that event)
  * Scripts in the form's Post-Submit HTML don't run with Squarespace's current form block,
  * so we watch for the form's own save request and react to it here instead.
  * Keep the form's Post-Submit HTML empty, or these events will be sent twice.
@@ -788,7 +789,6 @@ if (window.location.pathname === '/contact') {
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ 'event': 'contact-form-submit' });
-    if (window.lintrk) window.lintrk('track', { conversion_id: 15337562 });
 
     // show the thank-you message and the cube in place of the intro text above the form, and hide the form block.
     // The message comes from the form's settings on the page, so this needn't wait for Squarespace to show it.
