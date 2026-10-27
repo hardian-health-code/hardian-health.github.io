@@ -1,0 +1,30 @@
+<!-- Contact form > Advanced > Post-Submit HTML. Shows the cube under the thank-you message. -->
+<div class="hh-form-thanks">
+  <div data-hardian-cube data-background="transparent"></div>
+</div>
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({ 'event': 'contact-form-submit' });
+
+(function () {
+  // style the thank-you message (see .hh-form-submitted in style.css)
+  var marker = document.getElementById('form-submission-html-63430d79b1e88a6180ae56ea');
+  var block = (marker && marker.closest('.sqs-block-form')) || document.querySelector('.sqs-block-form');
+  if (block) block.classList.add('hh-form-submitted');
+
+  // if Squarespace didn't render the markup above, add the cube ourselves
+  if (block && !document.querySelector('.hh-form-thanks')) {
+    var thanks = document.createElement('div');
+    thanks.className = 'hh-form-thanks';
+    thanks.innerHTML = '<div data-hardian-cube data-background="transparent"></div>';
+    (block.querySelector('.sqs-block-content') || block).appendChild(thanks);
+  }
+
+  // load the cube embed once; it mounts into every [data-hardian-cube]
+  if (!window.HardianCube && !document.querySelector('script[src*="hardian-cube.js"]')) {
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/gh/hardian-health-code/Cube@main/dist/hardian-cube.js';
+    document.head.appendChild(s);
+  }
+})();
+</script>
