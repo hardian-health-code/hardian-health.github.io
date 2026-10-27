@@ -762,3 +762,68 @@ function addTargetBlankToExternalLinks() {
 $(document).ready(function () {
   addTargetBlankToExternalLinks();
 });
+
+
+/**
+ * CONTACT FORM THANK-YOU: cube, styling, GTM and LinkedIn conversion
+ * Scripts in the form's Post-Submit HTML don't run with Squarespace's current form block,
+ * so we watch for the form's own save request and react to it here instead.
+ * Keep the form's Post-Submit HTML empty, or these events will be sent twice.
+ */
+if (window.location.pathname === '/contact') {
+  var contactFormSubmitted = false;
+
+  var onContactFormSubmitted = function () {
+    if (contactFormSubmitted) return;
+    contactFormSubmitted = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'event': 'contact-form-submit' });
+    if (window.lintrk) window.lintrk('track', { conversion_id: 15337562 });
+
+    // wait for Squarespace to swap the form for the thank-you message, then add the cube under it
+    var tries = 0;
+    var addCube = function () {
+      var block = document.querySelector('.sqs-block-form');
+      if (!block) return;
+      if (block.querySelector('form') && tries++ < 50) return setTimeout(addCube, 100);
+      block.classList.add('hh-form-submitted');
+      if (!block.querySelector('.hh-form-thanks')) {
+        var thanks = document.createElement('div');
+        thanks.className = 'hh-form-thanks';
+        thanks.innerHTML = '<div data-hardian-cube data-background="transparent"></div>';
+        (block.querySelector('.sqs-block-content') || block).appendChild(thanks);
+      }
+      if (!window.HardianCube && !document.querySelector('script[src*="hardian-cube.js"]')) {
+        var s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/gh/hardian-health-code/Cube@main/dist/hardian-cube.js';
+        document.head.appendChild(s);
+      }
+    };
+    addCube();
+  };
+
+  // the form component saves with an XHR to .../SaveFormSubmission
+  var originalXhrOpen = XMLHttpRequest.prototype.open;
+  XMLHttpRequest.prototype.open = function (method, url) {
+    if (String(url).indexOf('SaveFormSubmission') !== -1) {
+      this.addEventListener('load', function () {
+        if (this.status >= 200 && this.status < 300) onContactFormSubmitted();
+      });
+    }
+    return originalXhrOpen.apply(this, arguments);
+  };
+
+  // in case it uses fetch instead
+  if (window.fetch) {
+    var originalFetch = window.fetch;
+    window.fetch = function (input) {
+      var url = typeof input === 'string' ? input : (input && input.url) || '';
+      var request = originalFetch.apply(this, arguments);
+      if (url.indexOf('SaveFormSubmission') !== -1) {
+        request.then(function (response) { if (response.ok) onContactFormSubmitted(); });
+      }
+      return request;
+    };
+  }
+}
