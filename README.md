@@ -1,9 +1,18 @@
-# Hardian Marketing Website CSS
+# Hardian Marketing Website CSS and JS
 
-This repo contains style overrides for the hardianhealth.com site. The CSS is served via github pages and published on any commit to the master branch.
+Style and script overrides for www.hardianhealth.com (Squarespace).
 
-> ![WARNING]
-> There are various old files and presumed unused content in this repo - only `style.css` is known to be used.
+Every commit to `master` is deployed by Cloudflare Pages to https://hardian-health-github-io.pages.dev, and the Squarespace header code injection loads two files from there:
+
+- `style.css`: site-wide styles. Edit this file directly; there is no build step.
+- `header.js`: site-wide behaviour (blog post meta, date formats, service tube maps and breadcrumbs, service colours, external links). Needs jQuery, which the header code loads first.
+
+Other files:
+
+- `footer.html`, `publications.html`: reference copies of code pasted into Squarespace code blocks (the site footer and the Publications widget). Changing them here does not change the site; paste the new version into Squarespace.
+- `backup/`: rollback copies of the live files. See the README inside.
+
+The Cube on /cube lives in its own repo, [hardian-health-code/Cube](https://github.com/hardian-health-code/Cube), and is embedded from there.
 
 ## Local CSS Development
 
@@ -17,11 +26,12 @@ Starting up server:
     ```bash
     npx serve .
     ```
-    Note the URL (e.g., http://localhost:3000/styles.css)
+    Note the URL (e.g., http://localhost:3000/style.css)
 2. Install [Requestly extension](https://chromewebstore.google.com/detail/requestly-supercharge-you/mdnleldcmiljblolnjhpnblkcekpdkpa?hl=en)
 3. Create a redirect rule in requestly:
-    Source equals: `https://hardian-health-code.github.io/hardian-health.github.io/style.css`
-    Redirect location: http://localhost:3000/styles.css
+    Source equals: `https://hardian-health-github-io.pages.dev/style.css`
+    Redirect location: http://localhost:3000/style.css
+    (Add a second rule for `header.js` if you are changing it.)
 4. Open https://www.hardianhealth.com/, select the padlock/settings for the site (left hand part of URL bar), then Site settings → Enable "Local network access"
 5. Open dev tools
     1. Go to sources → Workspace
