@@ -773,6 +773,15 @@ $(document).ready(function () {
 if (window.location.pathname === '/contact') {
   var contactFormSubmitted = false;
 
+  // load the cube with the page, so it is ready the moment the form is sent
+  var loadCube = function () {
+    if (window.HardianCube || document.querySelector('script[src*="hardian-cube.js"]')) return;
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/gh/hardian-health-code/Cube@main/dist/hardian-cube.js';
+    document.head.appendChild(script);
+  };
+  window.addEventListener('load', loadCube);
+
   var onContactFormSubmitted = function () {
     if (contactFormSubmitted) return;
     contactFormSubmitted = true;
@@ -781,35 +790,50 @@ if (window.location.pathname === '/contact') {
     window.dataLayer.push({ 'event': 'contact-form-submit' });
     if (window.lintrk) window.lintrk('track', { conversion_id: 15337562 });
 
-    // wait for Squarespace to swap the form for the thank-you message, then add the cube under it
+    // wait for Squarespace to swap the form for the thank-you message, then show the message and the cube
+    // in place of the intro text above the form, and hide the form block
     var tries = 0;
     var addCube = function () {
       var block = document.querySelector('.sqs-block-form');
       if (!block) return;
       if (block.querySelector('form') && tries++ < 50) return setTimeout(addCube, 100);
-      block.classList.add('hh-form-submitted');
-      if (!block.querySelector('.hh-form-thanks')) {
-        // the message box is the bordered element around the message, or failing that the message's container
-        var firstLine = block.querySelector('p');
-        var message = firstLine ? firstLine.parentElement : null;
-        for (var el = firstLine; el && el !== block; el = el.parentElement) {
-          if (parseFloat(getComputedStyle(el).borderTopWidth) > 0) message = el;
-        }
-        var thanks = document.createElement('div');
-        thanks.className = 'hh-form-thanks';
-        thanks.innerHTML = '<div data-hardian-cube data-background="transparent"></div>';
-        if (message) {
-          message.classList.add('hh-form-message');
-          message.insertAdjacentElement('afterend', thanks);
-        } else {
-          (block.querySelector('.sqs-block-content') || block).appendChild(thanks);
-        }
+      if (document.querySelector('.hh-form-submitted')) return;
+
+      // the message box is the bordered element around the message, or failing that the message's container
+      var firstLine = block.querySelector('p');
+      var message = firstLine ? firstLine.parentElement : null;
+      for (var el = firstLine; el && el !== block; el = el.parentElement) {
+        if (parseFloat(getComputedStyle(el).borderTopWidth) > 0) message = el;
       }
-      if (!window.HardianCube && !document.querySelector('script[src*="hardian-cube.js"]')) {
-        var s = document.createElement('script');
-        s.src = 'https://cdn.jsdelivr.net/gh/hardian-health-code/Cube@main/dist/hardian-cube.js';
-        document.head.appendChild(s);
+
+      var submitted = document.createElement('div');
+      submitted.className = 'hh-form-submitted';
+      submitted.innerHTML = '<div class="hh-form-message">' + (message ? message.innerHTML : '') + '</div>' +
+        '<div class="hh-form-thanks"><div data-hardian-cube data-background="transparent"></div></div>';
+
+      var formCell = block.closest('.fe-block');
+      var introCell = null;
+      document.querySelectorAll('.fe-block').forEach(function (cell) {
+        if (!introCell && cell !== formCell && cell.textContent.indexOf('love to hear from you') !== -1) introCell = cell;
+      });
+      var intro = introCell && introCell.querySelector('.sqs-html-content');
+
+      if (intro && formCell && message) {
+        intro.querySelectorAll('p').forEach(function (p) { p.style.display = 'none'; });
+        intro.appendChild(submitted);
+        // stretch the intro over the rows the form used, and let those rows shrink to fit,
+        // so the page doesn't leave a gap where the form was
+        introCell.style.gridRowEnd = getComputedStyle(formCell).gridRowEnd;
+        formCell.style.display = 'none';
+        formCell.parentElement.style.gridTemplateRows = 'none';
+        formCell.parentElement.style.gridAutoRows = 'auto';
+      } else if (message) {
+        message.style.display = 'none';
+        message.insertAdjacentElement('afterend', submitted);
+      } else {
+        (block.querySelector('.sqs-block-content') || block).appendChild(submitted);
       }
+      loadCube();
     };
     addCube();
   };
