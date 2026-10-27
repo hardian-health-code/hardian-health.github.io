@@ -6,7 +6,6 @@
  */
 
 
-
 /**
  * 🌸🌸🌸 SECTION - UNIVERSAL / HELPER FUNCTIONS 
  */
@@ -20,23 +19,9 @@ var myHeaders = new Headers();
 // If the url contains .squarespace.com, we're assuming it's admin logged in and won't cache the portfolio SEO description
 // If the url does not contain .squarespace.com, we're assuming it's a visitor and will cache the portfolio SEO description
 if(document.location.host.includes(".squarespace.com")){
-    console.log("url contains .squarespace.com so we're assuming it's admin logged in and won't cache the portfolio SEO description");
     myHeaders.append('pragma', 'no-cache');
     myHeaders.append('cache-control', 'no-cache');
-
-} else{
-    console.log("url  DOES NOT contain .squarespace.com. Assuming its' a visitor and will cache portfolio SEO description to make everything quicker");
 }
-
-
-
-
-
-
-
-
-
-
 
 
 /**
@@ -46,7 +31,6 @@ if(document.location.host.includes(".squarespace.com")){
 // SINGLE BLOG POST: reposition tags and categories to be under author bio inside .custom-metabox
 $( document ).ready(function() {    
   if( (window.location.pathname.includes("/insights")) && $('article').length   ){
-      console.log("blog page and article found. LEt's fix meta categories and tags");
   
       
       //move categories and tags after author
@@ -64,23 +48,16 @@ $( document ).ready(function() {
 }); 
 
 
-
-
-
 // if Blog category page (filtering of blog post) is on, let's make this category tag in each blog post (inside grid) have a class so we can show that yeah, this blog post is indeed filtered correctly
 $( document ).ready(function() {    
   if(window.location.pathname.includes("/insights/category/")){
-console.log("category page - filtering enabled");
 $("body").addClass("blog-category-filtered");
 
 var currentCategory = window.location.pathname;
-console.log()
 $(".blog-categories-list a").each(function(i){
 var categoryLabelLink = $(this).attr("href");
-  console.log(categoryLabelLink);
 
   if(categoryLabelLink == currentCategory){
-      console.log("ACTIVATE THIS ONE");
       $(this).addClass("blog-post-category-current-filter active-filter");
   }
   
@@ -88,10 +65,6 @@ var categoryLabelLink = $(this).attr("href");
   
 }
 }); 
-
-
-
-
 
 
 // BLOG CATEGORY NAVIGATION - ADD SELECTED CLASS TO CURRENTLY SELECTED CATEGORY
@@ -107,7 +80,6 @@ function styleBlogTagNavigation() {
   
         $(blogCategoryNavigationBlockLink).each(function() {
           if (currentPagePath == $(this).attr("href")) {
-            console.log(" ✅ Blog Tag Navigation — Current URL and the link matches. Lets style it to be active:" + $(this).text());
             $(this).addClass("active-filter");
           }
         })
@@ -118,14 +90,6 @@ function styleBlogTagNavigation() {
 styleBlogTagNavigation();
 
 
-
-
-
-
-
-
-
-
 /**
 * 🌸🌸🌸 SECTION - ANALYTICS
 */
@@ -134,17 +98,6 @@ styleBlogTagNavigation();
 $( document ).ready(function() {    
   $( ".form-item.field.text:contains('UTM'), .form-item.field.text:contains('GTM')" ).addClass( "GTM-hidden-field-hide");    
 }); 
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*
@@ -176,10 +129,6 @@ $(document).ready(function() {
 });
 
 
-
-
-
-
   
 
 /**
@@ -195,13 +144,9 @@ if(document.querySelector("meta[itemprop=datePublished]")){
     //console.log("BLOG SINGLE POST WITH DATE FOR IT");
     
     //insights post single - <meta itemprop="datePublished" content="2022-09-14T16:31:36+0300">
-    console.log("yes");
      var blogSinglePublishDate = $('meta[itemprop="datePublished"]').attr("content")
-    console.log(blogSinglePublishDate);
     var blogSingleDateArray = blogSinglePublishDate.split("T");
-    console.log(blogSingleDateArray);
     var blogSingleDateSplitted = blogSingleDateArray[0].split("-");
-console.log(blogSingleDateSplitted);
 
     var year = blogSingleDateSplitted[0];
     var month = blogSingleDateSplitted[1];
@@ -210,17 +155,10 @@ console.log(blogSingleDateSplitted);
 
 }
 else{
-  console.log("No meta description for blog date");
 
 }
 
 }); 
-
-
-
-
-
-
 
 
 /**
@@ -238,25 +176,12 @@ $( document ).ready(function() {
 }); 
 
 
-
-
-
-
-
-
-
-
-
 /**
  * ANIMATED HEADINGS - HOMEPAGE 5 SERVICES
  */
 
 try {
 
-  function animateStrikedThroughHeadingsCodeAndTonicStyle(){
-    
-  }
-  
      //code that might throw an exception
      var howLongWeShowALineFor = 2500;
      var howCloseShouldTheAnimationsOverlap = 360;
@@ -269,7 +194,6 @@ try {
      //select a heading that has a strike through (way for user to select a heading to be animated)
      var animatedH1 = $( "h1, h2, h3" ).has( "span[style*='line-through']" ); // let's check if we have a heading with a strike through first
      if(animatedH1.length){
-          console.log("✅ We have a heading with a strike through. Let's animate it");
         //remove white-space:pre-wrap;
      animatedH1.css("white-space", "normal");
      
@@ -285,7 +209,6 @@ try {
      
      //loop through lines and add them as span.word -tags
      for (var i = 1; i < animationArray.length; i++) { 
-         console.log(animationArray[i]); 
          $("span.container").append("<span class='word'>" + animationArray[i] + "</span>");
      }
      
@@ -348,7 +271,6 @@ try {
      setInterval(changeWord, howLongWeShowALineFor);
   
      } else{
-        console.log("no heading with a strike through - no animation for you");
   
      }
   
@@ -364,26 +286,7 @@ try {
   } //END OF TRY FUNCTION
   catch (e) {
      //code to handle the exception
-     console.log("no animation for striketrough headings here...");
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /**
@@ -407,7 +310,6 @@ $( document ).ready(function() {
 });
  
  
-
 
 
 /**
@@ -493,38 +395,15 @@ function fetchAndAddDescriptions(url){
 } // end of fetchAndAddDescriptions() function
 
 
-
-
-
 //run fetchAndAddDescriptions() on document ready
 //document.addEventListener("DOMContentLoaded", function(event) { //replace with jquery dom ready
 $(document).ready(function() {
-
-  //fetchAndAddDescriptions();
-  // check if we have this element: #gridThumbs.portfolio-grid-basic on the page. if we do, run the function
+  // portfolio parent page (service tube map): add SEO descriptions and a body class
   if (document.querySelector("#gridThumbs.portfolio-grid-basic")) {
-      console.log("we are on a portfolio page");
+      $('body').addClass('portfolio-main-or-child-page portfolio-parent-page');
       fetchAndAddDescriptions();
   }
 });
-//end of document ready
-
-
-
-$(document).ready(function() {
-
-  //fetchAndAddDescriptions();
-  // check if we have this element: #gridThumbs.portfolio-grid-basic on the page. if we do, run the function
-  if (document.querySelector("#gridThumbs.portfolio-grid-basic")) {
-      console.log("we are on a portfolio page");
-      //add class to the body: .main-service-portfolio-milestones-page
-      $('body').addClass('portfolio-main-or-child-page portfolio-parent-page');
-  }
-});
-
-
-
-
 
 
 //Loop each .grid-item, adds a div called "number" and adds the number of the item to it.
@@ -545,20 +424,6 @@ $( ".grid-item" ).first().prepend("<div class='tube-item-vertical-line'></div>")
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * PORTFOLIO TUBE LINE ANIMATION
  */
@@ -566,12 +431,10 @@ $( ".grid-item" ).first().prepend("<div class='tube-item-vertical-line'></div>")
 function updateTimelineVerticalLine() {
   // get the distance between the first .tube-item-vertical-line and the top of the window and log it
   var distance = document.querySelector('.tube-item-vertical-line').getBoundingClientRect().top;
-  console.log(distance);
   //if the distance is less than 50px. for each scrolled pixel add 1px more to the CSS height of the .tube-item-vertical-line
   // console log the distance of window top VS top of page
 
   var pageWindowOffset = window.pageYOffset
-  console.log('window top: ' + pageWindowOffset);
 
 
   // calculate the height of viewport and divide by 2. create a variable for it
@@ -595,54 +458,22 @@ function updateTimelineVerticalLine() {
   // calculate the height difference betweet top of ".tube-item-vertical-line" and the bottom of last .grid-item
   var lastGridItemBottom = lastGridItem.getBoundingClientRect().bottom;
 
-  console.log('last grid item bottom: ' + lastGridItemBottom);
-
-
-
 
   if ( (distance < verticalLineAnimationOffset ) && (lastGridItemBottom > verticalLineAnimationOffset) ) {
-      console.log("ANIMATE");
       // edit height of .tube-item-vertical-line so when distance is 50, the height is 0. when distance is 40, the height is 10. when distance is 30, the height is 20. when distance is 20, the height is 30. when distance is 10, the height is 40. when distance is 0, the height is 50. but it'll keep growing as you scroll down
 
       document.querySelector('.tube-item-vertical-line').style.height = (verticalLineAnimationOffset - distance) + 'px';
   }
   // make else if statements for when we are over the animation offset and when we are under the animation offset
   else if (lastGridItemBottom < verticalLineAnimationOffset) {
-    console.log("Stop animation. We are over the animation offsets. let's not animate as we've scrolled past the last grid item bottom and dont want to make the line too long. however let's make sure the line reaches the bottom of the last grid item even if we scroll too quickly ");
     //a bug. if scrolling too quickly the line may not reach  the bottom of the last grid item. it may stay a few px short. let's fix that
     document.querySelector('.tube-item-vertical-line').style.height = (lastGridItemBottom - distance) + 'px'; // so the height is until the bottom of the last grid item? yes
   }
   else {
-    console.log("Stop animation. We are under the animation offsets. Let's not animate if we're not yet at the timeline");
     // same problem here, when scrolling up fast, we may leave a few px of the line visible. when it should be 0px if we're above timeline. let's fix that
     document.querySelector('.tube-item-vertical-line').style.height = 0 + 'px'; // so the height is 0px? yes
   }
   
-  /*else {
-    console.log("Stop animation. We are over or under the animation offsets. Let's not animate if we're too high on page or if we're past the last grid item bottom");
-  }*/
-
-
-      /*
-          // ⛔ let's use a more simple function below a function that checks if the .tube-item-vertical-line overlaps with a .number. if it does, add a class to the .number called "number-overlap"
-            function checkOverlap() {
-              var verticalLine = document.querySelector('.tube-item-vertical-line');
-              var numbers = document.querySelectorAll('.number');
-              numbers.forEach(function(number) {
-                var numberRect = number.getBoundingClientRect();
-                var verticalLineRect = verticalLine.getBoundingClientRect();
-                if (numberRect.top < verticalLineRect.bottom && numberRect.bottom > verticalLineRect.top) {
-                  number.classList.add('number-overlap');
-                } else {
-                  number.classList.remove('number-overlap');
-                }
-              });
-            }
-
-            //checkOverlap();
-    */
-
-
   // a function that checks if a .number -element is less than verticalLineAnimationOffset from the top of the window. if it is, the vertical line has "touched" it. add a class to the .number called "number-overlap". if it's not, remove the class
   function checkNumberOverlap() {
     var numbers = document.querySelectorAll('.number');
@@ -677,40 +508,6 @@ $( document ).ready(function() {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
 * 🌸🌸🌸 SECTION - PORTFOLIO SUB-PAGES
 */
@@ -725,33 +522,9 @@ $( document ).ready(function() {
  */
 
 
-/* make a jquery $ thing from following html
-<div>
-
-
-
-
-
-
-
-*/ 
-
-//add the html before the pagination element here with jQuery
-
-
-
-
-
-
-
-
 function portfolioSubPageFetch() {
 
-var pageTitle = document.title;
-console.log("pageTitle: " + pageTitle);
-
 var fetchUrl = window.location.origin + window.location.pathname.split("/").slice(0, -1).join("/") + "?format=json-pretty";
-console.log("fetchUrl: " + fetchUrl);
 
 
 fetch(fetchUrl, { 
@@ -760,7 +533,6 @@ fetch(fetchUrl, {
 })
 .then(function(response) { return response.json(); })
 .then(function(json) {
-   console.log("json: " + json);
 
    // make an iterator number. To check which nth page we are on
    var i = 0;
@@ -768,49 +540,27 @@ fetch(fetchUrl, {
    var numberOfThisPortfolioItem = 0;
 
    jsonItems = json.items;
-    console.log("jsonItems: " + jsonItems);
    
     totalNumberOfPortfolioItems = jsonItems.length;
     //log it:
-    console.log("totalNumberOfPortfolioItems: " + totalNumberOfPortfolioItems);
     
     // loop through the json and find the title that matches the page title
    json.items.forEach((item) => {
     i++;
-    console.log("i: " + i);
 
-     if (pageTitle.toLowerCase().includes(item.title.toLowerCase())) { // we found this page from json portfolio items list
+     if (item.fullUrl === window.location.pathname) { // we found this page in the json portfolio items list
 
           numberOfThisPortfolioItem = i;
          
         
-         /* 
-         //skip automatic title and lead for now
-            // Get this pages title from json so we can use it in the h1
-            thisPageH1Title = item.title;
-              document.querySelector('.automatic-sub-page-title').innerHTML = thisPageH1Title; // TODO hide until we have the title
-              document.querySelector('.automatic-sub-page-title').classList.add('jsonContentLoadedFadeIn');
-            
-              //do the same thing for the lead (.sqsrte-large) using item.seoData.seoDescription instead of item.title
-              thisPageLead = item.seoData.seoDescription;
-              document.querySelector('.automatic-sub-page-lead').innerHTML = thisPageLead; // TODO hide until we have the title
-              document.querySelector('.automatic-sub-page-lead').classList.add('jsonContentLoadedFadeIn');
-          */
-          
-
-
           // PAGINATION: ADD NUMBERS TO NEXT/PREV 
           $(".item-pagination-link--next .item-pagination-title").text( (numberOfThisPortfolioItem + 1) + ". " + $(".item-pagination-link--next .item-pagination-title").text());
           //same for item-pagination-link--prev but with the number of the previous item
           $(".item-pagination-link--prev .item-pagination-title").text( (numberOfThisPortfolioItem - 1) + ". " + $(".item-pagination-link--prev .item-pagination-title").text());
 
-          /*
-          prepend follow html before "".automatic-sub-page-title": <div class="ProductItem-next-prev-codeandtonic"> <a class="codetonic-product-pagination-link-simple codetonic-prev" href="/shop/p/acuity-scheduling-redirect-forward-plugin">Prev</a> <span class="ProductItem-nav-pagination-separator ProductItem-nav-pagination-separator--hasPrev ProductItem-nav-pagination-separator--hasNext"></span> <a class="codetonic-product-pagination-link-simple codetonic-next" href="/shop/p/squarespace-text-animations">Next</a></div>
-          */
          //get the href of . item-pagination-link--next and . item-pagination-link--prev as variables
           var nextHref = $(".item-pagination-link--next").attr("href");
           var prevHref = $(".item-pagination-link--prev").attr("href");
-
 
 
           //before first h1, prepend ".sub-service-meta".
@@ -825,7 +575,6 @@ fetch(fetchUrl, {
         //var verticalTitle = "";
         if (path.startsWith("/clinical")) {
           verticalTitle = "Clinical";
-          console.log("!!!!!!!!");
           //vertical = "/clinical";// get this automatically from the path
           //vertical = path.split('/')[1];
           vertical = path.split('/')[1];
@@ -833,11 +582,7 @@ fetch(fetchUrl, {
           verticalTitle = "Regulatory";
           //vertical = "/services/regulatory";
           vertical = path.split('/')[1];
-        } else if (path.startsWith("/strategy")) {
-          verticalTitle = "Strategy";
-          //vertical = "/services/strategy";
-          vertical = path.split('/')[1];
-             } else if (path.startsWith("/marketaccess")) {
+        } else if (path.startsWith("/marketaccess")) {
           verticalTitle = "Market Access";
           //vertical = "/services/marketaccess";
           vertical = path.split('/')[1];
@@ -895,8 +640,6 @@ fetch(fetchUrl, {
          }
 
  
-     } else{
-         console.log( item.title + " VS " + pageTitle + " — not a match.");
      }
    
 
@@ -904,20 +647,6 @@ fetch(fetchUrl, {
 
 }); // end of fetch.then
 } // end of portfolioSubPageFetch() function
-
-
-// run portfolioSubPageFetch() on jquey document ready
-
-$(document).ready(function () {
-  //portfolioSubPageFetch();
-});
-
-
-
-
-
-
-
 
 
 /**
@@ -941,25 +670,47 @@ function setBodyBackgroundAndThemeColor(color) {
 // e.g. setBodyBackgroundAndThemeColor(getCSSVariableValue('--health-economics-brightpink'));
 
 
-//make a function that will check if window location path contains a substring. if it does, add a class to the body. it takes 3 arguments: the substring to check for, the class to add to the body and a css variable to set as the body background color
-function checkIfPathContainsSubstringAndAddClassToBody(substring, className, cssVariable) {
-  var path = window.location.pathname;
-  var body = document.querySelector('body');
-  if (path.includes(substring)) {
-    body.classList.add(className);
-    setBodyBackgroundAndThemeColor(getCSSVariableValue(cssVariable));
-  }
+// add the vertical's class to the body and set its colour. className is also the vertical's first path segment, e.g. /regulatory
+function addVerticalClassToBody(className, cssVariable) {
+  document.querySelector('body').classList.add(className);
+  setBodyBackgroundAndThemeColor(getCSSVariableValue(cssVariable));
 }
 
-// TODO check final urls - run it for each vertical
+var verticalColours = {
+  'clinical': '--clinical-purple',
+  'regulatory': '--regulatory-mintgreen',
+  'intellectual-property': '--ip-darkblue',
+  'health-economics': '--health-economics-brightpink',
+  'marketaccess': '--marketaccess-lightblue'
+};
 
-checkIfPathContainsSubstringAndAddClassToBody('health-economics', 'health-economics', '--health-economics-brightpink');
-checkIfPathContainsSubstringAndAddClassToBody('/strategy', 'strategy', '--strategy-lightblue');
-checkIfPathContainsSubstringAndAddClassToBody('marketaccess', 'marketaccess', '--marketaccess-lightblue');
-checkIfPathContainsSubstringAndAddClassToBody('/market-access', 'market-access', '--market-access-lightblue');
-checkIfPathContainsSubstringAndAddClassToBody('/intellectual-property', 'intellectual-property', '--ip-darkblue');
-checkIfPathContainsSubstringAndAddClassToBody('/regulatory', 'regulatory', '--regulatory-mintgreen');
-checkIfPathContainsSubstringAndAddClassToBody('/clinical', 'clinical', '--clinical-purple');
+// service pages and their sub-pages, e.g. /regulatory and /regulatory/pre-market-intended-use
+var firstPathSegment = window.location.pathname.split('/')[1];
+if (verticalColours[firstPathSegment]) {
+  addVerticalClassToBody(firstPathSegment, verticalColours[firstPathSegment]);
+}
+
+// single blog post: colour by its first category, e.g. Regulatory = green
+var blogCategoryColours = {
+  'clinical': 'clinical',
+  'regulatory': 'regulatory',
+  'intellectual property': 'intellectual-property',
+  'health economics': 'health-economics',
+  'market access': 'marketaccess'
+};
+
+$(document).ready(function () {
+  if (window.location.pathname.startsWith('/insights/') && $('.blog-item-wrapper').length) {
+    var firstCategoryLink = document.querySelector('.blog-item-wrapper a[href*="/insights/category/"]');
+    if (!firstCategoryLink) return;
+    var category = decodeURIComponent(firstCategoryLink.getAttribute('href').split('/insights/category/')[1]).replace(/\+/g, ' ').toLowerCase();
+    if (category === 'case study') {
+      addVerticalClassToBody('case-study', '--case-study-orange');
+    } else if (blogCategoryColours[category]) {
+      addVerticalClassToBody(blogCategoryColours[category], verticalColours[blogCategoryColours[category]]);
+    }
+  }
+});
 
 
 // Portfolio sub pages - has pagination but not .blog-item-wrapper like single blog post OR .blog-list-pagination like blog list page (which also has empoty #itemPagination for some reason)
@@ -974,24 +725,6 @@ $(document).ready(function () {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // link to services section on homepage (by scrolling to it) so we can use the link on breadcrumbs
 var servicesDataSectionID = '630906727a98a14798f4b3f4'
 $(document).ready(function () {
@@ -1003,16 +736,6 @@ $(document).ready(function () {
     }, 1000);
   }
 });
-
-
-
-
-
-
-
-
-
-
 
 
 //EXTERNAL LINKS IN NEW TABS
@@ -1039,226 +762,3 @@ function addTargetBlankToExternalLinks() {
 $(document).ready(function () {
   addTargetBlankToExternalLinks();
 });
-
-
-
-
-//CUBE from https://github.com/marklundin/cube
-// CSS added to our less – library dependencies loaded in page specific code injection.
-
-
-$(document).ready(function () {
-  // If the window location href includes /cube BUT does not include .squarespace.com
-  if(window.location.href.includes('/cube') && !window.location.href.includes('.squarespace.com')){
-    console.log("Launching Cube as we're not on a Squarespace logged-in page BUT are on /cube");
-
-    // Load the scripts
-    $.when(
-      //$.getScript("https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/cube/cuber.min.js"), 
-      //use https://hardian-health-71.squarespace.com/s/cubermin.js instead of https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/cube/cuber.min.js
-      $.getScript("https://hardian-health-71.squarespace.com/s/cubermin.js"),
-      //$.getScript("https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/photon.js") use https://hardian-health-71.squarespace.com/s/photon.js instead of https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/photon.js
-      $.getScript("https://hardian-health-71.squarespace.com/s/photon.js")
-    ).done(function(){
-      // Cube code which will run once the scripts are loaded and generate the cube
-      var container = document.querySelector('#cube-container'),
-          cube      = new ERNO.Cube(),
-          light     = new Photon.Light(10, 0, 100);
-
-      container.appendChild(cube.domElement);
-     
-     
-     
-        /**
- * Generates a random scramble string for a Rubik's cube.
- * The scramble ensures:
- * 1. No same move is repeated consecutively.
- * 2. No move is immediately followed by its inverse.
- * 
- * @param {number} length - Number of moves in the scramble string.
- * @return {string} - The scramble string.
- */
-function generateRandomString(length) {
-  // Possible moves on a Rubik's cube
-  const moves = ['U', 'u', 'D', 'd', 'R', 'r', 'L', 'l'];
-
-  // Mapping of a move to its inverse.
-  // This helps in quickly finding the inverse of a move, e.g., 'U' -> 'u'.
-  const inverseMoves = {'U': 'u', 'u': 'U', 'D': 'd', 'd': 'D', 'R': 'r', 'r': 'R', 'L': 'l', 'l': 'L'};
-
-  let scramble = ''; // To build the resulting scramble string
-  let lastMove = null; // To track the last move that was added to the scramble
-
-  // Generate the scramble string move-by-move
-  for (let i = 0; i < length; i++) {
-      let nextMove;
-      do {
-          // Randomly select a move from the list
-          nextMove = moves[Math.floor(Math.random() * moves.length)];
-      } 
-      // Check if the selected move is either the same as the last move
-      // or is the inverse of the last move.
-      // If either condition is true, we loop again to pick a different move.
-      while (nextMove === lastMove || nextMove === inverseMoves[lastMove]);
-
-      // Append the selected move to the scramble string
-      scramble += nextMove;
-      // Update lastMove to the move we just added
-      lastMove = nextMove;
-  }
-
-  return scramble;
-}
-
-// Usage:
-const randomstring = generateRandomString(8);
-//console.log("Rubic: " + randomstring);
-cube.twist(randomstring.multiply(1));
-
-    
-
-
-
-    });
-  } //else if /cube AND .squarespace.com, do nothing
-  else if(window.location.href.includes('/cube') && window.location.href.includes('.squarespace.com')){
-    console.log("Not launching Cube as we're on a Squarespace logged-in page AND on /cube");
-    // #cube-container add a h2 saying "Cube is not available on Squarespace logged-in pages. Please visit via hardianhealth.com instead of hardian-health-71.squarespace.com."
-  }
-
-  //refresh icon
-  //link with #cube-refresh as href for click
-  $("a.refresh").click(function(){
-    console.log("refresh click");
-    location.reload();
-});
-
-});
-
-
-/*
-if (window.location.href.includes('cube')) {
-  console.log("Cube");
-  $( document ).ready(function() {    
-  
-
-      var container 	= document.querySelector( '#cube-container' ),
-      cube 		= new ERNO.Cube();
-      light 		= new Photon.Light( 10, 0, 100 );
-
-    container.appendChild( cube.domElement );   
-  }); 
-  
-}
-*/
-
-
-
-
-
-
-
-/**
- * animation canvas test
- */
-
-/*
-// get the Squarespace section ID for the section you want to add the canvas to
-var sectionIDforCanvas = '63ff4493e22cef12e961eace';
-
-$('<canvas id="canv" style=""></canvas>').prependTo('section[data-section-id="' + sectionIDforCanvas +'"] .section-background');
-
-//need a z-index to show content in front of canvas
-$('section[data-section-id="' + sectionIDforCanvas +'"] .content-wrapper ').css("z-index", "2");
-
-const canvas = document.querySelector("canvas");
-const ctx = canvas.getContext("2d");
-const aspectRatio = 16 / 9;
-
-function setCanvasDimensions() {
-  const windowAspectRatio = window.innerWidth / window.innerHeight;
-  if (windowAspectRatio > aspectRatio) {
-    canvas.width = window.innerHeight * aspectRatio;
-    canvas.height = window.innerHeight;
-  } else {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerWidth / aspectRatio;
-  }
-}
-
-setCanvasDimensions();
-
-class Circle {
-  constructor(x, y, radius, dx, dy) {
-    this.x = x;
-    this.y = y;
-    this.radius = radius;
-    this.dx = dx;
-    this.dy = dy;
-  }
-
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = "#a37af5";
-    ctx.fill();
-    ctx.closePath();
-  }
-
-  update() {
-    this.x += this.dx;
-    this.y += this.dy;
-    this.draw();
-  }
-}
-
-const circles = [];
-
-function createCircles() {
-  circles.length = 0;
-  for (let i = 0; i < 6; i++) {
-    const radius = Math.random() * 100 + 50;
-    let x = Math.random() * (canvas.width - radius) + radius / 2;
-    let y = Math.random() * (canvas.height - radius * 2) + radius / 2;
-    const dx = (Math.random() - 0.5) * 0.1;
-    const dy = (Math.random() - 0.5) * 0.1;
-
-    // Avoid middle horizontal and vertical space
-    while ((x > canvas.width * 0.3 && x < canvas.width * 0.7) || (y > canvas.height * 0.3 && y < canvas.height * 0.7)) {
-      x = Math.random() * (canvas.width - radius) + radius / 2;
-      y = Math.random() * (canvas.height - radius * 2) + radius / 2;
-    }
-
-    circles.push(new Circle(x, y, radius, dx, dy));
-  }
-}
-
-function animate() {
-  requestAnimationFrame(animate);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  for (const circle of circles) {
-    circle.update();
-  }
-}
-
-function resizeCanvas() {
-  setCanvasDimensions();
-  createCircles();
-}
-
-window.addEventListener("resize", resizeCanvas);
-
-createCircles();
-animate();
-
-*/
-
-
-//if page path contains /cube, then run function on domready
-
-
-
-
-
-
