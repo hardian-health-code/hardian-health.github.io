@@ -7,7 +7,6 @@
   --neutral-lightgrey: #EEF0F2;
   --neutral-darkgrey: #A6A6A6;
   --clinical-purple: #A37AF5;
-  --strategy-lightblue: #5BCFFF;
   --regulatory-mintgreen: #49DAB0;
   --ip-darkblue: #3A6DF5;
   --health-economics-brightpink: #FF9FF2;
@@ -16,9 +15,6 @@
   --case-study-orange:    #FF6600;
   --publications-lightblue: #5BCFFF;
   --timelinetitleleft: -28px;
-}
-.strategy {
-  --current-service-color: var(--strategy-lightblue);
 }
 .clinical {
   --current-service-color: var(--clinical-purple);
@@ -34,6 +30,9 @@
 }
 .marketaccess {
   --current-service-color: var(--marketaccess-lightblue);
+}
+.case-study {
+  --current-service-color: var(--case-study-orange);
 }
 /*********
  TEAM PAGE
@@ -80,9 +79,6 @@ p + pre {
 }
 .header-nav-folder-item a[href*="/health-economics"] .header-nav-folder-item-content:before {
   background: var(--health-economics-brightpink) !important;
-}
-.header-nav-folder-item a[href*="/strategy"] .header-nav-folder-item-content:before {
-  background: var(--strategy-lightblue) !important;
 }
 .header-nav-folder-item a[href*="/intellectual-property"] .header-nav-folder-item-content:before {
   background: var(--ip-darkblue) !important;
@@ -182,7 +178,6 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   position: relative ; /* Establishes the positioning context for the pseudo-element */
 }
 
-
 .container.header-menu-nav-item .header-menu-nav-item-content:before {
   content: '' ;
   position: absolute ;
@@ -215,9 +210,6 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 .container.header-menu-nav-item a[href*="/health-economics"] .header-menu-nav-item-content:before {
   background-color: var(--health-economics-brightpink) !important;
 }
-.container.header-menu-nav-item a[href*="/strategy"] .header-menu-nav-item-content:before {
-  background-color: var(--strategy-lightblue) !important;
-}
 .container.header-menu-nav-item a[href*="/intellectual-property"] .header-menu-nav-item-content:before {
   background-color: var(--ip-darkblue) !important;
 }
@@ -247,42 +239,6 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 }
 
 /*
-.header-nav-item a{
-  padding: 15px 2px !important;
-}
-
-// ACTIVE NAV ITEM TEST
-.header-nav-item--active a {
-    background: #A37AF5;
-    color: white !important;
-    text-decoration: none !important;
-   
-    background-image: none !important;
-   
-    border-radius: 6px;
-}
-*/
-/*h1, h2, h3, h4{
-  strong{
-    font-weight: inherit !important;
-    font-style:normal !important;
-    display:inline-block;
-    background: #A37AF5;
-    padding:20px;
-    color: #FFF; 
-    border-radius:20px;
-    text-transform:none;
-  }
-}
-*/
-/*
-.sqs-block-button-element--medium{
-  background: rgb(163,122,245);
-background: linear-gradient(22deg, rgba(163,122,245,1) 0%, rgba(91,207,255,1) 100%);  
-}
-*/
-/*
-
 
 //😎😎😎 BLOG POST WIDTHS */
 .blog-item-content-wrapper {
@@ -290,12 +246,7 @@ background: linear-gradient(22deg, rgba(163,122,245,1) 0%, rgba(91,207,255,1) 10
   margin: auto;
   display: flex;
   flex-direction: column;
-  /*  
-p {
-   max-width:550px !important;
-  margin: auto;
-
-}  */
+  
 }
 .blog-item-content-wrapper .blog-meta-item--date {
   order: 1;
@@ -321,14 +272,8 @@ p {
   font-weight: 600 !important;
 }
 .tweak-blog-basic-grid-text-alignment-left .blog-basic-grid .blog-basic-grid--container .blog-more-link,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="regulatory"],
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="intellectual"],
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="strategy"],
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="economics"],
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="cli"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="regulatory"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="intellectual"],
-section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="strategy"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="economics"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="cli"],
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="marketaccess"],
@@ -343,14 +288,8 @@ a.summary-read-more-link {
   letter-spacing: 0.05em;
 }
 .tweak-blog-basic-grid-text-alignment-left .blog-basic-grid .blog-basic-grid--container .blog-more-link:hover,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="regulatory"]:hover,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="intellectual"]:hover,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="strategy"]:hover,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="economics"]:hover,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="cli"]:hover,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="regulatory"]:hover,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="intellectual"]:hover,
-section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="strategy"]:hover,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="economics"]:hover,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="cli"]:hover,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="marketaccess"]:hover,
@@ -358,14 +297,8 @@ a.summary-read-more-link:hover {
   left: 2px;
 }
 .tweak-blog-basic-grid-text-alignment-left .blog-basic-grid .blog-basic-grid--container .blog-more-link:hover:after,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="regulatory"]:hover:after,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="intellectual"]:hover:after,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="strategy"]:hover:after,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="economics"]:hover:after,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="cli"]:hover:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="regulatory"]:hover:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="intellectual"]:hover:after,
-section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="strategy"]:hover:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="economics"]:hover:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="cli"]:hover:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="marketaccess"]:hover:after,
@@ -373,14 +306,8 @@ a.summary-read-more-link:hover:after {
   left: 5px;
 }
 .tweak-blog-basic-grid-text-alignment-left .blog-basic-grid .blog-basic-grid--container .blog-more-link:after,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="regulatory"]:after,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="intellectual"]:after,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="strategy"]:after,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="economics"]:after,
-section[data-section-id="62f528d73cd06779e8eb3ee9"] p > a[href*="cli"]:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="regulatory"]:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="intellectual"]:after,
-section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="strategy"]:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="economics"]:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="cli"]:after,
 section[data-section-id="630906727a98a14798f4b3f4"] p > a[href*="marketaccess"]:after,
@@ -442,22 +369,9 @@ a.summary-read-more-link:after {
   }
 }
 /******
-🏷️ LOGO GRID
-*******/
-.eapp-logo-showcase-header-component {
-  display: none !important;
-}
-/******
 🏷️ HOMEPAGE BLOG SUMMARY
 *******/
-/*
-a.summary-read-more-link{
-  color: var(--clinical-purple) !important;
-  //text-transform:uppercase;
-  font-size:13px !important;
-  font-weight:500;
-}
-*/
+
 /******
 🏷️ BLOG
 *******/
@@ -533,22 +447,22 @@ CSS
 🐠🐠🐠🐠🐠
 
 */
-body:not(.sqs-is-page-editing) h1 span[style*="text-decoration:line-through"],
-body:not(.sqs-is-page-editing) h2 span[style*="text-decoration:line-through"],
-body:not(.sqs-is-page-editing) h3 span[style*="text-decoration:line-through"],
-body:not(.sqs-is-page-editing) h4 span[style*="text-decoration:line-through"] {
+body:not(.sqs-is-page-editing) h1 span[style*="line-through"],
+body:not(.sqs-is-page-editing) h2 span[style*="line-through"],
+body:not(.sqs-is-page-editing) h3 span[style*="line-through"],
+body:not(.sqs-is-page-editing) h4 span[style*="line-through"] {
   display: none;
 }
-body.sqs-is-page-editing h1 span[style*="text-decoration:line-through"],
-body.sqs-is-page-editing h2 span[style*="text-decoration:line-through"],
-body.sqs-is-page-editing h3 span[style*="text-decoration:line-through"],
-body.sqs-is-page-editing h4 span[style*="text-decoration:line-through"] {
+body.sqs-is-page-editing h1 span[style*="line-through"],
+body.sqs-is-page-editing h2 span[style*="line-through"],
+body.sqs-is-page-editing h3 span[style*="line-through"],
+body.sqs-is-page-editing h4 span[style*="line-through"] {
   display: block;
 }
-body.sqs-is-page-editing h1 span[style*="text-decoration:line-through"]:before,
-body.sqs-is-page-editing h2 span[style*="text-decoration:line-through"]:before,
-body.sqs-is-page-editing h3 span[style*="text-decoration:line-through"]:before,
-body.sqs-is-page-editing h4 span[style*="text-decoration:line-through"]:before {
+body.sqs-is-page-editing h1 span[style*="line-through"]:before,
+body.sqs-is-page-editing h2 span[style*="line-through"]:before,
+body.sqs-is-page-editing h3 span[style*="line-through"]:before,
+body.sqs-is-page-editing h4 span[style*="line-through"]:before {
   content: "(This strikethrough text will be animated. )";
   position: absolute;
   top: -9px;
@@ -596,49 +510,6 @@ body.sqs-is-page-editing h4 span[style*="text-decoration:line-through"]:before {
 .codetonic-textanimation-one .letter.behind {
   transform: rotateX(-90deg);
 }
-/*
-🐠🐠🐠🐠🐠
-🐠🐠🐠🐠🐠
-
-CODE + TONIC ANIMATED HEADING #1 
-CSS
-
-🐠🐠🐠🐠🐠
-🐠🐠🐠🐠🐠
-
-*/
-section[data-section-id="630906727a98a14798f4b3f4"] .sqs-block-image .design-layout-fluid img {
-  width: 80% !important;
-  margin-left: 10%;
-  /*
-  @black: #1C1D1E;
-@white: #FFFFFF;
-@lightGrey: #EEF0F2; 
-@darkGrey: #A6A6A6;
-
-//Brand Colors
-var(--clinical-purple):#A37AF5; 
-var(--strategy-lightblue): #5BCFFF;
-var(--regulatory-mintgreen):#49DAB0;
-var(--ip-darkblue):#3A6DF5;
-var(--health-economics-brightpink): #FF9FF2;
-  */
-}
-#block-yui_3_17_2_1_1661536994504_107859 {
-  filter: invert(55%) sepia(51%) saturate(4343%) hue-rotate(226deg) brightness(106%) contrast(92%) !important;
-}
-#block-yui_3_17_2_1_1661504512609_911651 {
-  filter: invert(77%) sepia(35%) saturate(3485%) hue-rotate(172deg) brightness(104%) contrast(102%);
-}
-#block-yui_3_17_2_1_1661536994504_24312 {
-  filter: invert(78%) sepia(58%) saturate(432%) hue-rotate(102deg) brightness(87%) contrast(95%);
-}
-#block-yui_3_17_2_1_1661504512609_1016720 {
-  filter: invert(39%) sepia(50%) saturate(2788%) hue-rotate(211deg) brightness(92%) contrast(110%);
-}
-#block-yui_3_17_2_1_1661504512609_1087339 {
-  filter: invert(96%) sepia(51%) saturate(3731%) hue-rotate(273deg) brightness(97%) contrast(108%);
-}
 h2 + p.sqsrte-large,
 h1 + p.sqsrte-large {
   max-width: 560px;
@@ -663,52 +534,7 @@ h2 {
 section[data-section-id="630906727a98a14798f4b3f4"] h4 {
   position: relative;
 }
-/*
-section[data-section-id="630906727a98a14798f4b3f4"] h4{
 
-  &:hover:before{
-    width:20px;
-    height:20px !important;
-    top: 6px !important;
-    left:-25px;
-  }
-  &:before {
-    transition:0.5s all ease;
-    content:"";
-    position:absolute;
-    left:-20px;
-    top:12px;
-    width:10px;
-    height:10px;
-    background:purple;
-    border-radius:50%;
-  
-}
-}
-
-
-//regulatory 
-#block-yui_3_17_2_1_1660233301342_179110 h4:before{
-  background:var(--regulatory-mintgreen);
-}
-
-//clinical
-#block-yui_3_17_2_1_1660233301342_153163 h4:before{
-  background:var(--clinical-purple);
-}
-
-//IP
-#block-yui_3_17_2_1_1660233301342_220277 h4:before{
-  background:var(--health-economics-brightpink);
-}
-
-#block-a78ba45834402982aeb1 h4:before{
-  background:var(--strategy-lightblue);
-}
-
-#block-yui_3_17_2_1_1660233301342_249459  h4:before{
-  background:var(--ip-darkblue);
-}*/
 .sqs-is-page-editing section[data-section-id="630906727a98a14798f4b3f4"]:before {
   content: "ADMIN! THIS SECTION has custom CSS styling applied. ";
   opacity: 1;
@@ -746,9 +572,6 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 a:before {
 section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="clinical"]:before {
   background: var(--clinical-purple) !important;
 }
-section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="strategy"]:before {
-  background: var(--strategy-lightblue) !important;
-}
 section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="regulatory"]:before {
   background: var(--regulatory-mintgreen) !important;
 }
@@ -761,40 +584,13 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="health-economics
 section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="marketaccess"]:before {
   background: var(--marketaccess-lightblue) !important;
 }
-/*
-span.word:nth-of-type(1) {
-    color: var(--clinical-purple) !important;
-}
 
-span.word:nth-of-type(2) {
-    color: var(--strategy-lightblue)  !important;
-}
-
-span.word:nth-of-type(3) {
-    color: var(--regulatory-mintgreen) !important;
-}
-
-span.word:nth-of-type(4) {
-    color: var(--ip-darkblue) !important;
-}
-
-span.word:nth-of-type(5) {
-    color: var(--health-economics-brightpink) !important;
-}
-*/
 article p a,
 .sqs-block-summary-v2 .summary-read-more-link,
 .blog-more-link {
   color: var(--clinical-purple) !important;
 }
-#item-630e84b25139f15acd7bab4c .blog-item-author-profile-wrapper {
-  display: none;
-}
-@media only screen and (max-width: 767px) {
-  section[data-section-id="63110aa129f035f05a07ea5f"] h1 {
-    font-size: 26px !important;
-  }
-}
+
 /*
 
 IMAGES
@@ -824,62 +620,8 @@ section[data-section-id="63ff454406ca054fd4fcf921"] .section-background {
 section[data-section-id="63ff45fee385f576b580ad2d"] .section-background {
   background-image: url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff42f7e9f52e0b60b703bf/1677673207327/Circle+health-economics-brightpink+%23FF9FF2.png), url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff42f7e9f52e0b60b703bf/1677673207327/Circle+health-economics-brightpink+%23FF9FF2.png);
 }
-section[data-section-id="63470e27c96c5945e6d186bb"] .section-background,
-section[data-section-id="63f8da6bd2901235ddf21fe9"] .section-background,
 section[data-section-id="63fe67382ca07217b03f6cb4"] .section-background {
-  /*    
-//background-image: url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63069d8616ecd437bb459966/1661377926454/single+circle+-+pink+blue+gradient.png),
-background-image: url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png),
 
-//url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/6306a10917e44f371c0c34c2/1661378825510/single+circle+-+green++blue+gradient.png);
-url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png),
-url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png),
-url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png);
-  
-  
-  // create css variable for the size of the circles
-
-  --circleBaseSize: 18vw;
-  --circleAddSize: 70px;
-
-  --circleBaseVerticalDistance: 1vh; // 0 hakkaa ylä/alareunaan. vh skaalaa responsiivisesti
-  --circlePxVerticalDistance: 20px; // 0 hakkaa ylä/alareunaan
-  
-  --circleHorizonalBase: -6vw; // negative value -> move circles outside viewport
-  --circleHorizontalPx: -90px;// negative value ->  move circles outside viewport
-  
-   
-   // VER 4 with CSS custom properties
-    background-size:calc(var(--circleBaseSize) + var(--circleAddSize)) auto;
-    background-position: 
-    top ~"calc(1vh + 20px)" left ~"calc(-120px + -2vw)", 
-    bottom ~"calc(1vh + 20px)" right  ~"calc(-120px + -2vw)" ;
-    
-    // make background position using CSS custom properties instead of LESS variables but keep it exactly the same
-    background-position: top calc(var(--circleBaseVerticalDistance) + var(--circlePxVerticalDistance)) left calc(var(--circleHorizonalBase) + var(--circleHorizontalPx)), bottom calc(var(--circleBaseVerticalDistance) + var(--circlePxVerticalDistance)) right calc(var(--circleHorizonalBase) + var(--circleHorizontalPx)), bottom calc(var(--circleBaseVerticalDistance) + var(--circlePxVerticalDistance)) left calc(-14vw + -69px), top calc(-7vw + -69px) right calc(-14vw + -69px);
-    
-*/
-  /*
-  // VER 2 SEP 1 16:52
-   background-size:~"calc(22vw + 70px)" auto;
-  background-position: 
-   top ~"calc(10vh + 20px)" left ~"calc(-120px + -2vw)", 
-   bottom ~"calc(10vh + 20px)" right  ~"calc(-120px + -2vw)" ;
-  */
-  /*
-  background-position: 
-   top ~"calc(10vh + 20px)" left ~"calc(-120px + -2vw)", 
-   bottom ~"calc(10vh + 20px)" right  ~"calc(-120px + -2vw)" ;
-
-   background-position: 
-   top ~"calc(0vw + 20px)" left ~"calc(-120px + -2vw)", 
-   bottom ~"calc(0vw + 20px)" right  ~"calc(-120px + -2vw)" ;
-*/
-  /*
-  background-size:~"calc(18vw + 70px)" auto;
-   background-position: ~"top calc(6vw + -100px) left calc(-100px + -2vw), bottom calc(0vh + 20px) right calc(-100px + -4vw)";
-   
-   */
 }
 .careers-blog-single .blog-item-meta-wrapper,
 .careers-blog-single .item-pagination,
@@ -894,8 +636,7 @@ url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536
 }
 .blog-item-wrapper .blog-meta-item,
 .blog-item-wrapper .blog-meta-item a,
-.blog-item-wrapper .blog-meta-item span,
-.blog-item-wrapper .item-pagination-prev-next {
+.blog-item-wrapper .blog-meta-item span {
   font-size: 14px;
 }
 .sqs-block-html h4 a,
@@ -981,96 +722,15 @@ pre code {
 section[data-section-id="630906727a98a14798f4b3f4"] h4 {
   font-size: calc((1 - 1) * 1.2vw + 1rem) !important;
 }
-.heading-h1 {
-  font-size: 20px !important;
-}
-@media (min-width: 767px) {
-  .heading-h1 {
-    font-size: 40px !important;
-  }
-}
-.heading-h2 {
-  font-size: 20px !important;
-}
-@media (min-width: 767px) {
-  .heading-h2 {
-    font-size: 40px !important;
-  }
-}
-.heading-h3 {
-  font-size: 20px !important;
-}
-@media (min-width: 767px) {
-  .heading-h3 {
-    font-size: 40px !important;
-  }
-}
-.heading-h4 {
-  font-size: 20px !important;
-}
-@media (min-width: 767px) {
-  .heading-h4 {
-    font-size: 40px !important;
-  }
-}
-.body-copy-large {
-  font-size: 20px !important;
-}
-@media (min-width: 767px) {
-  .body-copy-large {
-    font-size: 40px !important;
-  }
-}
-.body-copy {
-  font-size: 20px !important;
-}
-@media (min-width: 767px) {
-  .body-copy {
-    font-size: 40px !important;
-  }
-}
-.meta-date {
-  font-size: 20px !important;
-}
-@media (min-width: 767px) {
-  .meta-date {
-    font-size: 40px !important;
-  }
-}
-.nav-label {
-  font-family: 'Open Sans', sans-serif !important;
-  font-weight: 500 !important;
-  font-size: 14px !important;
-}
-@media (min-width: 767px) {
-}
+
 .header-nav-list a,
 .header-nav-list {
   font-family: 'Open Sans', sans-serif !important;
   font-weight: 500 !important;
   font-size: 14px !important;
 }
-@media (min-width: 767px) {
-}
-.read-more {
-  font-size: 20px !important;
-}
-@media (min-width: 767px) {
-  .read-more {
-    font-size: 40px !important;
-  }
-}
-.active-nav-item-underline {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-repeat: repeat-x;
-  background-size: 1px 1px;
-  background-position: 0 100%;
-  background-position: 0 calc(100% - 0.1em);
-}
 
-/**/DATE for BLOGS/**/
-
-
+/* DATE for BLOGS */
 
 /**/
 
@@ -1078,22 +738,9 @@ html body #page .dateFormatted-and-ready-to-show,
 .dateFormatted-and-ready-to-show * {
   opacity: 1 !important;
 }
-
-  section[data-section-id="63345cfd93596d2af59dedad"] a:after {
-    content: "\A" !important;
-    white-space: pre !important;
-  }
-
-[data-section-id="63345cfd93596d2af59dedad"] {
-  display: none;
-}
-section[data-section-id="63345cfd93596d2af59dedad"] p,
-section[data-section-id="6389f6432a12130f5a0778ab"] p,
 section[data-section-id="63936a7c3d674d7079783a93"] p {
   margin: 8px !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a,
-section[data-section-id="6389f6432a12130f5a0778ab"] a,
 section[data-section-id="63936a7c3d674d7079783a93"] a,
 .blog-item-category-wrapper a,
 .blog-categories-list a {
@@ -1111,10 +758,7 @@ section[data-section-id="63936a7c3d674d7079783a93"] a,
   padding: 5px 12px 6px 24px;
   font-size: 12px !important;
 }
-@media (min-width: 767px) {
-}
-section[data-section-id="63345cfd93596d2af59dedad"] a:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a:before,
+
 section[data-section-id="63936a7c3d674d7079783a93"] a:before,
 .blog-item-category-wrapper a:before,
 .blog-categories-list a:before {
@@ -1126,10 +770,7 @@ section[data-section-id="63936a7c3d674d7079783a93"] a:before,
   height: 6px;
   border-radius: 50%;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href="/insights"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/insights"]:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href="/insights"]:before,
-.blog-item-category-wrapper a[href="/insights"]:before,
 .blog-categories-list a[href="/insights"]:before {
   background: #1C1D1E;
 }
@@ -1138,10 +779,7 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/insights"].active-f
 section[data-section-id="63936a7c3d674d7079783a93"] a[href="/insights"].active-filter,
 .blog-item-category-wrapper a[href="/insights"].active-filter,
 .blog-categories-list a[href="/insights"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href="/insights"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/insights"]:hover,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href="/insights"]:hover,
-.blog-item-category-wrapper a[href="/insights"]:hover,
 .blog-categories-list a[href="/insights"]:hover {
   background: #1C1D1E;
   color: #FFFFFF !important;
@@ -1151,22 +789,15 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/insights"].active-f
 section[data-section-id="63936a7c3d674d7079783a93"] a[href="/insights"].active-filter:before,
 .blog-item-category-wrapper a[href="/insights"].active-filter:before,
 .blog-categories-list a[href="/insights"].active-filter:before,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href="/insights"]:hover:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/insights"]:hover:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href="/insights"]:hover:before,
-.blog-item-category-wrapper a[href="/insights"]:hover:before,
 .blog-categories-list a[href="/insights"]:hover:before {
   background: #FFFFFF;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Clinical"],
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Clinical"],
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Clinical"],
 .blog-item-category-wrapper a[href*="Clinical"],
 .blog-categories-list a[href*="Clinical"] {
   border: 1px solid var(--clinical-purple) !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Clinical"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Clinical"]:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Clinical"]:before,
 .blog-item-category-wrapper a[href*="Clinical"]:before,
 .blog-categories-list a[href*="Clinical"]:before {
@@ -1177,8 +808,6 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Clinical"].active-f
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Clinical"].active-filter,
 .blog-item-category-wrapper a[href*="Clinical"].active-filter,
 .blog-categories-list a[href*="Clinical"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Clinical"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Clinical"]:hover,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Clinical"]:hover,
 .blog-item-category-wrapper a[href*="Clinical"]:hover,
 .blog-categories-list a[href*="Clinical"]:hover {
@@ -1190,61 +819,16 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Clinical"].active-f
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Clinical"].active-filter:before,
 .blog-item-category-wrapper a[href*="Clinical"].active-filter:before,
 .blog-categories-list a[href*="Clinical"].active-filter:before,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Clinical"]:hover:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="Clinical"]:hover:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="Clinical"]:hover:before,
 .blog-item-category-wrapper a[href*="Clinical"]:hover:before,
 .blog-categories-list a[href*="Clinical"]:hover:before {
   background: #FFFFFF;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="trategy"],
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="trategy"],
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="trategy"],
-.blog-item-category-wrapper a[href*="trategy"],
-.blog-categories-list a[href*="trategy"] {
-  border: 1px solid var(--strategy-lightblue) !important;
-}
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="trategy"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="trategy"]:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="trategy"]:before,
-.blog-item-category-wrapper a[href*="trategy"]:before,
-.blog-categories-list a[href*="trategy"]:before {
-  background: var(--strategy-lightblue);
-}
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="trategy"].active-filter,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="trategy"].active-filter,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="trategy"].active-filter,
-.blog-item-category-wrapper a[href*="trategy"].active-filter,
-.blog-categories-list a[href*="trategy"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="trategy"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="trategy"]:hover,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="trategy"]:hover,
-.blog-item-category-wrapper a[href*="trategy"]:hover,
-.blog-categories-list a[href*="trategy"]:hover {
-  background: var(--strategy-lightblue);
-  color: #FFFFFF !important;
-}
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="trategy"].active-filter:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="trategy"].active-filter:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="trategy"].active-filter:before,
-.blog-item-category-wrapper a[href*="trategy"].active-filter:before,
-.blog-categories-list a[href*="trategy"].active-filter:before,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="trategy"]:hover:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="trategy"]:hover:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href*="trategy"]:hover:before,
-.blog-item-category-wrapper a[href*="trategy"]:hover:before,
-.blog-categories-list a[href*="trategy"]:hover:before {
-  background: #FFFFFF;
-}
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="egulat"],
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="egulat"],
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="egulat"],
 .blog-item-category-wrapper a[href*="egulat"],
 .blog-categories-list a[href*="egulat"] {
   border: 1px solid var(--regulatory-mintgreen) !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="egulat"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="egulat"]:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="egulat"]:before,
 .blog-item-category-wrapper a[href*="egulat"]:before,
 .blog-categories-list a[href*="egulat"]:before {
@@ -1255,8 +839,6 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="egulat"].active-fil
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="egulat"].active-filter,
 .blog-item-category-wrapper a[href*="egulat"].active-filter,
 .blog-categories-list a[href*="egulat"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="egulat"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="egulat"]:hover,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="egulat"]:hover,
 .blog-item-category-wrapper a[href*="egulat"]:hover,
 .blog-categories-list a[href*="egulat"]:hover {
@@ -1268,22 +850,16 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="egulat"].active-fil
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="egulat"].active-filter:before,
 .blog-item-category-wrapper a[href*="egulat"].active-filter:before,
 .blog-categories-list a[href*="egulat"].active-filter:before,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="egulat"]:hover:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="egulat"]:hover:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="egulat"]:hover:before,
 .blog-item-category-wrapper a[href*="egulat"]:hover:before,
 .blog-categories-list a[href*="egulat"]:hover:before {
   background: #FFFFFF;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ntellectual"],
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ntellectual"],
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ntellectual"],
 .blog-item-category-wrapper a[href*="ntellectual"],
 .blog-categories-list a[href*="ntellectual"] {
   border: 1px solid var(--ip-darkblue) !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ntellectual"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ntellectual"]:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ntellectual"]:before,
 .blog-item-category-wrapper a[href*="ntellectual"]:before,
 .blog-categories-list a[href*="ntellectual"]:before {
@@ -1294,8 +870,6 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ntellectual"].activ
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ntellectual"].active-filter,
 .blog-item-category-wrapper a[href*="ntellectual"].active-filter,
 .blog-categories-list a[href*="ntellectual"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ntellectual"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ntellectual"]:hover,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ntellectual"]:hover,
 .blog-item-category-wrapper a[href*="ntellectual"]:hover,
 .blog-categories-list a[href*="ntellectual"]:hover {
@@ -1307,22 +881,16 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ntellectual"].activ
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ntellectual"].active-filter:before,
 .blog-item-category-wrapper a[href*="ntellectual"].active-filter:before,
 .blog-categories-list a[href*="ntellectual"].active-filter:before,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ntellectual"]:hover:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ntellectual"]:hover:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ntellectual"]:hover:before,
 .blog-item-category-wrapper a[href*="ntellectual"]:hover:before,
 .blog-categories-list a[href*="ntellectual"]:hover:before {
   background: #FFFFFF;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ealth"],
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ealth"],
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ealth"],
 .blog-item-category-wrapper a[href*="ealth"],
 .blog-categories-list a[href*="ealth"] {
   border: 1px solid var(--health-economics-brightpink) !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ealth"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ealth"]:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ealth"]:before,
 .blog-item-category-wrapper a[href*="ealth"]:before,
 .blog-categories-list a[href*="ealth"]:before {
@@ -1333,8 +901,6 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ealth"].active-filt
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ealth"].active-filter,
 .blog-item-category-wrapper a[href*="ealth"].active-filter,
 .blog-categories-list a[href*="ealth"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ealth"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ealth"]:hover,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ealth"]:hover,
 .blog-item-category-wrapper a[href*="ealth"]:hover,
 .blog-categories-list a[href*="ealth"]:hover {
@@ -1346,23 +912,17 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ealth"].active-filt
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ealth"].active-filter:before,
 .blog-item-category-wrapper a[href*="ealth"].active-filter:before,
 .blog-categories-list a[href*="ealth"].active-filter:before,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="ealth"]:hover:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="ealth"]:hover:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="ealth"]:hover:before,
 .blog-item-category-wrapper a[href*="ealth"]:hover:before,
 .blog-categories-list a[href*="ealth"]:hover:before {
   background: #FFFFFF;
 }
 
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Market"],
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Market"],
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Market"],
 .blog-item-category-wrapper a[href*="category/Market"],
 .blog-categories-list a[href*="category/Market"] {
   border: 1px solid var(--market-access-lightblue) !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Market"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Market"]:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Market"]:before,
 .blog-item-category-wrapper a[href*="category/Market"]:before,
 .blog-categories-list a[href*="category/Market"]:before {
@@ -1373,31 +933,23 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Market"].a
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Market"].active-filter,
 .blog-item-category-wrapper a[href*="category/Market"].active-filter,
 .blog-categories-list a[href*="category/Market"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Market"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Market"]:hover,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Market"]:hover,
 .blog-item-category-wrapper a[href*="category/Market"]:hover,
 .blog-categories-list a[href*="category/Market"]:hover {
   background: var(--market-access-lightblue);
   color: #FFFFFF !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Market"]:hover:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Market"]:hover:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Market"]:hover:before,
 .blog-item-category-wrapper a[href*="category/Market"]:hover:before,
 .blog-categories-list a[href*="category/Market"]:hover:before {
   background: #FFFFFF;
 }
 
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Case"],
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Case"],
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Case"],
 .blog-item-category-wrapper a[href*="category/Case"],
 .blog-categories-list a[href*="category/Case"] {
   border: 1px solid var(--case-study-orange) !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Case"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Case"]:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Case"]:before,
 .blog-item-category-wrapper a[href*="category/Case"]:before,
 .blog-categories-list a[href*="category/Case"]:before {
@@ -1408,22 +960,17 @@ section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Case"].act
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Case"].active-filter,
 .blog-item-category-wrapper a[href*="category/Case"].active-filter,
 .blog-categories-list a[href*="category/Case"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Case"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Case"]:hover,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Case"]:hover,
 .blog-item-category-wrapper a[href*="category/Case"]:hover,
 .blog-categories-list a[href*="category/Case"]:hover {
   background: var(--case-study-orange);
   color: #FFFFFF !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href*="category/Case"]:hover:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href*="category/Case"]:hover:before,
 section[data-section-id="63936a7c3d674d7079783a93"] a[href*="category/Case"]:hover:before,
 .blog-item-category-wrapper a[href*="category/Case"]:hover:before,
 .blog-categories-list a[href*="category/Case"]:hover:before {
   background: #FFFFFF;
 }
-
 
 a.blog-categories {
   font-size: 9px !important;
@@ -1440,64 +987,12 @@ a.blog-categories:before {
   padding: 6px 0px;
   display: inline-block;
 }
-span.category-count {
-  font-size: 11px;
-  font-weight: 400;
-}
 .tweak-blog-item-delimiter-bullet .blog-item-wrapper .blog-item-category-wrapper:not(:last-child)::after,
 .tweak-blog-item-delimiter-bullet .blog-item-wrapper .blog-item-tag-wrapper:not(:last-child)::after {
   content: none;
 }
 /*BLOG SUBNAVIGATION TAGS / KEY VERTICALS ALTERNATIVE STYLE - pills / labels*/
-/*
-section[data-section-id="63345cfd93596d2af59dedad"] a,
-.blog-meta-item--tags a{
-    &.active-filter, &:hover{
-        .active-nav-item-underline()
-    }
-    position:relative;
-//    .nav-label();
-    display:inline-block;
-  padding: 1px 10px 1px 30px;
-  border: 1px solid;
-  border-radius:30px;
-  font-size:12px !important;
-    margin:0 10px ;
-    text-decoration:none;
-    color: inherit !important;
-    &:before{
-     content:"";
-    position:absolute;
-    left:17px;
-    top:7px;
-    width:8px;
-    height:8px;
-    border-radius:50%;
-  }
-   &[href="/blog"]{
-     color:@black;
-&:before{
-    background:@black;
-     }}
-  
-   &[href*="Clinical"]:before{
-    background:var(--clinical-purple);
-  }
-  
-  &[href*="trategy"]:before{
-    background:var(--strategy-lightblue);
-  }
-  &[href*="egulat"]:before{
-    background:var(--regulatory-mintgreen);
-  }
-  &[href*="ntellectual"]:before{
-    background:var(--ip-darkblue);
-  }
-  &[href*="ealth"]:before{
-    background:var(--health-economics-brightpink);
-  }
-  }
-*/
+
 .GTM-hidden-field-hide {
   display: none;
 }
@@ -1526,12 +1021,7 @@ section[data-section-id="63345cfd93596d2af59dedad"] a,
 .blog-meta-item--tags {
   display: none !important;
 }
-/*
 
-DOMAIN JOTTA FONTIT: ;
-/config/settings/domains ➡️ https://macbook-pro.local:5757
-
-*/
 /*
 🟪
 🟪
@@ -1542,18 +1032,7 @@ DOMAIN JOTTA FONTIT: ;
 SERVIES PORTFOLIO SUBPAGE SKETCHING
 
 */
-/*
 
-.sqs-block-content, .line{
-  height:100%;
-}
-.line{
-  position:relative;
-   background:black;
-  width: 1px;
-  left:50%;
-}
-*/
 body.portfolio-parent-page section:first-of-type .content-wrapper {
   padding: 90px 0 !important;
 }
@@ -1561,17 +1040,7 @@ body.portfolio-parent-page section:first-of-type .content-wrapper {
   overflow: hidden;
   position: relative;
   padding-left: 40px;
-  /*
-  &:after{
-    display:block;
-    position:absolute;
-    content:"";
-    width:1px;
-    left:50%;
-    height:100% !important;
-    background:black;
-  }
-  */
+  
   max-width: 500px;
   display: flex;
   flex-direction: column;
@@ -1595,18 +1064,7 @@ body.portfolio-parent-page section:first-of-type .content-wrapper {
   padding: 28px 0px 28px 40px;
   position: relative;
   --sizeandleft: 4px;
-  /*
-   .no-touch & {
-    .pofo-readmore{
-      opacity:0;
-    }
-    &:hover{
-      .pofo-readmore{
-        opacity:1;
-      }
-    }
-   }
-   */
+  
 }
 #gridThumbs .grid-item .portfolio-text {
   margin-left: 20px;
@@ -1686,44 +1144,7 @@ body.portfolio-parent-page section:first-of-type .content-wrapper {
 #gridThumbs .grid-item .number.number-overlap {
   border: 2px solid var(--current-service-color) !important;
 }
-/*
-    .grid-item[href*="post"] {
-      //background:red;
-      &:before{
-        content:"Post-Market";
-        font-size: 38px;
-        font-weight:bold;
-        margin-bottom:70px;
-      }
-    }
 
-
-    .grid-item[href*="post"] ~ .grid-item[href*="post"] {
-      // background:blue;
-      &:before{
-        display:none;
-      }
-        // Reverse the above rule 
-    }
-
-
-    .grid-item[href*="pre"]{
-    //  background:green;
-      &:before{
-        font-size: 38px;
-        font-weight:bold;
-        margin-bottom:70px;
-      }
-    }
-
-    .grid-item[href*="pre"] ~ .grid-item[href*="pre"] {
-    //    background:blue;
-      &:before{
-        display:none;
-      }
-        // Reverse the above rule 
-    }
-*/
 .tube-item-vertical-line {
   transition: none !important;
   background: var(--current-service-color) !important;
@@ -1753,13 +1174,8 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   padding: 0.84rem 2rem !important;
   border: none !important;
 }
-#block-yui_3_17_2_1_1672830175723_37275 .newsletter-form-header,
-#block-a6d2b76149f477c1df75 .newsletter-form-header {
+#block-yui_3_17_2_1_1672830175723_37275 .newsletter-form-header {
   display: none;
-}
-#block-a6d2b76149f477c1df75 .newsletter-form-field-element {
-  border-radius: 3px;
-  padding: 0.76rem 2rem !important;
 }
 #block-yui_3_17_2_1_1672830175723_37275 .newsletter-form-field-element {
   border: 1px solid #0000004a !important;
@@ -1779,9 +1195,6 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   .portfolio-main-or-child-page section.page-section .content-wrapper {
     padding: 32px 0 !important;
   }
-}
-h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
-  margin-top: 0 !important;
 }
 .automatic-sub-page-meta {
   margin-bottom: 6px !important;
@@ -1811,14 +1224,12 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
   max-width: 800px !important;
 }
 .portfolio-child-page .sqsrte-large + p,
-.portfolio-child-page .sqsrte-large + ul,
-.portfolio-child-page .sqsrte-large + ol {
+.portfolio-child-page .sqsrte-large + ul {
   margin-top: 44px !important;
 }
 @media (max-width: 767px) {
   .portfolio-child-page .sqsrte-large + p,
-  .portfolio-child-page .sqsrte-large + ul,
-  .portfolio-child-page .sqsrte-large + ol {
+  .portfolio-child-page .sqsrte-large + ul {
     margin-top: 20px !important;
   }
 }
@@ -1860,13 +1271,8 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
   }
   .portfolio-child-page article.sections p[style*="text-align:center"],
   .portfolio-child-page article.sections h1[style*="text-align:center"],
-  .portfolio-child-page article.sections h2[style*="text-align:center"],
-  .portfolio-child-page article.sections h3[style*="text-align:center"],
-  .portfolio-child-page article.sections h4[style*="text-align:center"] {
+  .portfolio-child-page article.sections h2[style*="text-align:center"] {
     text-align: left !important;
-  }
-  .portfolio-child-page .portfolio-child-page section.page-section:first-of-type .content {
-    margin-top: 0px;
   }
   .portfolio-child-page h1 {
     margin-top: 10px !important;
@@ -1906,13 +1312,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-70567ea7cb126eebad5d,
 .fe-block-a230150d8b24e9e15530,
 .fe-block-dc21c2250a162a6e2e96,
-.fe-block-727f3d4ec1382dc833ac,
-#block-d692121b106fabb16cee,
-#block-f34d6ceab7bf536e2169,
-#block-6b4c4b9eaeaaf3fa1468,
-#block-20e09700f8c868526153,
-#block-e6e6a2c281381d8af7ec,
-#block-96499bd8f90668ed34d0 {
+.fe-block-727f3d4ec1382dc833ac {
   border: 1px solid var(--current-service-color) !important;
   padding: 4px;
   box-sizing: border-box;
@@ -1934,16 +1334,9 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-5566db8db162ac064756,
 .fe-block-0220c9853d0843df67dc,
 .fe-block-05b8d0a57689e67de280,
-.fe-block-cbb6e8af5d9ad0fa7b81,
-.fe-block-f-3b94caa0f1713b38d2,
 .fe-block-f81f643749bbd8167670,
-.fe-block-e36884fe060700b67418,
-.fe-block-12d8f049834f03a487dde,
 .fe-block-abf84ca7bcfbc235eecb,
-.fe-block-f07b94caa0f1713b38d2,
 .fe-block-88072067f3690415748a,
-.fe-block-71e83213d745acffce8f,
-.fe-block-e36894fe060700b67418,
 .fe-block-fda217c1094ec997087f,
 .fe-block-2d8f049834f03a487dde,
 .fe-block-61e83213d745acffce8f,
@@ -1990,7 +1383,6 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-0aa6c96fd76e87ff228f,
 .fe-block-99a64411c06977899f48,
 .fe-block-2dcdc9b3a287d49f81f6,
-.fe-block-506e9667d56d357e2522,
 .fe-block-aa58305faf4b2f19d10b,
 .fe-block-a05ce3da6258f5b282cd,
 .fe-block-f6a8ce60a9004e4a9aa5,
@@ -2019,16 +1411,9 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-5566db8db162ac064756 .html-block,
 .fe-block-0220c9853d0843df67dc .html-block,
 .fe-block-05b8d0a57689e67de280 .html-block,
-.fe-block-cbb6e8af5d9ad0fa7b81 .html-block,
-.fe-block-f-3b94caa0f1713b38d2 .html-block,
 .fe-block-f81f643749bbd8167670 .html-block,
-.fe-block-e36884fe060700b67418 .html-block,
-.fe-block-12d8f049834f03a487dde .html-block,
 .fe-block-abf84ca7bcfbc235eecb .html-block,
-.fe-block-f07b94caa0f1713b38d2 .html-block,
 .fe-block-88072067f3690415748a .html-block,
-.fe-block-71e83213d745acffce8f .html-block,
-.fe-block-e36894fe060700b67418 .html-block,
 .fe-block-fda217c1094ec997087f .html-block,
 .fe-block-2d8f049834f03a487dde .html-block,
 .fe-block-61e83213d745acffce8f .html-block,
@@ -2075,7 +1460,6 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-0aa6c96fd76e87ff228f .html-block,
 .fe-block-99a64411c06977899f48 .html-block,
 .fe-block-2dcdc9b3a287d49f81f6 .html-block,
-.fe-block-506e9667d56d357e2522 .html-block,
 .fe-block-aa58305faf4b2f19d10b .html-block,
 .fe-block-a05ce3da6258f5b282cd .html-block,
 .fe-block-f6a8ce60a9004e4a9aa5 .html-block,
@@ -2100,16 +1484,9 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-5566db8db162ac064756 p,
 .fe-block-0220c9853d0843df67dc p,
 .fe-block-05b8d0a57689e67de280 p,
-.fe-block-cbb6e8af5d9ad0fa7b81 p,
-.fe-block-f-3b94caa0f1713b38d2 p,
 .fe-block-f81f643749bbd8167670 p,
-.fe-block-e36884fe060700b67418 p,
-.fe-block-12d8f049834f03a487dde p,
 .fe-block-abf84ca7bcfbc235eecb p,
-.fe-block-f07b94caa0f1713b38d2 p,
 .fe-block-88072067f3690415748a p,
-.fe-block-71e83213d745acffce8f p,
-.fe-block-e36894fe060700b67418 p,
 .fe-block-fda217c1094ec997087f p,
 .fe-block-2d8f049834f03a487dde p,
 .fe-block-61e83213d745acffce8f p,
@@ -2156,7 +1533,6 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-0aa6c96fd76e87ff228f p,
 .fe-block-99a64411c06977899f48 p,
 .fe-block-2dcdc9b3a287d49f81f6 p,
-.fe-block-506e9667d56d357e2522 p,
 .fe-block-aa58305faf4b2f19d10b p,
 .fe-block-a05ce3da6258f5b282cd p,
 .fe-block-f6a8ce60a9004e4a9aa5 p,
@@ -2181,16 +1557,9 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-5566db8db162ac064756:hover,
 .fe-block-0220c9853d0843df67dc:hover,
 .fe-block-05b8d0a57689e67de280:hover,
-.fe-block-cbb6e8af5d9ad0fa7b81:hover,
-.fe-block-f-3b94caa0f1713b38d2:hover,
 .fe-block-f81f643749bbd8167670:hover,
-.fe-block-e36884fe060700b67418:hover,
-.fe-block-12d8f049834f03a487dde:hover,
 .fe-block-abf84ca7bcfbc235eecb:hover,
-.fe-block-f07b94caa0f1713b38d2:hover,
 .fe-block-88072067f3690415748a:hover,
-.fe-block-71e83213d745acffce8f:hover,
-.fe-block-e36894fe060700b67418:hover,
 .fe-block-fda217c1094ec997087f:hover,
 .fe-block-2d8f049834f03a487dde:hover,
 .fe-block-61e83213d745acffce8f:hover,
@@ -2237,7 +1606,6 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-0aa6c96fd76e87ff228f:hover,
 .fe-block-99a64411c06977899f48:hover,
 .fe-block-2dcdc9b3a287d49f81f6:hover,
-.fe-block-506e9667d56d357e2522:hover,
 .fe-block-aa58305faf4b2f19d10b:hover,
 .fe-block-a05ce3da6258f5b282cd:hover,
 .fe-block-f6a8ce60a9004e4a9aa5:hover,
@@ -2262,16 +1630,9 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-5566db8db162ac064756:hover p,
 .fe-block-0220c9853d0843df67dc:hover p,
 .fe-block-05b8d0a57689e67de280:hover p,
-.fe-block-cbb6e8af5d9ad0fa7b81:hover p,
-.fe-block-f-3b94caa0f1713b38d2:hover p,
 .fe-block-f81f643749bbd8167670:hover p,
-.fe-block-e36884fe060700b67418:hover p,
-.fe-block-12d8f049834f03a487dde:hover p,
 .fe-block-abf84ca7bcfbc235eecb:hover p,
-.fe-block-f07b94caa0f1713b38d2:hover p,
 .fe-block-88072067f3690415748a:hover p,
-.fe-block-71e83213d745acffce8f:hover p,
-.fe-block-e36894fe060700b67418:hover p,
 .fe-block-fda217c1094ec997087f:hover p,
 .fe-block-2d8f049834f03a487dde:hover p,
 .fe-block-61e83213d745acffce8f:hover p,
@@ -2318,7 +1679,6 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-0aa6c96fd76e87ff228f:hover p,
 .fe-block-99a64411c06977899f48:hover p,
 .fe-block-2dcdc9b3a287d49f81f6:hover p,
-.fe-block-506e9667d56d357e2522:hover p,
 .fe-block-aa58305faf4b2f19d10b:hover p,
 .fe-block-a05ce3da6258f5b282cd:hover p,
 .fe-block-f6a8ce60a9004e4a9aa5:hover p,
@@ -2342,7 +1702,6 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-87cb1200e50671e59c63:hover,
 .fe-block-99a64411c06977899f48:hover,
 .fe-block-2dcdc9b3a287d49f81f6:hover,
-.fe-block-506e9667d56d357e2522:hover,
 .fe-block-aa58305faf4b2f19d10b:hover,
 .fe-block-a05ce3da6258f5b282cd:hover,
 .fe-block-f6a8ce60a9004e4a9aa5:hover,
@@ -2366,7 +1725,6 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-87cb1200e50671e59c63:hover p,
 .fe-block-99a64411c06977899f48:hover p,
 .fe-block-2dcdc9b3a287d49f81f6:hover p,
-.fe-block-506e9667d56d357e2522:hover p,
 .fe-block-aa58305faf4b2f19d10b:hover p,
 .fe-block-a05ce3da6258f5b282cd:hover p,
 .fe-block-f6a8ce60a9004e4a9aa5:hover p,
@@ -2378,13 +1736,11 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
   color: inherit !important;
 }
 @media screen and (min-width: 768px) {
-  .fe-block-e36894fe060700b67418,
   .fe-block-f81f643749bbd8167670,
   .fe-block-61e83213d745acffce8f,
   .fe-block-88072067f3690415748a,
   .fe-block-fda217c1094ec997087f,
   .fe-block-abf84ca7bcfbc235eecb,
-  .fe-block-f07b94caa0f1713b38d2,
   .fe-block-2d8f049834f03a487dde,
   .fe-block-0d9ee209f499ccd09c15,
   .fe-block-8ba676ace17bcc4a6c99,
@@ -2443,13 +1799,7 @@ html .fe-63d3d1df55d0b241361a0b22:before {
 .sqs-block-content:has(.chart-line) {
   height: 100% !important;
 }
-/*
-.sqs-block-content:has(.horizontal-line) {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-*/
+
 .chart-line {
   background: var(--current-service-color);
 }
@@ -2485,399 +1835,7 @@ canvas {
   left: 0;
   right: 0;
 }
-/*------------------------------------*\
 
-Full-Width Blocks 5.0 by codeandtonic.com
-
- 🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊
- 🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊
- 🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊
-  
-\*------------------------------------*/
-/*
-// 🎛 Tweak Full-width settings
-@fullWidthMaxWidth: 199200px; //set to 99999 if you don't want max-width
-@fullWidthPadding: 0px; // 0px if no padding
-
-
-
-
-// ⬇️🔥🔥🔥⬇️ FULL-WIDTH BLOCK ID'S
-#block-yui_3_17_2_1_1680779512574_9556,
-#block-yui_3_17_2_1_1694678311330_2188,
-#block-yui_3_17_2_1_1699003760782_3152
-// ⬆️🔥🔥🔥⬆️ FULL-WIDTH BLOCK ID'S
-{
-  
-
-
-
-.full-width-base; // "extend" full-width styles to these IDs
-
- body.sqs-layout-editing & //editing the page content
-                          {
-  &:before{
-    content: "Full-width CSS | MAX: @{fullWidthMaxWidth} | Padding: @{fullWidthPadding}";
-    opacity: 0.0;
-	transition: .5s all ease;
-    background: #ffc3c3;
-    color: black;
-    padding: 2px 6px;
-    font-size: 9px;
-    top: 17px !important;
-    margin: 0;
-    position: absolute;
-    text-transform: uppercase;
-    font-weight: 400;
-    height: 20px;
-    z-index: 99999999;
-  }
-                           
- }
-    &:hover{
-    &:before{
-      opacity:1 !important;
-
-    }
-}
-}
-
-
-
-// DONT TOUNCH ANYTHING BELOW! 
-//for 7.1 to prevent layout from breaking
-.page-section:not(.full-bleed-section)>.content-wrapper{
-  box-sizing: border-box !important;
-}
-
-
-//magic below
-.full-width-base{
-  box-sizing: border-box !important;
-  padding-left: @fullWidthPadding !important;
-  padding-right: @fullWidthPadding !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  overflow: hidden;
-  width: 100vw;
-
-  left: ~"calc(-50vw + 50%)"; // the magic formula 🪄
-  .intrinsic{
-    max-width: unset !important;
-  }
-  
-  @media only screen and (min-width: @fullWidthMaxWidth){
-     width: min( ~"calc(100vw), @{fullWidthMaxWidth}");
-    left: ~"calc(-50vw + 50% + ((100vw - @{fullWidthMaxWidth} ) /2 ) )";
-  }
-  
-}
-
-//remove scrollbars pure CSS windows etc https://streamofcoding.com/css-horizontal-scroll-with-100vw/
-html, body{
-  overflow-x: hidden !important;
-}
-
-/*------------------------------------*\
-
- SQSP Full-Width Blocks 5.0 by codeandtonic.com
-
- 🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊
- 🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊
- 🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊
-  
-\*------------------------------------*/
-.refresh-icon {
-  max-width: 30px !important;
-  cursor: pointer !important;
-}
-.refresh-svg {
-  display: inline-block;
-  transform: translate(-3px, 2px);
-}
-#block-yui_3_17_2_1_1694692999741_5995 {
-  cursor: pointer !important;
-}
-#block-yui_3_17_2_1_1694692999741_5995 .sqs-block-content {
-  text-align: center;
-}
-@media screen and (max-width: 767px) {
-  #block-9515ee7079835042fd14 {
-    display: none;
-  }
-}
-/*
-CUBE
-*/
-/************/
-/*          */
-/*   Cube   */
-/*          */
-/************/
-.cube {
-  width: 100%;
-  height: 100%;
-}
-/*
-@font-face {
-
-	font-family: "RubikExtended";
-	src:
-		url( "../media/RubikExtended.ttf"  ) format( "truetype" ),
-		url( "../media/RubikExtended.otf"  ) format( "otf" );
-	font-weight: normal;
-	font-style: normal;
-}*/
-/*
-
-	This next bit is just for labeling a Cube's face.
-
-*/
-.faceLabel {
-  display: none;
-  position: absolute;
-  font-size: 60px;
-  text-align: center;
-  text-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
-  color: #FFF;
-}
-/****************/
-/*              */
-/*   Cubelets   */
-/*              */
-/****************/
-.cube .cubelet {
-  width: 1em;
-  height: 1em;
-  position: absolute;
-  box-sizing: border-box;
-}
-/*********************/
-/*                   */
-/*   Cubelet Faces   */
-/*                   */
-/*********************/
-/*
-
-	Direction-facing planes of limited size
-	that act as containers for content.
-
-*/
-.cube .face {
-  position: absolute;
-  width: 1em;
-  height: 1em;
-  background-color: #000;
-  text-align: center;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-  padding: 0.05em;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/*
-
-	Extroverted faces have content such as a colored sticker, text, etc.
-	They are constantly visible. Meanwhile introverted faces are not
-	visible when the cube is an untwisted state. Some introverted walls
-	are momentarily visible as the cube twists.
-
-*/
-.cube .face.faceIntroverted {
-  background-color: #000;
-}
-/*
-
-	Our Cubelet faces are naturally black to match the physical Rubik's Cube.
-	Adding or removing the "transparent" class here keeps the position and
-	rotation integrity of the face while supporting Group.showPlastics() and
-	Group.hidePlastics().
-
-*/
-.cube .face.faceTransparent {
-  background-color: transparent;
-}
-/*
-
-	Awwww.... Look at da purty colors...
-
-*/
-.purty .face {
-  opacity: 0.5;
-}
-.purty .face.faceFront {
-  background-color: #FFF;
-}
-.purty .face.faceUp {
-  background-color: #E87000;
-}
-.purty .face.faceRight {
-  background-color: #3D81F6;
-}
-.purty .face.faceDown {
-  background-color: #DC422F;
-}
-.purty .face.faceLeft {
-  background-color: #009D54;
-}
-.purty .face.faceBack {
-  background-color: #F5B400;
-}
-/*.purty .face.faceFront { background-color: #CCC; }
-.purty .face.faceUp    { background-color: #C30; }
-.purty .face.faceRight { background-color: #00A; }
-.purty .face.faceDown  { background-color: #C00; }
-.purty .face.faceLeft  { background-color: #070; }
-.purty .face.faceBack  { background-color: #CB0; }*/
-/****************************/
-/*                          */
-/*   Cubelet Face Content   */
-/*                          */
-/****************************/
-/*
-
-	WIREFRAMES
-
-	Oddly, we cannot use borders to make our wireframes
-	because this will cause a visible oscillation as CSS
-	struggles to decide what gets drawn on top.
-	Instead we use specially crafted box-shadows.
-
-*/
-.cube .face > .wireframe {
-  /*box-sizing: border-box;*/
-  display: none;
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  background-color: rgba(255, 255, 255, 0.05);
-}
-/*
-
-	STICKERS
-
-	About what you'd expect. The default color here
-	is full on bright purple (which does not exist
-	on an actual Rubik's Cube) so that one can see
-	quickly if something's gone wrong with stickers.
-
-*/
-.cube .sticker {
-  /*position: absolute;*/
-  width: 100%;
-  height: 100%;
-  background-color: #F0F;
-  border-radius: 0.1em;
-  text-align: center;
-}
-.cube .stickerLogo {
-  background-image: url("https://hardian-health-71.squarespace.com/s/Hardian-H-white-on-black.png") !important;
-  background-size: 100% 100% !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-}
-/*
-.cube .sticker.red { background: #DC422F; }
-.cube .sticker.white { background: white; }
-.cube .sticker.blue { background: #3D81F6; }
-.cube .sticker.green { background: #009D54; }
-.cube .sticker.orange { background: #FF6C00; }
-.cube .sticker.yellow { background: #FDCC09; }
-*/
-/*lets use our own colors from the theme*/
-.cube .sticker.red {
-  background: var(--clinical-purple);
-}
-.cube .sticker.white {
-  background: var(--neutral-white);
-}
-.cube .sticker.blue {
-  background: var(--ip-darkblue);
-}
-.cube .sticker.green {
-  background: var(--regulatory-mintgreen);
-}
-.cube .sticker.orange {
-  background: var(--health-economics-brightpink);
-}
-.cube .sticker.yellow {
-  background: var(--strategy-lightblue);
-}
-/*
-
-	CUBELET IDs
-
-	Each Cubelet has a unique ID number from 0 to 26.
-	We display these mostly for debugging purposes
-	as the end user probably doesn't care and/or would
-	find this superfluous info confusing.
-
-*/
-.cube .face > .id {
-  display: none;
-  position: absolute;
-  z-index: 1000;
-  width: 90%;
-  height: 90%;
-  font-size: 1em;
-  line-height: 0.9em;
-  text-align: center;
-  color: #000;
-}
-.cube .face > .id > .underline {
-  border-bottom: 1px solid #000;
-}
-/*
-
-	We want ID numbers displayed on introverted faces to be white,
-	but why use #FEFEFE instead of #FFF?
-	So we can export as PDF, open up in Adobe Illustrator, select "Same Fill Color"
-	and it will exclude our #FFF text nodes!
-
-*/
-.cube .face.faceIntroverted > .id {
-  color: #FEFEFE;
-}
-.cube .face.faceIntroverted > .id > .underline {
-  border-bottom: 1px solid #FEFEFE;
-}
-/*
-
-	TEXT
-
-	Formerly referred to as "Hero Text", this is the one-character
-	display for a Cubelet face.
-
-*/
-.cube .face > .text {
-  display: none;
-  position: absolute;
-  z-index: 2000;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  color: #FFF;
-  font-family: "RubikExtended", sans-serif;
-  font-size: 1em;
-  line-height: 1em;
-  /*-webkit-backface-visibility: hidden;
-  	-moz-backface-visibility:    hidden;
-  	-o-backface-visibility:      hidden;
-  	backface-visibility:         hidden;*/
-}
-#cube-container {
-  min-height: 500px;
-}
-@media screen and (min-width: 600px) {
-  #cube-container {
-    min-height: 700px;
-  }
-}
 /* Force Date Visibility on Blog Posts */
 .blog-meta-item--date, 
 .blog-meta-item--date time.blog-date,
@@ -2890,5 +1848,9 @@ CUBE
 .blog-meta-item--date::after,
 .blog-meta-item::after {
     content: none !important;
+    display: none !important;
+}
+/* Hide Squarespace's "Written by" line on blog posts (the author bio already shows the name) */
+.blog-meta-item--author {
     display: none !important;
 }
