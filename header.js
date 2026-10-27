@@ -789,10 +789,21 @@ if (window.location.pathname === '/contact') {
       if (block.querySelector('form') && tries++ < 50) return setTimeout(addCube, 100);
       block.classList.add('hh-form-submitted');
       if (!block.querySelector('.hh-form-thanks')) {
+        // the message box is the bordered element around the message, or failing that the message's container
+        var firstLine = block.querySelector('p');
+        var message = firstLine ? firstLine.parentElement : null;
+        for (var el = firstLine; el && el !== block; el = el.parentElement) {
+          if (parseFloat(getComputedStyle(el).borderTopWidth) > 0) message = el;
+        }
         var thanks = document.createElement('div');
         thanks.className = 'hh-form-thanks';
         thanks.innerHTML = '<div data-hardian-cube data-background="transparent"></div>';
-        (block.querySelector('.sqs-block-content') || block).appendChild(thanks);
+        if (message) {
+          message.classList.add('hh-form-message');
+          message.insertAdjacentElement('afterend', thanks);
+        } else {
+          (block.querySelector('.sqs-block-content') || block).appendChild(thanks);
+        }
       }
       if (!window.HardianCube && !document.querySelector('script[src*="hardian-cube.js"]')) {
         var s = document.createElement('script');
