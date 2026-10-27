@@ -11,6 +11,7 @@ Other files:
 
 - `footer.html`, `publications.html`: reference copies of code pasted into Squarespace code blocks (the site footer and the Publications widget). Changing them here does not change the site; paste the new version into Squarespace.
 - `squarespace/contact-form-post-submit.html`: a note that the contact form's Post-Submit HTML stays empty. Scripts there don't run, so `header.js` sends the GTM event and LinkedIn conversion and shows the cube after a submission.
+- `_headers`: Cloudflare Pages cache settings. Browsers reuse `style.css` and `header.js` for 10 minutes, so a change can take up to about 10 minutes (plus one page view) to show. Hard-refresh to see it sooner.
 - `backup/`: rollback copies of the live files. See the README inside.
 
 The Cube on /cube lives in its own repo, [hardian-health-code/Cube](https://github.com/hardian-health-code/Cube), and is embedded from there.
