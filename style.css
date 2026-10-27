@@ -1854,7 +1854,7 @@ canvas {
 .blog-meta-item--author {
     display: none !important;
 }
-/* Contact form thank-you message (.hh-form-submitted, .hh-form-message and .hh-form-thanks are added by header.js) */
+/* Contact form thank-you message and cube (.hh-form-submitted is added by header.js in place of the intro text) */
 .hh-form-submitted {
   text-align: center;
 }
@@ -1877,21 +1877,14 @@ canvas {
 .hh-form-submitted p a:hover {
   color: var(--neutral-black) !important;
 }
-.hh-form-message {
-  border: none !important;
-  padding: 0 !important;
-}
 .hh-form-thanks {
   margin-top: 1.5rem;
 }
 .hh-form-thanks [data-hardian-cube] {
-  height: 420px;
+  height: min(600px, 100vw);
 }
 @media (max-width: 767px) {
   .hh-form-submitted p {
     font-size: 1.1rem !important;
-  }
-  .hh-form-thanks [data-hardian-cube] {
-    height: 340px;
   }
 }
