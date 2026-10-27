@@ -1854,7 +1854,7 @@ canvas {
 .blog-meta-item--author {
     display: none !important;
 }
-/* Contact form thank-you message (.hh-form-submitted is added by the form's post-submit HTML) */
+/* Contact form thank-you message (.hh-form-submitted, .hh-form-message and .hh-form-thanks are added by header.js) */
 .hh-form-submitted {
   text-align: center;
 }
@@ -1877,10 +1877,12 @@ canvas {
 .hh-form-submitted p a:hover {
   color: var(--neutral-black) !important;
 }
+.hh-form-message {
+  border: none !important;
+  padding: 0 !important;
+}
 .hh-form-thanks {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--neutral-lightgrey);
+  margin-top: 1.5rem;
 }
 .hh-form-thanks [data-hardian-cube] {
   height: 420px;
