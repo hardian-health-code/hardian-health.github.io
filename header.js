@@ -49,16 +49,17 @@ $( document ).ready(function() {
       console.log("blog page and article found. LEt's fix meta categories and tags");
   
       
-//move categories and tags after author
-$("<div class='custom-metabox'></div>").insertAfter(".blog-item-author-profile-wrapper");
-$(".blog-meta-item--date").prependTo(".custom-metabox"); /* <-- ADD THIS LINE TO RESCUE THE DATE */
-$("div.blog-meta-item.blog-meta-item--tags").prependTo(".custom-metabox");
+      //move categories and tags after author
+          $("<div class='custom-metabox'></div>").insertAfter(".blog-item-author-profile-wrapper");
+          $("div.blog-meta-item.blog-meta-item--tags").prependTo(".custom-metabox");
+          $("div.blog-meta-item.blog-meta-item--categories").prependTo(".custom-metabox");
           
           
           //create labeels for categories and tags
           $("<span class='custom-meta-label category-label'>Categories:</span>").prependTo("div.blog-meta-item.blog-meta-item--categories");
           $("<span class=' custom-meta-label custom-tag-label'>Tags:</span>").prependTo("div.blog-meta-item.blog-meta-item--tags");    
-  
+
+
   }
 }); 
 
@@ -182,25 +183,38 @@ $(document).ready(function() {
   
 
 /**
- * SINGLE POST DATE FORMAT (REPAIRED)
+ * SINGLE POST DATE FORMAT
  */
-$( document ).ready(function() {    
-    // Check if the metadata exists
-    if(document.querySelector("meta[itemprop='datePublished']")){
-        var publishDate = $('meta[itemprop="datePublished"]').attr("content");
-        
-        // Safely extract the YYYY-MM-DD format
-        var dateOnly = publishDate.split("T")[0]; 
 
-        // Inject it directly into the <time> tag, avoiding the missing 'span' bug
-        $(".blog-meta-item--date time.blog-date").text(dateOnly);
-        
-        // Add the visibility classes just in case
-        $(".blog-meta-item--date").addClass("dateFormatted-and-ready-to-show");
-    } else {
-        console.log("No meta description for blog date found.");
-    }
-});
+  $( document ).ready(function() {    
+    //❗IF BLOG POST SINGLE  DATE FORMAT 
+if(document.querySelector("meta[itemprop=datePublished]")){
+
+  //if(document.querySelector("meta[itemprop=datePublished]").getAttribute("content") === "Description of the webpage")
+
+    //console.log("BLOG SINGLE POST WITH DATE FOR IT");
+    
+    //insights post single - <meta itemprop="datePublished" content="2022-09-14T16:31:36+0300">
+    console.log("yes");
+     var blogSinglePublishDate = $('meta[itemprop="datePublished"]').attr("content")
+    console.log(blogSinglePublishDate);
+    var blogSingleDateArray = blogSinglePublishDate.split("T");
+    console.log(blogSingleDateArray);
+    var blogSingleDateSplitted = blogSingleDateArray[0].split("-");
+console.log(blogSingleDateSplitted);
+
+    var year = blogSingleDateSplitted[0];
+    var month = blogSingleDateSplitted[1];
+    var day = blogSingleDateSplitted[2]
+    $(".blog-meta-item--date span").html(year + "-" + month + "-" + day).addClass("dateFormatted-and-ready-to-show");
+
+}
+else{
+  console.log("No meta description for blog date");
+
+}
+
+}); 
 
 
 
@@ -819,8 +833,12 @@ fetch(fetchUrl, {
           verticalTitle = "Regulatory";
           //vertical = "/services/regulatory";
           vertical = path.split('/')[1];
-        } else if (path.startsWith("/marketaccess")) {
-          verticalTitle = "marketaccess";
+        } else if (path.startsWith("/strategy")) {
+          verticalTitle = "Strategy";
+          //vertical = "/services/strategy";
+          vertical = path.split('/')[1];
+             } else if (path.startsWith("/marketaccess")) {
+          verticalTitle = "Market Access";
           //vertical = "/services/marketaccess";
           vertical = path.split('/')[1];
         } else if (path.startsWith("/health-economics")) {
@@ -936,7 +954,9 @@ function checkIfPathContainsSubstringAndAddClassToBody(substring, className, css
 // TODO check final urls - run it for each vertical
 
 checkIfPathContainsSubstringAndAddClassToBody('health-economics', 'health-economics', '--health-economics-brightpink');
-checkIfPathContainsSubstringAndAddClassToBody('/marketaccess', 'marketaccess', '--marketaccess-lightblue');
+checkIfPathContainsSubstringAndAddClassToBody('/strategy', 'strategy', '--strategy-lightblue');
+checkIfPathContainsSubstringAndAddClassToBody('marketaccess', 'marketaccess', '--marketaccess-lightblue');
+checkIfPathContainsSubstringAndAddClassToBody('/market-access', 'market-access', '--market-access-lightblue');
 checkIfPathContainsSubstringAndAddClassToBody('/intellectual-property', 'intellectual-property', '--ip-darkblue');
 checkIfPathContainsSubstringAndAddClassToBody('/regulatory', 'regulatory', '--regulatory-mintgreen');
 checkIfPathContainsSubstringAndAddClassToBody('/clinical', 'clinical', '--clinical-purple');
