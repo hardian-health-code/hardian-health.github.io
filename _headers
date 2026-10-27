@@ -1,0 +1,9 @@
+# Cloudflare Pages response headers.
+# Let browsers reuse style.css and header.js for 10 minutes, then keep using the cached copy
+# while they fetch a fresh one in the background, so pages don't wait on these files each time.
+# A change here reaches visitors within about 10 minutes.
+/style.css
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
+
+/header.js
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
