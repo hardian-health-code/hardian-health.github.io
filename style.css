@@ -481,9 +481,15 @@ a.summary-read-more-link{
   border-radius: 12px;
   flex-direction: row !important;
   justify-content: left !important;
+  align-items: center !important;
+}
+.blog-item-author-profile-wrapper a {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 .blog-item-author-profile-wrapper .author-name {
-  display: none;
+  display: none !important;
 }
 .blog-item-author-profile-wrapper a span.author-avatar {
   display: block !important;
@@ -494,6 +500,9 @@ a.summary-read-more-link{
   font-weight: 500;
   font-size: 14px;
   text-align: left !important;
+}
+.blog-item-author-profile-wrapper .author-bio p {
+  margin: 0;
 }
 .blog-item-wrapper .blog-item-author-profile-wrapper {
   margin: 0 0 4vh;
