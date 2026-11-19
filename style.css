@@ -139,6 +139,18 @@ p + pre {
   transition: 0.3s all ease !important;
 }
 
+/* Risk management app (Hardian Flow on the Atlassian Marketplace): purple dot */
+.header-nav-folder-item.header-nav-folder-item--external a[href*="marketplace.atlassian.com/apps/1236515"]:before {
+  background: var(--clinical-purple) !important;
+}
+
+/* No external-link arrow on dropdown items, so external items match the rest */
+.header-nav-folder-item--external a.automatic-external-link::after,
+.header-menu-nav-item--external a.automatic-external-link::after {
+  content: none !important;
+  display: none !important;
+}
+
 body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-item-content {
   background-size: 0px !important;
 }
@@ -224,7 +236,8 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   position: relative ;
 }
 
-.container.header-menu-nav-item.header-menu-nav-item--external a[href*="hari.hardianhealth.com"]:before {
+.container.header-menu-nav-item.header-menu-nav-item--external a[href*="hari.hardianhealth.com"]:before,
+.container.header-menu-nav-item.header-menu-nav-item--external a[href*="marketplace.atlassian.com/apps/1236515"]:before {
   content: '' !important;
   position: absolute !important;
   width: 12px !important;
@@ -236,6 +249,14 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   background-color: var(--health-economics-brightpink) !important;
   z-index: 1 !important;
   display: block !important;
+}
+/* Risk management app (Hardian Flow on the Atlassian Marketplace): purple dot on mobile */
+.container.header-menu-nav-item.header-menu-nav-item--external a[href*="marketplace.atlassian.com/apps/1236515"]:before {
+  background-color: var(--clinical-purple) !important;
+}
+/* keep it on one line so the dot sits next to the text, like the other items */
+.container.header-menu-nav-item.header-menu-nav-item--external a[href*="marketplace.atlassian.com/apps/1236515"] {
+  white-space: nowrap;
 }
 
 /*
