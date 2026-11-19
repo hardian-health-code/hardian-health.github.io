@@ -139,13 +139,17 @@ p + pre {
   transition: 0.3s all ease !important;
 }
 
-/* HaRi - Devices Database: green dot */
-.header-nav-folder-item.header-nav-folder-item--external a[href*="hari.hardianhealth.com"]:before {
-  background: var(--regulatory-mintgreen) !important;
-}
-/* Risk management app (Hardian Flow on the Atlassian Marketplace): purple dot */
-.header-nav-folder-item.header-nav-folder-item--external a[href*="marketplace.atlassian.com/apps/1236515"]:before {
-  background: var(--clinical-purple) !important;
+/* RESOURCES DROPDOWN: dots cycle through the 5 brand colours in order, top to bottom,
+   like the Services dropdown (green, purple, pink, light blue, dark blue, then repeat).
+   Based on position, so it keeps working when items are added or reordered in Squarespace. */
+#resources > .header-nav-folder-item:nth-child(5n+1) { --resources-dot: var(--regulatory-mintgreen); }
+#resources > .header-nav-folder-item:nth-child(5n+2) { --resources-dot: var(--clinical-purple); }
+#resources > .header-nav-folder-item:nth-child(5n+3) { --resources-dot: var(--health-economics-brightpink); }
+#resources > .header-nav-folder-item:nth-child(5n+4) { --resources-dot: var(--marketaccess-lightblue); }
+#resources > .header-nav-folder-item:nth-child(5n+5) { --resources-dot: var(--ip-darkblue); }
+#resources > .header-nav-folder-item a .header-nav-folder-item-content:before,
+#resources > .header-nav-folder-item.header-nav-folder-item--external a:before {
+  background: var(--resources-dot) !important;
 }
 
 /* No external-link arrow on dropdown items, so external items match the rest */
@@ -242,12 +246,11 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 
 /* External items on mobile: the dot sits inline before the first word,
    so it stays next to the text even when a long title wraps */
-.container.header-menu-nav-item.header-menu-nav-item--external a {
+[data-folder="/resources"] .container.header-menu-nav-item.header-menu-nav-item--external a {
   display: block !important;
   text-align: center !important;
 }
-.container.header-menu-nav-item.header-menu-nav-item--external a[href*="hari.hardianhealth.com"]:before,
-.container.header-menu-nav-item.header-menu-nav-item--external a[href*="marketplace.atlassian.com/apps/1236515"]:before {
+[data-folder="/resources"] .container.header-menu-nav-item.header-menu-nav-item--external a:before {
   content: '' !important;
   position: relative !important;
   display: inline-block !important;
@@ -259,13 +262,16 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   margin-left: -20px !important; /* hang the dot left of the text so the text stays centred */
   z-index: 1 !important;
 }
-/* HaRi - Devices Database: green dot on mobile */
-.container.header-menu-nav-item.header-menu-nav-item--external a[href*="hari.hardianhealth.com"]:before {
-  background-color: var(--regulatory-mintgreen) !important;
-}
-/* Risk management app (Hardian Flow on the Atlassian Marketplace): purple dot on mobile */
-.container.header-menu-nav-item.header-menu-nav-item--external a[href*="marketplace.atlassian.com/apps/1236515"]:before {
-  background-color: var(--clinical-purple) !important;
+/* Resources on mobile: same 5-colour sequence as desktop. The first child is the
+   Back button, so the items start at child 2. */
+[data-folder="/resources"] .header-menu-nav-folder-content > .header-menu-nav-item:nth-child(5n+2) { --resources-dot: var(--regulatory-mintgreen); }
+[data-folder="/resources"] .header-menu-nav-folder-content > .header-menu-nav-item:nth-child(5n+3) { --resources-dot: var(--clinical-purple); }
+[data-folder="/resources"] .header-menu-nav-folder-content > .header-menu-nav-item:nth-child(5n+4) { --resources-dot: var(--health-economics-brightpink); }
+[data-folder="/resources"] .header-menu-nav-folder-content > .header-menu-nav-item:nth-child(5n+5) { --resources-dot: var(--marketaccess-lightblue); }
+[data-folder="/resources"] .header-menu-nav-folder-content > .header-menu-nav-item:nth-child(5n+6) { --resources-dot: var(--ip-darkblue); }
+[data-folder="/resources"] .header-menu-nav-folder-content > .header-menu-nav-item a .header-menu-nav-item-content:before,
+[data-folder="/resources"] .header-menu-nav-folder-content > .header-menu-nav-item.header-menu-nav-item--external a:before {
+  background-color: var(--resources-dot) !important;
 }
 /* it fits on one line, so keep it there */
 .container.header-menu-nav-item.header-menu-nav-item--external a[href*="marketplace.atlassian.com/apps/1236515"] {
