@@ -139,6 +139,10 @@ p + pre {
   transition: 0.3s all ease !important;
 }
 
+/* HaRi - Devices Database: green dot */
+.header-nav-folder-item.header-nav-folder-item--external a[href*="hari.hardianhealth.com"]:before {
+  background: var(--regulatory-mintgreen) !important;
+}
 /* Risk management app (Hardian Flow on the Atlassian Marketplace): purple dot */
 .header-nav-folder-item.header-nav-folder-item--external a[href*="marketplace.atlassian.com/apps/1236515"]:before {
   background: var(--clinical-purple) !important;
@@ -236,25 +240,34 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   position: relative ;
 }
 
+/* External items on mobile: the dot sits inline before the first word,
+   so it stays next to the text even when a long title wraps */
+.container.header-menu-nav-item.header-menu-nav-item--external a {
+  display: block !important;
+  text-align: center !important;
+}
 .container.header-menu-nav-item.header-menu-nav-item--external a[href*="hari.hardianhealth.com"]:before,
 .container.header-menu-nav-item.header-menu-nav-item--external a[href*="marketplace.atlassian.com/apps/1236515"]:before {
   content: '' !important;
-  position: absolute !important;
+  position: relative !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
   width: 12px !important;
   height: 12px !important;
   border-radius: 50% !important;
-  left: -20px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  background-color: var(--health-economics-brightpink) !important;
+  margin-right: 8px !important;
+  margin-left: -20px !important; /* hang the dot left of the text so the text stays centred */
   z-index: 1 !important;
-  display: block !important;
+}
+/* HaRi - Devices Database: green dot on mobile */
+.container.header-menu-nav-item.header-menu-nav-item--external a[href*="hari.hardianhealth.com"]:before {
+  background-color: var(--regulatory-mintgreen) !important;
 }
 /* Risk management app (Hardian Flow on the Atlassian Marketplace): purple dot on mobile */
 .container.header-menu-nav-item.header-menu-nav-item--external a[href*="marketplace.atlassian.com/apps/1236515"]:before {
   background-color: var(--clinical-purple) !important;
 }
-/* keep it on one line so the dot sits next to the text, like the other items */
+/* it fits on one line, so keep it there */
 .container.header-menu-nav-item.header-menu-nav-item--external a[href*="marketplace.atlassian.com/apps/1236515"] {
   white-space: nowrap;
 }
